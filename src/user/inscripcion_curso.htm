@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Centro Deportivo · Inscripción</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="navbar navbar-expand-lg align-items-center px-4 py-3 header-bg">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        <a class="d-flex align-items-center gap-3 brand-link" href="../index.html">
+          <img src="../images/logo.png" alt="Centro Deportivo" class="logo-img">
+          <div class="brand-text">
+            <div class="h6 mb-0">Centro Deportivo</div>
+            <div class="small text-beige">Inscripciones · Centro Deportivo</div>
+          </div>
+        </a>
+        <nav class="d-none d-md-flex gap-3 nav-left">
+          <a class="nav-link text-beige" href="../index.html">Inicio</a>
+          <a class="nav-link text-beige" href="cursos.htm">Cursos</a>
+        </nav>
+      </div>
+      <a class="user-box d-flex align-items-center gap-2" href="perfil_usuario.htm">
+        <img src="../images/avatar.jpg" alt="Avatar" class="user-avatar">
+        <div class="user-name">Vizaith</div>
+      </a>
+    </div>
+  </header>
+
+  <main class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8">
+        <div class="card page-card p-4">
+          <div class="d-flex gap-3 align-items-start flex-column flex-md-row">
+            <img src="../images/natacion.jpeg" alt="Natación" class="thumb-large-img">
+            <div class="flex-fill">
+              <h1 class="h4 mb-1 text-carbon">Confirmar inscripción</h1>
+              <div class="d-flex flex-wrap gap-2 align-items-center meta">
+                <span class="badge-level">Avanzado</span>
+                <div class="small text-muted">Impartido por <strong>Carlos Martínez</strong></div>
+                <div class="small text-muted">Plazas disponibles: <strong>10</strong></div>
+              </div>
+
+              <p class="text-muted mt-3 mb-3 text-justify">
+                Estás a punto de inscribirte en el curso seleccionado. Revisa los datos y confirma tu inscripción. El pago se realiza por medios externos y será validado por el administrador.
+              </p>
+
+              <div class="d-flex gap-2 flex-wrap">
+                <button class="btn btn-primary btn-lg btn-fixed" id="openConfirm">Confirmar inscripción</button>
+                <a class="btn btn-outline-primary btn-lg btn-fixed" href="cursos_detalle.htm">Volver a detalles</a>
+                <a class="btn btn-outline-primary btn-lg btn-fixed" href="mis_inscripciones.htm">Ver mis inscripciones</a>
+              </div>
+            </div>
+
+            <div class="summary-box summary-centered summary-dark" aria-hidden="false">
+              <div class="small text-beige">Resumen</div>
+              <div class="fw-bold text-white mt-2">Natación Avanzada</div>
+              <div class="small text-white schedule-text"><strong>Horario:</strong> Lun/Mié/Vie <strong>18:00 - 19:00</strong></div>
+              <div class="price mt-3">
+                <div class="h4 mb-0 text-white cost-text"><strong>$150</strong></div>
+                <div class="small text-beige">MXN / mes</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div id="confirmModal" class="modal-css" role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+          <div class="modal-card">
+            <h2 id="confirmTitle" class="h5 text-carbon mb-2">Confirmar Inscripción</h2>
+            <p class="text-muted mb-3">Revisa la información y confirma. El administrador validará el pago registrado.</p>
+            <div class="d-flex justify-content-between align-items-center mb-3 modal-grid">
+              <div class="text-muted">
+                <div><strong>Curso:</strong> Natación Avanzada</div>
+                <div class="mt-2"><strong>Instructor:</strong> Carlos Martínez</div>
+                <div class="mt-2"><strong>Horario:</strong> Lun, Mié, Vie - 18:00</div>
+              </div>
+              <div class="text-end">
+                <div class="h4 mb-0 text-carbon">$150</div>
+                <div class="small text-muted">MXN / mes</div>
+              </div>
+            </div>
+            <div class="d-flex gap-3">
+              <button class="btn confirm-btn btn-fixed" id="confirmBtn">Confirmar Inscripción</button>
+              <button class="btn cancel-link btn-fixed" id="cancelConfirm">Cancelar</button>
+            </div>
+            <div class="small text-muted mt-3">Al confirmar, recibirás una credencial virtual y el pago quedará pendiente de validación administrativa.</div>
+          </div>
+        </div>
+
+        <div id="toast" class="position-fixed top-0 end-0 m-3" style="z-index:2000; display:none">
+          <div class="toast-body toast-success rounded p-3 text-white">Inscripción confirmada. Está en espera de validación.</div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center py-3 small text-muted">© Centro Deportivo</footer>
+
+  <script>
+    const openConfirm = document.getElementById('openConfirm');
+    const confirmModal = document.getElementById('confirmModal');
+    const cancelConfirm = document.getElementById('cancelConfirm');
+    const confirmBtn = document.getElementById('confirmBtn');
+    const toast = document.getElementById('toast');
+
+    openConfirm.addEventListener('click', () => {
+      confirmModal.style.visibility = 'visible';
+      confirmModal.style.opacity = '1';
+      confirmModal.style.transform = 'scale(1)';
+    });
+
+    cancelConfirm.addEventListener('click', () => {
+      confirmModal.style.visibility = 'hidden';
+      confirmModal.style.opacity = '0';
+      confirmModal.style.transform = 'scale(1.02)';
+    });
+
+    confirmBtn.addEventListener('click', () => {
+      confirmModal.style.visibility = 'hidden';
+      confirmModal.style.opacity = '0';
+      toast.style.display = 'block';
+      setTimeout(() => { toast.style.display = 'none'; }, 3500);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        confirmModal.style.visibility = 'hidden';
+        confirmModal.style.opacity = '0';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Centro Deportivo · Validación de pagos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="navbar navbar-expand-lg align-items-center px-4 py-3 header-bg">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        <a class="d-flex align-items-center gap-3 brand-link" href="../index.html">
+          <img src="../images/logo.png" alt="Centro Deportivo" class="logo-img">
+          <div class="brand-text">
+            <div class="h6 mb-0">Centro Deportivo</div>
+            <div class="small text-beige">Panel de Administración</div>
+          </div>
+        </a>
+        <nav class="d-none d-md-flex gap-3 nav-left">
+          <a class="nav-link text-beige" href="../index.html">Inicio</a>
+          <a class="nav-link text-beige" href="cursos.htm">Cursos</a>
+        </nav>
+      </div>
+      <a class="user-box d-flex align-items-center gap-2" href="perfil_usuario.htm">
+        <img src="../images/avatar.jpg" alt="Avatar" class="user-avatar">
+        <div class="user-name">Vizaith</div>
+      </a>
+    </div>
+  </header>
+
+  <main class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10">
+        <div class="card page-card p-3">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+              <h1 class="h5 mb-0 text-carbon">Validación de pagos</h1>
+              <div class="small text-muted">Revisa y valida los pagos registrados por los usuarios</div>
+            </div>
+            <div class="d-flex gap-2 align-items-center">
+              <input class="form-control search-input" placeholder="Buscar por usuario o curso" />
+            </div>
+          </div>
+
+          <div class="payments">
+            <div class="payment d-flex justify-content-between align-items-center p-3 mb-3" data-id="1">
+              <div class="d-flex align-items-center gap-3">
+                <img src="../images/natacion.jpeg" alt="Natación" class="p-thumb-img-square">
+                <div>
+                  <div class="fw-bold text-carbon">Natación Avanzada</div>
+                  <div class="small text-muted">Usuario: Ana López · Monto: $150 · Fecha: 12/03/2026</div>
+                </div>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <div class="status valid">Validado</div>
+                <div class="d-flex gap-2">
+                  <button class="btn btn-outline-secondary btn-fixed view-btn" data-info="Pago recibido y verificado. Referencia: 001">Ver</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="payment d-flex justify-content-between align-items-center p-3 mb-3" data-id="2">
+              <div class="d-flex align-items-center gap-3">
+                <img src="../images/basketball.jpeg" alt="Basketball" class="p-thumb-img-square">
+                <div>
+                  <div class="fw-bold text-carbon">Basketball Principiante</div>
+                  <div class="small text-muted">Usuario: Juan Martínez · Monto: $100 · Fecha: 10/03/2026</div>
+                </div>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <div class="status pending">Pendiente</div>
+                <div class="d-flex gap-2">
+                  <button class="btn btn-outline-secondary btn-fixed view-btn" data-info="Pago en revisión. Comprobante: pendiente">Ver</button>
+                  <button class="btn validate-btn btn-fixed validate-action">Validar</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="payment d-flex justify-content-between align-items-center p-3 mb-3" data-id="3">
+              <div class="d-flex align-items-center gap-3">
+                <img src="../images/atletismo.jpeg" alt="Atletismo" class="p-thumb-img-square">
+                <div>
+                  <div class="fw-bold text-carbon">Atletismo Intermedio</div>
+                  <div class="small text-muted">Usuario: Carlos Ruiz · Monto: $200 · Fecha: 14/03/2026</div>
+                </div>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <div class="status denied">Denegado</div>
+                <div class="d-flex gap-2">
+                  <button class="btn btn-outline-secondary btn-fixed view-btn" data-info="Pago denegado por falta de comprobante">Ver</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="infoModal" class="modal-css" role="dialog" aria-modal="true" aria-labelledby="infoTitle">
+    <div class="modal-card">
+      <h2 id="infoTitle" class="h5 text-carbon mb-2">Información de pago</h2>
+      <p id="infoContent" class="text-muted mb-3"></p>
+      <div class="d-flex gap-3">
+        <button class="btn confirm-btn btn-fixed" id="closeInfo">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="adminToast" class="position-fixed top-0 end-0 m-3" style="z-index:2000; display:none">
+    <div id="adminToastBody" class="toast-body toast-success rounded p-3 text-white"></div>
+  </div>
+
+  <footer class="text-center py-3 small text-muted">© Centro Deportivo</footer>
+
+  <script>
+    document.querySelectorAll('.view-btn').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const info = btn.getAttribute('data-info') || 'Sin información';
+        document.getElementById('infoContent').textContent = info;
+        const modal = document.getElementById('infoModal');
+        modal.style.visibility='visible';modal.style.opacity='1';modal.style.transform='scale(1)';
+      });
+    });
+    document.getElementById('closeInfo').addEventListener('click', ()=>{
+      const modal = document.getElementById('infoModal');
+      modal.style.visibility='hidden';modal.style.opacity='0';modal.style.transform='scale(1.02)';
+    });
+    document.querySelectorAll('.validate-action').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const payment = btn.closest('.payment');
+        const status = payment.querySelector('.status');
+        status.className = 'status valid';
+        status.textContent = 'Validado';
+        const toast = document.getElementById('adminToast');
+        const body = document.getElementById('adminToastBody');
+        body.textContent = 'Pago validado correctamente.';
+        toast.style.display='block';
+        setTimeout(()=>{toast.style.display='none'},3000);
+        btn.remove();
+      });
+    });
+    document.addEventListener('keydown', (e)=>{if(e.key==='Escape'){document.getElementById('infoModal').style.visibility='hidden';document.getElementById('infoModal').style.opacity='0';}});
+  </script>
+</body>
+</html>
