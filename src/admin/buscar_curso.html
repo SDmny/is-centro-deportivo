@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Centro Deportivo · Buscar curso</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="estilos_crud.css">
+</head>
+<body>
+<header class="navbar navbar-expand-lg align-items-center px-4 py-3 header-bg">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        <a class="d-flex align-items-center gap-3 brand-link" href="../index.html">
+          <img src="../images/logo.png" alt="Centro Deportivo" class="logo-img">
+          <div class="brand-text">
+            <div class="h6 mb-0">Centro Deportivo</div>
+            <div class="small text-beige">Panel de Administración</div>
+          </div>
+        </a>
+        <nav class="d-none d-md-flex gap-3 nav-left">
+          <a class="nav-link text-beige" href="../index.html">Inicio</a>
+          <a class="nav-link text-beige" href="cursos.htm">Cursos</a>
+        </nav>
+      </div>
+      <a class="user-box d-flex align-items-center gap-2" href="perfil_usuario.htm">
+        <img src="../images/avatar.jpg" alt="Avatar" class="user-avatar">
+        <div class="user-name">Administrador</div>
+      </a>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="page-card form-card">
+      <h1 style="margin:0; font-size:1.6rem;">Buscar curso</h1>
+      <p style="margin:8px 0 0; color:var(--muted);">Encuentra un curso por nombre, instructor o nivel.</p>
+
+      <form class="form-grid" action="#" method="get" novalidate>
+        <div class="full-width">
+          <label class="form-label" for="query">Búsqueda</label>
+          <input class="form-input" type="search" id="query" name="q" placeholder="Ej. Yoga, Juan Pérez, Intermedio" />
+        </div>
+
+        <div>
+          <label class="form-label" for="filterLevel">Nivel</label>
+          <select class="form-input" id="filterLevel" name="level">
+            <option value="">Todos</option>
+            <option value="beginner">Principiante</option>
+            <option value="intermediate">Intermedio</option>
+            <option value="advanced">Avanzado</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="form-label" for="filterDate">Fecha de inicio</label>
+          <input class="form-input" type="date" id="filterDate" name="startDate" />
+        </div>
+
+        <div class="full-width" style="display:flex;justify-content:flex-end;gap:12px;margin-top:14px;flex-wrap:wrap;">
+          <button type="reset" class="btn-outline-primary" style="min-width:120px;">Limpiar</button>
+          <button type="submit" class="btn-primary" style="min-width:120px;">Buscar</button>
+        </div>
+      </form>
+
+      <div class="mt-4">
+        <h2 class="h5 text-carbon">Resultados</h2>
+        <p class="text-muted" style="margin:4px 0 12px;">Ningún resultado aún. Realiza una búsqueda para ver cursos.</p>
+
+        <!-- Ejemplo de tarjeta de resultado (se puede quitar / reemplazar con contenido dinámico) -->
+        <div class="card page-card p-3 mb-3">
+          <div class="d-flex flex-column flex-md-row gap-3 align-items-start">
+            <div class="flex-grow-1">
+              <h3 class="h6 mb-1">Yoga para principiantes</h3>
+              <p class="text-muted mb-1">Instructor: Juan Pérez · Nivel: Intermedio</p>
+              <p class="text-muted small mb-0">Horario: Lun/Mié 18:00-19:00 · Inicia: 01/04/2026 · Costo: $25.00</p>
+            </div>
+            <div class="d-flex gap-2 flex-wrap">
+              <a href="editar_curso.html" class="btn btn-outline-primary">Editar</a>
+              <a href="#" class="btn btn-outline-primary">Ver</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center py-3 small text-muted">© Centro Deportivo</footer>
+</body>
+</html>
