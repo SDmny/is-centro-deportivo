@@ -9,7 +9,7 @@
   --denied:#d9534f;
 }
 *{box-sizing:border-box}
-html,body{height:100%}
+html,body{height:auto;min-height:100%}
 body{
   margin:0;
   font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -265,4 +265,36 @@ a.btn-fixed{display:inline-flex;align-items:center;justify-content:center;text-d
   .search-input{width:100%}
   .modal-card{padding:16px}
   .user-name{font-size:13px}
+}
+
+.table {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(46,44,38,0.06);
+  background: linear-gradient(180deg, var(--white), #fbfbfb);
+
+  table-layout: fixed;
+  width: 100%;
+
+}
+
+.table th {
+  background: var(--olive-dark);
+  color: var(--white);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+
+  word-wrap: break-word;
+
+}
+
+.table td {
+  color: var(--carbon);
+  font-size: 14px;
+  vertical-align: middle;
+
+  word-wrap: break-word;
+
 }
