@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Centro Deportivo · Administración</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <header class="navbar navbar-expand-lg align-items-center px-4 py-3 header-bg">
+      <div class="container-fluid d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center gap-3">
+          <a class="d-flex align-items-center gap-3 brand-link" href="../index.html">
+            <img src="../images/logo.png" alt="Centro Deportivo" class="logo-img">
+            <div class="brand-text">
+              <div class="h6 mb-0">Centro Deportivo</div>
+              <div class="small text-beige">Panel de Administración</div>
+            </div>
+          </a>
+          <nav class="d-none d-md-flex gap-3 nav-left">
+            <a class="nav-link text-beige" href="../index.html">Inicio</a>
+            <a class="nav-link text-beige" href="../user/consultar_cursos_filtro.htm">Cursos</a>
+          </nav>
+        </div>
+        <a class="user-box d-flex align-items-center gap-2" href="perfil_usuario.htm">
+          <img src="../images/avatar.jpg" alt="Avatar" class="user-avatar">
+          <div class="user-name">Administrador</div>
+        </a>
+      </div>
+    </header>
+
+    <main class="container my-5">
+      <div class="card page-card p-4">
+        <h1 class="h4 mb-4 text-carbon">Usuarios inscritos</h1>
+
+        <!-- Curso -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div>
+            <h2 class="text-carbon">Natación Principiante</h2>
+            <div class="meta mt-2">
+              <span class="badge-level">Natación</span>
+              <span class="badge-level">Principiante</span>
+              <span class="text-muted">ID: CUR-001</span>
+            </div>
+          </div>
+          <img src="../images/natacion.jpeg" class="thumb-large-img" alt="Curso natación">
+        </div>
+
+        <h5 class="mb-3">Información general</h5>
+        <p class="text-justify">
+          Curso introductorio de natación enfocado en desarrollar habilidades
+          básicas en el agua.
+        </p>
+        <div class="row mb-4">
+          <div class="col-md-6">
+            <p><strong>Duración:</strong> 3 meses</p>
+            <p><strong>Fecha inicio:</strong> 10 Marzo 2026</p>
+            <p><strong>Fecha fin:</strong> 10 Junio 2026</p>
+          </div>
+          <div class="col-md-6">
+            <p><strong>Horario:</strong> Martes y Viernes · 16:00 - 18:00</p>
+            <p><strong>Cupo máximo:</strong> 20 alumnos</p>
+          </div>
+        </div>
+
+        <!-- Lista de usuarios -->
+        <h5 class="mb-3">Usuarios inscritos</h5>
+        <table class="table table-striped">
+          <thead class="table-light">
+            <tr>
+              <th>Nombre</th>
+              <th>Edad</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ana López</td>
+              <td>20</td>
+              <td>ana@example.com</td>
+            </tr>
+            <tr>
+              <td>Luis Torres</td>
+              <td>25</td>
+              <td>luis@example.com</td>
+            </tr>
+            <tr>
+              <td>María Fernández</td>
+              <td>19</td>
+              <td>maria@example.com</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <footer class="text-center py-3 small text-muted">
+      © Centro Deportivo
+    </footer>
+  </body>
+</html>
