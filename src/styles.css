@@ -59,7 +59,7 @@ body{
   white-space:nowrap;
 }
 .page-card{
-  background:linear-gradient(180deg,var(--beige),#fff);
+  background:var(--beige);
   border-radius:12px;
   border:1px solid rgba(46,44,38,0.06);
   box-shadow:0 8px 24px rgba(46,44,38,0.06);
