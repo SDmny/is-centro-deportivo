@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Centro Deportivo · Consultar Cursos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="navbar navbar-expand-lg align-items-center px-4 py-3 header-bg">
+  <div class="container-fluid d-flex align-items-center justify-content-between">
+
+    <div class="d-flex align-items-center gap-3">
+      <a class="d-flex align-items-center gap-3 brand-link" href="../index.html">
+        <img src="../images/logo.png" alt="Centro Deportivo" class="logo-img">
+        <div>
+          <div class="h6 mb-0">Centro Deportivo</div>
+          <div class="small text-beige">Inscripciones · Centro Deportivo</div>
+        </div>
+      </a>
+
+      <nav class="d-none d-md-flex gap-3 nav-left">
+        <a class="nav-link text-beige" href="../index.html">Inicio</a>
+        <a class="nav-link text-beige" href="#">Cursos</a>
+      </nav>
+    </div>
+
+    <a class="user-box d-flex align-items-center gap-2" href="#">
+      <img src="../images/avatar.jpg" alt="Avatar" class="user-avatar">
+      <div class="user-name">Vizaith</div>
+    </a>
+
+  </div>
+</header>
+
+<main class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
+
+      <div class="card page-card p-4">
+
+        <h1 class="h4 mb-4 text-carbon">Consultar cursos deportivos</h1>
+
+        <!-- FILTROS -->
+        <div class="d-flex justify-content-between mb-3">
+
+          <select class="search-input" style="width: 30%;">
+            <option>Deporte</option>
+            <option>Atletismo</option>
+            <option>Básquetbol</option>
+            <option>Natación</option>
+            <option>Voleibol</option>
+          </select>
+
+          <select class="search-input" style="width: 30%;">
+            <option>Nivel</option>
+            <option>Principiante</option>
+            <option>Intermedio</option>
+            <option>Avanzado</option>
+          </select>
+
+          <select class="search-input" style="width: 30%;">
+            <option>Horario</option>
+            <option>Mañana</option>
+            <option>Tarde</option>
+            <option>Noche</option>
+          </select>
+
+        </div>
+
+        <!-- BOTÓN -->
+        <div class="mb-4 text-center">
+        <button class="btn btn-primary btn-fixed">Buscar</button>
+        </div>
+
+
+        <!-- NATACIÓN -->
+        <div class="payment p-3 mb-3 d-flex justify-content-between align-items-center">
+          <div>
+            <h5>Natación Principiante</h5>
+            <p>Nivel: Principiante</p>
+            <p>Horario: Tarde</p>
+            <p>Instructor: Juan Pérez</p>
+            <p>Cupo disponible: 8</p>
+            <a class="btn btn-outline-primary btn-fixed" href="detalle_curso.htm">Ver detalles</a>
+          </div>
+
+          <div style="margin-right: 40px;">
+            <img src="../images/natacion.jpeg" alt="Natación"
+                 style="width:180px; height:180px; object-fit:cover; border-radius:16px;">
+          </div>
+        </div>
+
+        <!-- ATLETISMO -->
+        <div class="payment p-3 mb-3 d-flex justify-content-between align-items-center">
+          <div>
+            <h5>Atletismo Intermedio</h5>
+            <p>Nivel: Intermedio</p>
+            <p>Horario: Mañana</p>
+            <p>Instructor: Carlos Ruiz</p>
+            <p>Cupo disponible: 5</p>
+            <a class="btn btn-outline-primary btn-fixed" href="detalle_curso.htm">Ver detalles</a>
+          </div>
+
+          <div style="margin-right: 40px;">
+            <img src="../images/atletismo.jpeg" alt="Atletismo"
+                 style="width:180px; height:180px; object-fit:cover; border-radius:16px;">
+          </div>
+        </div>
+
+        <!-- BÁSQUETBOL -->
+        <div class="payment p-3 mb-3 d-flex justify-content-between align-items-center">
+          <div>
+            <h5>Básquetbol Avanzado</h5>
+            <p>Nivel: Avanzado</p>
+            <p>Horario: Noche</p>
+            <p>Instructor: Laura Gómez</p>
+            <p>Cupo disponible: 10</p>
+            <a class="btn btn-outline-primary btn-fixed" href="detalle_curso.htm">Ver detalles</a>
+          </div>
+
+          <div style="margin-right: 40px;">
+            <img src="../images/basketball.jpeg" alt="Básquetbol"
+                 style="width:180px; height:180px; object-fit:cover; border-radius:16px;">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer class="text-center py-3 small text-muted">
+  © Centro Deportivo
+</footer>
+
+</body>
+</html>
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Centro Deportivo · Borrar curso</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../estilos_crud.css">
+</head>
+<body>
+<header class="navbar navbar-expand-lg align-items-center px-4 py-3 header-bg">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        <a class="d-flex align-items-center gap-3 brand-link" href="../index.html">
+          <img src="../images/logo.png" alt="Centro Deportivo" class="logo-img">
+          <div class="brand-text">
+            <div class="h6 mb-0">Centro Deportivo</div>
+            <div class="small text-beige">Panel de Administración</div>
+          </div>
+        </a>
+        <nav class="d-none d-md-flex gap-3 nav-left">
+          <a class="nav-link text-beige" href="../index.html">Inicio</a>
+          <a class="nav-link text-beige" href="cursos.htm">Cursos</a>
+        </nav>
+      </div>
+      <a class="user-box d-flex align-items-center gap-2" href="perfil_usuario.htm">
+        <img src="../images/avatar.jpg" alt="Avatar" class="user-avatar">
+        <div class="user-name">Administrador</div>
+      </a>
+    </div>
+  </header>
+
+  <main class="container my-5">
+    <div class="page-card form-card mb-5">
+      <h1 style="margin:0; font-size:1.6rem;">Borrar curso</h1>
+      <p style="margin:8px 0 0; color:var(--muted);">Selecciona un curso y confirma para eliminarlo del sistema.</p>
+
+      <form class="form-grid" action="#" method="post" novalidate>
+        <div class="full-width">
+          <label class="form-label" for="courseSelect">Curso</label>
+          <select class="form-input" id="courseSelect" name="courseId" required>
+            <option value="" disabled selected>Selecciona un curso</option>
+            <option value="1">Yoga para principiantes</option>
+            <option value="2">Basketball Principiante</option>
+            <option value="3">Atletismo Intermedio</option>
+          </select>
+        </div>
+
+        <div class="full-width">
+          <div class="alert" style="border:1px solid rgba(217,83,79,0.25);background:rgba(217,83,79,0.08);color:var(--denied);border-radius:10px;padding:12px;">
+            <strong>Atención:</strong> Esta acción es irreversible. El curso seleccionado se eliminará permanentemente.
+          </div>
+        </div>
+
+        <div class="full-width" style="display:flex;justify-content:flex-end;gap:12px;margin-top:14px;flex-wrap:wrap;">
+          <button type="reset" class="btn-outline-primary" style="min-width:120px;">Cancelar</button>
+          <button type="submit" class="btn-primary" style="min-width:120px;">Eliminar curso</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="text-center py-3 small text-muted">© Centro Deportivo</footer>
+</body>
+</html>
