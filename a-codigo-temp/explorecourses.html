@@ -1,0 +1,550 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#4c6455",
+              "on-tertiary-fixed-variant": "#3e4a40",
+              "surface-variant": "#e3e2e0",
+              "tertiary-container": "#99a69a",
+              background: "#faf9f7",
+              "surface-tint": "#4c6455",
+              "inverse-primary": "#b2cdbb",
+              "on-background": "#1a1c1b",
+              secondary: "#795555",
+              outline: "#727973",
+              surface: "#faf9f7",
+              "error-container": "#ffdad6",
+              "surface-container": "#efeeec",
+              "on-secondary-fixed-variant": "#5f3e3f",
+              "on-error-container": "#93000a",
+              "on-surface-variant": "#424844",
+              "surface-container-low": "#f4f3f1",
+              "inverse-on-surface": "#f1f1ef",
+              "on-tertiary-fixed": "#131e16",
+              "on-primary-container": "#273e31",
+              "on-error": "#ffffff",
+              "primary-fixed": "#cee9d6",
+              "on-secondary-fixed": "#2e1415",
+              "tertiary-fixed": "#d9e6d9",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed-dim": "#b2cdbb",
+              "surface-container-highest": "#e3e2e0",
+              "on-primary-fixed-variant": "#344c3e",
+              "on-surface": "#1a1c1b",
+              "outline-variant": "#c2c8c2",
+              "surface-bright": "#faf9f7",
+              "secondary-fixed": "#ffdad9",
+              "on-primary-fixed": "#082014",
+              "primary-container": "#8fa998",
+              "surface-container-high": "#e9e8e6",
+              "inverse-surface": "#2f3130",
+              "on-tertiary-container": "#303c33",
+              error: "#ba1a1a",
+              tertiary: "#556157",
+              "secondary-fixed-dim": "#eabbbb",
+              "tertiary-fixed-dim": "#bdcabd",
+              "secondary-container": "#fbcccc",
+              "on-tertiary": "#ffffff",
+              "on-primary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "surface-dim": "#dadad8",
+              "on-secondary-container": "#785454",
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Manrope"],
+              label: ["Manrope"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      body {
+        font-family: "Manrope", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-background text-on-surface">
+    <!-- SideNavBar Shell -->
+    <aside
+      class="h-screen w-64 fixed left-0 top-0 flex flex-col py-8 px-4 gap-y-2 bg-stone-100 dark:bg-stone-900 font-manrope text-sm font-medium tracking-wide"
+    >
+      <div class="px-4 mb-10">
+        <h1
+          class="text-xl font-bold text-[#4c6455] dark:text-emerald-500 tracking-tighter"
+        >
+          Kinetic Sanctuary
+        </h1>
+        <p class="text-[10px] uppercase tracking-[0.2em] text-stone-400 mt-1">
+          Elite Performance
+        </p>
+      </div>
+      <nav class="flex-1 space-y-1">
+        <a
+          class="flex items-center gap-3 px-4 py-3 rounded-lg text-stone-500 dark:text-stone-400 hover:bg-[#ffffff] dark:hover:bg-stone-800 transition-colors duration-200"
+          href="#"
+        >
+          <span class="material-symbols-outlined">dashboard</span>
+          <span>Dashboard</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 rounded-lg text-stone-500 dark:text-stone-400 hover:bg-[#ffffff] dark:hover:bg-stone-800 transition-colors duration-200"
+          href="#"
+        >
+          <span class="material-symbols-outlined">school</span>
+          <span>My Courses</span>
+        </a>
+        <!-- Active State: Explore Courses -->
+        <a
+          class="flex items-center gap-3 px-4 py-3 rounded-lg text-[#4c6455] dark:text-emerald-400 font-bold border-r-4 border-[#4c6455] dark:border-emerald-500 bg-[#ffffff]/50 dark:bg-stone-800/50 transition-colors duration-200"
+          href="#"
+        >
+          <span class="material-symbols-outlined">explore</span>
+          <span>Explore Courses</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 rounded-lg text-stone-500 dark:text-stone-400 hover:bg-[#ffffff] dark:hover:bg-stone-800 transition-colors duration-200"
+          href="#"
+        >
+          <span class="material-symbols-outlined">calendar_month</span>
+          <span>Schedule</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 rounded-lg text-stone-500 dark:text-stone-400 hover:bg-[#ffffff] dark:hover:bg-stone-800 transition-colors duration-200"
+          href="#"
+        >
+          <span class="material-symbols-outlined">settings</span>
+          <span>Settings</span>
+        </a>
+      </nav>
+      <div class="px-4 mt-auto pt-8">
+        <div class="flex items-center gap-3 p-2">
+          <img
+            alt="Coach Profile"
+            class="w-10 h-10 rounded-full bg-surface-container-highest"
+            data-alt="Professional athletic coach profile photo"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDylCmJkjb8DDyK0br_1mueP9jQnXtz1iOqE5oZSJl0vT9boCyzLJHp5-5cy6vJdAziGi-7FSMbQdY3uZGG03ZyDpiS-vIcUmBEZXLg7KNpA9xto7Oy-CvSO4MztjcrzKhrWphTcUofwYa_6STZ1IF77lANYjYNTzZu_4DBzzV35rIiT8Hcz9rKj4Tcc4fyYIpY28yers0hB1_cOYBl4Ob6ZBHu0xhgrGSjAJUPlOOr2OlC8Wzccj_7N2Vzjimp1nrZc4mace9lmtfr"
+          />
+          <div class="overflow-hidden">
+            <p class="text-xs font-bold truncate">Coach Marcus</p>
+            <p class="text-[10px] text-stone-400">Head of Performance</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <!-- TopAppBar Shell -->
+    <header
+      class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-40 bg-[#faf9f7]/70 dark:bg-stone-950/70 backdrop-blur-md flex justify-between items-center px-12 transition-all duration-300 ease-in-out"
+    >
+      <div class="flex items-center gap-4 flex-1 max-w-xl">
+        <div class="relative w-full">
+          <span
+            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline"
+            >search</span
+          >
+          <input
+            class="w-full bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-1 focus:ring-primary placeholder:text-outline/60"
+            placeholder="Search for discipline, instructor, or goal..."
+            type="text"
+          />
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <button
+          class="hover:bg-[#f4f3f1] dark:hover:bg-stone-800 rounded-full p-2 text-primary transition-all duration-300"
+        >
+          <span class="material-symbols-outlined">notifications</span>
+        </button>
+        <button
+          class="hover:bg-[#f4f3f1] dark:hover:bg-stone-800 rounded-full p-2 text-primary transition-all duration-300"
+        >
+          <span class="material-symbols-outlined">account_circle</span>
+        </button>
+      </div>
+    </header>
+    <!-- Main Content Canvas -->
+    <main class="ml-64 pt-24 pb-16 px-12">
+      <!-- Hero Editorial Section -->
+      <section class="mb-16">
+        <h2 class="text-4xl font-extrabold tracking-tight text-on-surface mb-4">
+          Discovery
+        </h2>
+        <p
+          class="text-body-lg text-on-surface-variant max-w-2xl leading-relaxed"
+        >
+          Nurture your kinetic potential through curated disciplines. From
+          high-intensity performance to restorative stillness, find the rhythm
+          that matches your sanctuary.
+        </p>
+      </section>
+      <!-- Category Filters -->
+      <section class="flex flex-wrap gap-3 mb-12">
+        <button
+          class="px-6 py-2 rounded-full bg-primary text-on-primary font-semibold text-sm transition-all"
+        >
+          All Disciplines
+        </button>
+        <button
+          class="px-6 py-2 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high font-medium text-sm transition-all"
+        >
+          Strength
+        </button>
+        <button
+          class="px-6 py-2 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high font-medium text-sm transition-all"
+        >
+          Cardio
+        </button>
+        <button
+          class="px-6 py-2 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high font-medium text-sm transition-all"
+        >
+          Recovery
+        </button>
+        <button
+          class="px-6 py-2 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high font-medium text-sm transition-all"
+        >
+          Mindfulness
+        </button>
+      </section>
+      <!-- Course Grid - Bento Inspired -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Course Card 1: Pilates -->
+        <div
+          class="group flex flex-col bg-surface-container-low rounded-lg overflow-hidden hover:bg-surface-container-lowest hover:shadow-[0_8px_24px_rgba(76,100,85,0.06)] transition-all duration-300"
+        >
+          <div class="relative h-56 overflow-hidden">
+            <img
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              data-alt="A person practicing advanced Pilates on a reformer"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeNqhqBHODjCoUHf4LUXfdPoxMTxvg2txItAv8BMrXw-7-0tGjgmYD6QsLJ_GMpvm4tNxzN1BzAOhRdfqRYWG1jwkh1t8tX7VKiXHXyDWwfFhIlT4JaZeP5N2Zt7SCksaMKD3wq6FpkaVXqjt7KLJgp-HyAW1MLflHo9uPB1KAm1cRIImfbxfSBsn4AONj-5afivYMGyzW5y8aJCSnArUb1rxl4YMQGpzqrrJQp7eMCSlO5vsdi4v8q0UBBaBO5f93t60N8ZgcKrW4"
+            />
+            <div class="absolute top-4 left-4">
+              <span
+                class="px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold tracking-wider uppercase"
+                >Recovery</span
+              >
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="text-xl font-bold mb-1">Precision Pilates</h3>
+            <p class="text-sm text-on-surface-variant mb-6">
+              Master core stability and fluid movement under elite guidance.
+            </p>
+            <div class="mt-auto flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <img
+                  class="w-8 h-8 rounded-full"
+                  data-alt="Portrait of instructor Elena"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGJE34urX0meS6hIlGgHQqTmbpxcDLiPtYJtgsaXkXwhdpjhn4KRxSwSkEF0EKHugKUARiG77-lWxMR2vQcgX_nzOGyvJV4vSQ6Tz0RYp74C3zGI7N3sqDm4H4c2EI3p3iHJ3HAjsExOU4jmrw-n8Oo3SLJUD6f_hs8k9PmTOkMHNZ1X4yHnBSUqFpX6VoKAIADR2SoaSAhF_WDAxE8oZaEgfZl-ta8OibAsTtkOl5qQI_zl7YqCv3G4pyQeo11hQfnplDaftFxvZh"
+                />
+                <div>
+                  <p class="text-xs font-bold leading-none">Elena Thorne</p>
+                  <p class="text-[10px] text-outline mt-0.5">
+                    60 mins • Mon/Wed
+                  </p>
+                </div>
+              </div>
+              <button
+                class="px-5 py-2 bg-primary text-on-primary rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity"
+              >
+                Enroll
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Course Card 2: Swimming -->
+        <div
+          class="group flex flex-col bg-surface-container-low rounded-lg overflow-hidden hover:bg-surface-container-lowest hover:shadow-[0_8px_24px_rgba(76,100,85,0.06)] transition-all duration-300"
+        >
+          <div class="relative h-56 overflow-hidden">
+            <img
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              data-alt="Blue Olympic size swimming pool with sunlight reflecting"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7c7llYop4tusc3C0aaSC2Wk4LrqILAHtfyzBHi_3j-k7BQhGLcaanGZuatb8ZtiCPZRIEFvzp05Bp-mMrPBFoCznprN_0iJs-am_uLWeLeZRRh7LSj_4PjC9w-rtXSRHTxrd5w9kbbs9rdeMZuh0qs4oJumGb3k7auSnKdxm4a_RZ60pYMo2chNGbhNn4VoDlH_tSz-a_gOv70lZXxSzeQhwp8epV4xuaCX9PbghvAvzEBnM7yaDQawIh1tX6GKzCbDsAJ4tXYSFW"
+            />
+            <div class="absolute top-4 left-4">
+              <span
+                class="px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold tracking-wider uppercase"
+                >Cardio</span
+              >
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="text-xl font-bold mb-1">Aquatic Endurance</h3>
+            <p class="text-sm text-on-surface-variant mb-6">
+              Refine your stroke mechanics for maximum hydrodynamic efficiency.
+            </p>
+            <div class="mt-auto flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <img
+                  class="w-8 h-8 rounded-full"
+                  data-alt="Portrait of swimming coach David"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJGMNFxNeBlAJlwESqNBGvi2uEe7JE9jzomKX8v9uRVHcDO9dq9GGMZxCXm1Op8NzbcUNHRpuSH3wTx2Dd5UwHQII0U_6Wf3D2hSwz-PyFIF0F1U2pshR7GpOpoH8uCwuflO_4Dau7aZZLrYzYR_yM567k9BTmkc4JgQ9dAVBjDWa1i_lHhQSOTXpoBJbpB6QN3PsBLqlz2G9AtwKQQxDuawJa4Usf92n5Twi0FxXRwwqhjxfHgG4fwNNgNJaGWwL5Uw-OZNW0Tahs"
+                />
+                <div>
+                  <p class="text-xs font-bold leading-none">David Chen</p>
+                  <p class="text-[10px] text-outline mt-0.5">
+                    45 mins • Tue/Thu
+                  </p>
+                </div>
+              </div>
+              <button
+                class="px-5 py-2 bg-primary text-on-primary rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity"
+              >
+                Enroll
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Course Card 3: Tennis -->
+        <div
+          class="group flex flex-col bg-surface-container-low rounded-lg overflow-hidden hover:bg-surface-container-lowest hover:shadow-[0_8px_24px_rgba(76,100,85,0.06)] transition-all duration-300"
+        >
+          <div class="relative h-56 overflow-hidden">
+            <img
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              data-alt="Tennis court with racket and green ball in focus"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuABjQEi6zXABjsBlIFYOVZyfX-CvhStcaNtIJPnNt6x0rHABB_TKFVvoWEHgYr13aAKRC5xfKNyNDE-1EsJ9FDVoL1GLh18oBFs22_-0s5M-4dOAzaD0uzUHA_wmFgnIXUqeJtYJU1tjoCwP1pSaGN0J7LxrykrD-H14sF7fk-v2eYTYgg2Jgaw9LnsyFtSG-9E7pDBoPusM__1em9fxN21Xr8DDJxdD-BXKTAgkyAQ1sbQDZxR81zm6y8R7M-imvXWMTnjFtIi4Xw9"
+            />
+            <div class="absolute top-4 left-4">
+              <span
+                class="px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold tracking-wider uppercase"
+                >Strength</span
+              >
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="text-xl font-bold mb-1">The Kinetic Serve</h3>
+            <p class="text-sm text-on-surface-variant mb-6">
+              High-performance technical drills for competitive tennis players.
+            </p>
+            <div class="mt-auto flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <img
+                  class="w-8 h-8 rounded-full"
+                  data-alt="Portrait of tennis pro Sarah"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrU9CS3a07vI3J6KpCIucPgxeP_12I1rT8wSrYQGq1FxWkAl1SXV84jlMqqQbvEZJsorwzUXty4hCvj8k4nGo2HshZ1EnfwRR3V9gM-u8wlrs_N_JhS4ZDr8z31mZN00m2Uwcftscq8vEuy4iHG2Llgfe3DGWKlKEQz_DgRvc3qJdArE3LNIvA4wVhfJkhVmwX2ACA3PdR49EzsJQFl5wGK5Ov3deI4oWBuKyiOCQ4UsTBZjNsCJHa_hP2lExL6Zo-0r6f7TXm2Tti"
+                />
+                <div>
+                  <p class="text-xs font-bold leading-none">Sarah Vance</p>
+                  <p class="text-[10px] text-outline mt-0.5">
+                    90 mins • Saturdays
+                  </p>
+                </div>
+              </div>
+              <button
+                class="px-5 py-2 bg-primary text-on-primary rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity"
+              >
+                Enroll
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Course Card 4: Meditation -->
+        <div
+          class="group flex flex-col bg-surface-container-low rounded-lg overflow-hidden hover:bg-surface-container-lowest hover:shadow-[0_8px_24px_rgba(76,100,85,0.06)] transition-all duration-300"
+        >
+          <div class="relative h-56 overflow-hidden">
+            <img
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              data-alt="Peaceful person meditating outdoors at sunrise"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMI662Njt31SKfh3VvrDtxpD5q44uQ6txqhxtu9aIvt-Tqqhx-_PnIjJX6TZN1o-bQPw5_V2iljMiGEYGK9dlzYjdy8k6CjkZxRfGYU7Ajnil63ab6eTShE-MG2DqAb4gQwdrpV9FbODc5cV_e9L3y1X3F0hLOmi5c-d4d0jbGWSb_HwZhDoSNE46FWxhOJGah1mDHZFDw2dJXV2tGzfSIw_pqSWFi6zdpQqkNCkPiH4enlOQTxSbOSSspKP3BzeCsdXs_XVml_OoX"
+            />
+            <div class="absolute top-4 left-4">
+              <span
+                class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-[10px] font-bold tracking-wider uppercase"
+                >Recovery</span
+              >
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="text-xl font-bold mb-1">Deep Stillness</h3>
+            <p class="text-sm text-on-surface-variant mb-6">
+              Cognitive recovery through ancient breathwork and modern
+              mindfulness.
+            </p>
+            <div class="mt-auto flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <img
+                  class="w-8 h-8 rounded-full"
+                  data-alt="Portrait of mindfulness expert Julian"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDME6ktZpx5W8TtwuiIOyqJKdM9ZGkERAoUxzCGadpWKskkmx9mNOZGoybicRrA0kYW_c7nV6f-ImgftT5uhQA-V8YTaRyDXeFDodwY1vy9ZrhhOc3UbLtD4hMOpPFDulw0SlOKCREXNbR3THIBNdw25M3y7WyGFssfZcpsbQ9N_2o7UwgOsx9zFa_OnZ9QjPZkjwQAssptuphVvg8CLNjwjXSrl7VVuOZ3kqAL2c-3iGbB7-boPbzsoNvEy2qTw5uwqs1ca0uPY9Lg"
+                />
+                <div>
+                  <p class="text-xs font-bold leading-none">Julian Frost</p>
+                  <p class="text-[10px] text-outline mt-0.5">
+                    30 mins • Daily (Online)
+                  </p>
+                </div>
+              </div>
+              <button
+                class="px-5 py-2 bg-primary text-on-primary rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity"
+              >
+                Enroll
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Course Card 5: Strength -->
+        <div
+          class="group flex flex-col bg-surface-container-low rounded-lg overflow-hidden hover:bg-surface-container-lowest hover:shadow-[0_8px_24px_rgba(76,100,85,0.06)] transition-all duration-300"
+        >
+          <div class="relative h-56 overflow-hidden">
+            <img
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              data-alt="Atmospheric gym with weights and moody lighting"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1Qs6MW27TrFBzjFo80oc1Xm-6hGqGS3nnzIClHsT1pp0JYlQ0ZCo5ZwQkEbt0s2Pu1nnbz7I3vjSEswoCzdR14aOzcbREC7dpih-4rnJO1WWCvvatMO0z_vZmAi2RJwHl8HYtevnm3tlUlfDKGb7kGELuhiG2neOwPYY7l8B4mRK4XiapsdzwXuqOiWtiYKdderjmSgi6AmcZOeUtoS-bxwKq48MQ2PhhMCWEwhVUaqKIHNklV57CMtdddxuY4gF2jdO6GfsxDQlO"
+            />
+            <div class="absolute top-4 left-4">
+              <span
+                class="px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold tracking-wider uppercase"
+                >Strength</span
+              >
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="text-xl font-bold mb-1">Foundational Flow</h3>
+            <p class="text-sm text-on-surface-variant mb-6">
+              Functional strength training designed for longevity and explosive
+              power.
+            </p>
+            <div class="mt-auto flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <img
+                  class="w-8 h-8 rounded-full"
+                  data-alt="Portrait of strength coach Alex"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXWVfJUfj8u5wlbuECufT7-S7HpfZc6nSEOobw2uMcniFryOE7Wz9KXRnvwflSMUhOTDtVON7IiAqEJKEuECyyTSKOJpCnSJ2B9KCig_69gSjLCt7wL6DOFS2_sajReKskh6PfWOfmUKKietDzELaxAzhNBjWy3taSs4Z5e0QyID4NZAf--dQ7DMTpTH6Y6ofubVOBFflmzjnPL8WqHsFj8xFPqGJ_ZnJ_J4YFL3iZmjWdaEktvtuf4J1Dtw_pvudyzxfgXAYwWUAM"
+                />
+                <div>
+                  <p class="text-xs font-bold leading-none">Alex Rivera</p>
+                  <p class="text-[10px] text-outline mt-0.5">
+                    75 mins • Mon/Fri
+                  </p>
+                </div>
+              </div>
+              <button
+                class="px-5 py-2 bg-primary text-on-primary rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity"
+              >
+                Enroll
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- CTA/Inspiration Card -->
+        <div
+          class="relative bg-primary overflow-hidden rounded-lg p-8 flex flex-col justify-end min-h-100"
+        >
+          <div
+            class="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent z-10"
+          ></div>
+          <img
+            class="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-overlay"
+            data-alt="Athlete preparing at the start line"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUQGjXP88Di__xypz838kKpw8ana0zhg9KMeZzNvspvx8wVgZ-nq2ZUwdoRVVzjZ_8_4wUGYgKlbMK_j0lK9Wywsa0R-TXOlcAG8oUX6zafXbCKgY7Sz7d-xov32wtvKjrJV2m-XoDT7oDdm9eEH1ydfXyoMU-DUw2XOmC1-Rw9sXAjgtT9ZgtcVQddZba6O009GTkh9GjJ0KcXaOl97d6CsuzmGOCxIwfY2A-UICQx8uYNpNfXTgdO_68KQ5FPvj7FKSOzF-xfnP2"
+          />
+          <div class="relative z-20">
+            <h3 class="text-2xl font-bold text-white mb-2">
+              Can't find your rhythm?
+            </h3>
+            <p class="text-white/80 text-sm mb-6">
+              Work with our elite performance coordinators to design a custom
+              sanctuary schedule tailored to your biometrics.
+            </p>
+            <button
+              class="w-full py-3 bg-white text-primary rounded-lg font-bold hover:bg-stone-100 transition-colors"
+            >
+              Request Private Coaching
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Featured Instructor Section -->
+      <section
+        class="mt-24 bg-secondary-container/30 rounded-xl p-10 flex flex-col md:flex-row items-center gap-10"
+      >
+        <div class="w-full md:w-1/3">
+          <div
+            class="aspect-square rounded-full overflow-hidden border-8 border-white shadow-xl"
+          >
+            <img
+              class="w-full h-full object-cover"
+              data-alt="Portrait of head coach Maya"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbbOlft-yRjT33BkNJ8Ypu54-Ya2u6C2YKmDwbK4gydbpBwie6esyV_Mz3emF6MQK3gHOaOkoFK3nHlHZk4Oav74JVjfU_xA7dbMbaz6UW7LQe1jUeNxLXuoZzvk7GarLHtNhKAQAKrOc4T1Q2RTjvJfwNmbWf98N27Tm239wuAbV7tJZ3kfWdzOCHdTTOEYoMT76LAyKbTyBzkzD3InUYudsZGkMAJn-5MiN8u5fqVHyfjs2XAjuuCfp1TboudiEdpuj9UFDTb8zo"
+            />
+          </div>
+        </div>
+        <div class="flex-1">
+          <span
+            class="text-secondary font-bold text-xs uppercase tracking-widest mb-2 block"
+            >Instructor Spotlight</span
+          >
+          <h2 class="text-3xl font-extrabold mb-4">Maya Sterling</h2>
+          <p class="text-on-surface-variant leading-relaxed mb-6">
+            A former Olympic decathlete, Maya combines physiological data with
+            holistic recovery methods. Her signature "Adaptive Breath" course is
+            the hallmark of the Kinetic Sanctuary.
+          </p>
+          <div class="flex gap-4">
+            <div class="px-4 py-2 bg-surface-container-lowest rounded-full">
+              <p class="text-[10px] text-outline uppercase font-bold">
+                Specialty
+              </p>
+              <p class="text-sm font-bold">Biometric Recovery</p>
+            </div>
+            <div class="px-4 py-2 bg-surface-container-lowest rounded-full">
+              <p class="text-[10px] text-outline uppercase font-bold">
+                Experience
+              </p>
+              <p class="text-sm font-bold">12+ Years</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Floating Action Button - Contextual for Enrollment Help -->
+    <button
+      class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center group hover:w-48 transition-all duration-300 overflow-hidden z-50"
+      style="box-shadow: 0 8px 24px rgba(76, 100, 85, 0.2)"
+    >
+      <span class="material-symbols-outlined shrink-0">support_agent</span>
+      <span
+        class="whitespace-nowrap ml-3 font-bold text-sm opacity-0 group-hover:opacity-100 transition-opacity"
+        >Contact Advisor</span
+      >
+    </button>
+  </body>
+</html>

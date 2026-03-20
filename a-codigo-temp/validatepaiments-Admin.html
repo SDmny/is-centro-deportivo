@@ -1,0 +1,573 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Payment Validation | Kinetic Sanctuary</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-tint": "#4c6455",
+              surface: "#faf9f7",
+              "on-secondary-fixed-variant": "#5f3e3f",
+              "on-tertiary-fixed": "#131e16",
+              "on-background": "#1a1c1b",
+              "primary-container": "#8fa998",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed-variant": "#3e4a40",
+              error: "#ba1a1a",
+              primary: "#4c6455",
+              "on-error-container": "#93000a",
+              "secondary-fixed-dim": "#eabbbb",
+              "error-container": "#ffdad6",
+              "on-surface": "#1a1c1b",
+              "on-secondary-fixed": "#2e1415",
+              outline: "#727973",
+              "outline-variant": "#c2c8c2",
+              "surface-container-high": "#e9e8e6",
+              "primary-fixed-dim": "#b2cdbb",
+              "on-error": "#ffffff",
+              "inverse-on-surface": "#f1f1ef",
+              "inverse-primary": "#b2cdbb",
+              "surface-container-highest": "#e3e2e0",
+              tertiary: "#556157",
+              "on-primary-fixed-variant": "#344c3e",
+              "surface-container": "#efeeec",
+              "on-tertiary-container": "#303c33",
+              "on-primary-fixed": "#082014",
+              "surface-bright": "#faf9f7",
+              "on-secondary": "#ffffff",
+              "on-primary": "#ffffff",
+              "tertiary-fixed": "#d9e6d9",
+              "primary-fixed": "#cee9d6",
+              "surface-variant": "#e3e2e0",
+              "on-tertiary": "#ffffff",
+              background: "#faf9f7",
+              "surface-dim": "#dadad8",
+              "tertiary-container": "#99a69a",
+              "surface-container-low": "#f4f3f1",
+              "secondary-fixed": "#ffdad9",
+              "secondary-container": "#fbcccc",
+              "on-primary-container": "#273e31",
+              "on-surface-variant": "#424844",
+              secondary: "#795555",
+              "tertiary-fixed-dim": "#bdcabd",
+              "on-secondary-container": "#785454",
+              "inverse-surface": "#2f3130",
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Manrope"],
+              label: ["Manrope"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Manrope", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+    </style>
+  </head>
+  <body class="bg-background text-on-background antialiased overflow-x-hidden">
+    <!-- SideNavBar -->
+    <aside
+      class="h-screen w-64 fixed left-0 top-0 overflow-y-auto bg-stone-100 dark:bg-stone-950 flex flex-col gap-y-4 p-6 border-r-0 font-manrope text-sm font-medium tracking-wide z-50"
+    >
+      <div class="mb-8">
+        <h1
+          class="text-lg font-extrabold text-emerald-900 dark:text-emerald-100 mb-2"
+        >
+          Kinetic Sanctuary
+        </h1>
+        <p class="text-stone-500 text-[10px] uppercase tracking-[0.2em]">
+          Elite Performance
+        </p>
+      </div>
+      <nav class="flex flex-col gap-y-2">
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:text-emerald-700 dark:hover:text-emerald-300 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-all duration-200"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="dashboard"
+            >dashboard</span
+          >
+          <span>Dashboard</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:text-emerald-700 dark:hover:text-emerald-300 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-all duration-200"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="auto_stories"
+            >auto_stories</span
+          >
+          <span>Courses</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:text-emerald-700 dark:hover:text-emerald-300 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-all duration-200"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="calendar_today"
+            >calendar_today</span
+          >
+          <span>Schedule</span>
+        </a>
+        <!-- Active State: Payments (Current Context) -->
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-emerald-900 dark:text-emerald-100 font-bold bg-white dark:bg-stone-800 rounded-lg shadow-sm ease-in-out transform active:scale-95"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="payments"
+            >payments</span
+          >
+          <span>Payments</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:text-emerald-700 dark:hover:text-emerald-300 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-all duration-200"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="settings"
+            >settings</span
+          >
+          <span>Settings</span>
+        </a>
+      </nav>
+      <div class="mt-auto pt-8">
+        <div class="flex items-center gap-3 px-2">
+          <div
+            class="w-10 h-10 rounded-lg bg-primary-container/20 flex items-center justify-center"
+          >
+            <img
+              alt="User Profile Avatar"
+              class="w-10 h-10 rounded-lg object-cover"
+              data-alt="Portrait of an administrator"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLlssqUMGG3oH_glBu09JKiurW75Vy5PKWGI-rt674wrFc5J4z4caX2CA5iPvJYDuLck4Optf3Q4enRYhA-ofFMqo6HzNFGj6dcdLrWxgIyiaKO_TUbW3sT1WbqRe6NF9CIpzBV2v6hqMjj_MVvwHfBW8yNLvm8nz_kOUw8SMy4qkE4ZGyFhLyap5Bz_CGA1PPrELaELGfftNJM9Lz-vxkS9zeVQwBwmLdcGXcXTAdWMHKOptecV7AAlSZOBimjDVQubjM9EWFz6b8"
+            />
+          </div>
+          <div class="flex flex-col">
+            <span class="font-bold text-on-surface">Alex Rivers</span>
+            <span class="text-xs text-outline">Lead Validator</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <!-- Main Content Canvas -->
+    <main class="ml-64 min-h-screen bg-background">
+      <!-- TopNavBar -->
+      <header
+        class="w-full sticky top-0 z-40 bg-stone-50/70 dark:bg-stone-900/70 backdrop-blur-xl flex justify-between items-center px-12 py-6 font-manrope antialiased tracking-tight"
+      >
+        <div class="flex items-center gap-8">
+          <h2 class="text-2xl font-bold text-emerald-900 dark:text-emerald-100">
+            Payment Validation
+          </h2>
+          <div class="relative hidden lg:block">
+            <span
+              class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline"
+              data-icon="search"
+              >search</span
+            >
+            <input
+              class="pl-12 pr-6 py-2.5 bg-surface-container-highest border-none rounded-lg text-sm w-80 focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all"
+              placeholder="Search by student name..."
+              type="text"
+            />
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <button
+            class="p-2.5 rounded-full hover:bg-emerald-50/50 text-stone-500 transition-colors"
+          >
+            <span class="material-symbols-outlined" data-icon="notifications"
+              >notifications</span
+            >
+          </button>
+          <button
+            class="p-2.5 rounded-full hover:bg-emerald-50/50 text-stone-500 transition-colors"
+          >
+            <span class="material-symbols-outlined" data-icon="account_circle"
+              >account_circle</span
+            >
+          </button>
+        </div>
+      </header>
+      <!-- Content Area -->
+      <div class="px-12 py-10 max-w-7xl mx-auto space-y-12">
+        <!-- Filters & Summary Bento -->
+        <section class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <!-- Summary Card 1 -->
+          <div
+            class="md:col-span-1 bg-surface-container-low p-6 rounded-xl flex flex-col justify-between h-32"
+          >
+            <span
+              class="text-label-md text-primary font-semibold tracking-wider uppercase text-[10px]"
+              >Pending Approval</span
+            >
+            <div class="flex items-baseline gap-2">
+              <span class="text-4xl font-extrabold tracking-tight">24</span>
+              <span class="text-sm text-outline font-medium">Entries</span>
+            </div>
+          </div>
+          <!-- Summary Card 2 -->
+          <div
+            class="md:col-span-1 bg-surface-container-low p-6 rounded-xl flex flex-col justify-between h-32"
+          >
+            <span
+              class="text-label-md text-secondary font-semibold tracking-wider uppercase text-[10px]"
+              >Total Value</span
+            >
+            <div class="flex items-baseline gap-2">
+              <span class="text-4xl font-extrabold tracking-tight">$12.4k</span>
+              <span class="text-sm text-outline font-medium">USD</span>
+            </div>
+          </div>
+          <!-- Filters Group -->
+          <div
+            class="md:col-span-2 bg-surface-container-low p-6 rounded-xl flex items-center gap-4"
+          >
+            <div class="flex-1 space-y-1">
+              <label
+                class="text-[10px] uppercase tracking-widest text-outline font-bold px-1"
+                >Filter by Course</label
+              >
+              <select
+                class="w-full bg-surface-container-lowest border-none rounded-lg py-3 px-4 text-sm focus:ring-1 focus:ring-primary"
+              >
+                <option>All Disciplines</option>
+                <option>Neural Mobility Masterclass</option>
+                <option>Postural Restoration</option>
+                <option>Kinetic Breathwork</option>
+              </select>
+            </div>
+            <button
+              class="mt-5 px-6 py-3 bg-primary text-on-primary rounded-lg font-bold text-sm hover:opacity-90 transition-opacity"
+            >
+              Apply Filters
+            </button>
+          </div>
+        </section>
+        <!-- Table Section (Asymmetric Layout / No-Line Principle) -->
+        <section class="space-y-6">
+          <div class="flex justify-between items-end mb-4">
+            <div>
+              <h3 class="text-2xl font-bold tracking-tight text-on-surface">
+                Queue
+              </h3>
+              <p class="text-outline text-sm">Reviewing 24 priority payments</p>
+            </div>
+            <div class="flex gap-2">
+              <span
+                class="px-4 py-1.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-xs font-bold uppercase tracking-widest"
+                >Live Updates</span
+              >
+            </div>
+          </div>
+          <div class="bg-surface-container-low rounded-xl overflow-hidden">
+            <div
+              class="grid grid-cols-12 px-8 py-5 text-[11px] uppercase tracking-[0.2em] font-extrabold text-outline"
+            >
+              <div class="col-span-3">User Name</div>
+              <div class="col-span-3">Course / Package</div>
+              <div class="col-span-2">Amount</div>
+              <div class="col-span-2">Proof</div>
+              <div class="col-span-2 text-right">Actions</div>
+            </div>
+            <!-- Row 1 -->
+            <div
+              class="grid grid-cols-12 items-center px-8 py-6 bg-surface-container-lowest hover:bg-surface-bright transition-colors group"
+            >
+              <div class="col-span-3 flex items-center gap-3">
+                <div
+                  class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary font-bold overflow-hidden"
+                >
+                  <img
+                    alt="User Avatar"
+                    class="w-full h-full object-cover"
+                    data-alt="Profile photo of a student"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlJw_EAPNR9lrasEsQYD55_4XN4JziKhUK19FlDZ6eg_eUHSERIj8dvR3p5DPuMejSzdZkLdMjJ8GIigh0tu0IxpyV46JFEuKo4roemVGPY2jxaN95-GacjHyYULGrTQoeoeCl6N45m-aW6rBJZIHU3p82mSYeIq5RbVxGT0_b132CinTjj-6RHC11aB03byY2ZP-lBv1591Qfb5AVfHgsoKrYWFJj61iS_NcZ56MNqC8jIN4pvOc__HvKsYq4Lg7OvWC_CGDZObVS"
+                  />
+                </div>
+                <div>
+                  <p class="font-bold text-on-surface">Julian Thorne</p>
+                  <p class="text-[10px] text-outline">j.thorne@icloud.com</p>
+                </div>
+              </div>
+              <div class="col-span-3">
+                <p class="text-sm font-semibold text-primary">
+                  Neural Mobility Masterclass
+                </p>
+                <p class="text-[10px] text-outline">Subscription (Annual)</p>
+              </div>
+              <div class="col-span-2">
+                <p
+                  class="text-lg font-extrabold tracking-tight text-on-surface"
+                >
+                  $850.00
+                </p>
+                <p class="text-[10px] text-outline">via Stripe Transfer</p>
+              </div>
+              <div class="col-span-2">
+                <button
+                  class="flex items-center gap-2 text-secondary font-bold text-sm group-hover:underline"
+                >
+                  <span
+                    class="material-symbols-outlined text-base"
+                    data-icon="image"
+                    >image</span
+                  >
+                  view_receipt.png
+                </button>
+              </div>
+              <div class="col-span-2 flex justify-end gap-3">
+                <button
+                  class="w-10 h-10 rounded-lg flex items-center justify-center bg-error-container/30 text-error hover:bg-error hover:text-white transition-all duration-200"
+                >
+                  <span class="material-symbols-outlined" data-icon="close"
+                    >close</span
+                  >
+                </button>
+                <button
+                  class="px-6 py-2.5 bg-primary text-on-primary rounded-lg font-bold text-xs uppercase tracking-widest shadow-sm hover:shadow-md transition-all active:scale-95"
+                >
+                  Approve
+                </button>
+              </div>
+            </div>
+            <!-- Spacer -->
+            <div class="h-2.5 bg-surface-container-low"></div>
+            <!-- Row 2 -->
+            <div
+              class="grid grid-cols-12 items-center px-8 py-6 bg-surface-container-lowest hover:bg-surface-bright transition-colors group"
+            >
+              <div class="col-span-3 flex items-center gap-3">
+                <div
+                  class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary font-bold overflow-hidden"
+                >
+                  <img
+                    alt="User Avatar"
+                    class="w-full h-full object-cover"
+                    data-alt="Portrait of a female athlete"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEunKJriDCqEY2TV7lzcDFNQwh94bnCfs4r8AOr95gPpb1jb7SU1Bi3A25N40rYQymRGPGlhHIQBRVifJ5xAj_PM0lVy6Zk7CJN6KWS3Mozzbleb81xI5U4EzNNIF0_VtO6mVF1zwVxagwbMIZA5DZH2i7ZilYhYnifOvoBRe-8mpevo_XgmvLeDc9i15vtShyyNllMRBwwpmrIleqyr-FqyDCVz9ObVnUs8yXh9_wDqcwYcdBsCbynqVU53pU6LN0pR8ukTpIKhaH"
+                  />
+                </div>
+                <div>
+                  <p class="font-bold text-on-surface">Sienna Voss</p>
+                  <p class="text-[10px] text-outline">svoss@wellness.net</p>
+                </div>
+              </div>
+              <div class="col-span-3">
+                <p class="text-sm font-semibold text-primary">
+                  Postural Restoration
+                </p>
+                <p class="text-[10px] text-outline">One-time Payment</p>
+              </div>
+              <div class="col-span-2">
+                <p
+                  class="text-lg font-extrabold tracking-tight text-on-surface"
+                >
+                  $1,200.00
+                </p>
+                <p class="text-[10px] text-outline">Bank Wire Confirmation</p>
+              </div>
+              <div class="col-span-2">
+                <button
+                  class="flex items-center gap-2 text-secondary font-bold text-sm group-hover:underline"
+                >
+                  <span
+                    class="material-symbols-outlined text-base"
+                    data-icon="attach_file"
+                    >attach_file</span
+                  >
+                  invoice_ref_204.pdf
+                </button>
+              </div>
+              <div class="col-span-2 flex justify-end gap-3">
+                <button
+                  class="w-10 h-10 rounded-lg flex items-center justify-center bg-error-container/30 text-error hover:bg-error hover:text-white transition-all duration-200"
+                >
+                  <span class="material-symbols-outlined" data-icon="close"
+                    >close</span
+                  >
+                </button>
+                <button
+                  class="px-6 py-2.5 bg-primary text-on-primary rounded-lg font-bold text-xs uppercase tracking-widest shadow-sm hover:shadow-md transition-all active:scale-95"
+                >
+                  Approve
+                </button>
+              </div>
+            </div>
+            <!-- Spacer -->
+            <div class="h-2.5 bg-surface-container-low"></div>
+            <!-- Row 3 -->
+            <div
+              class="grid grid-cols-12 items-center px-8 py-6 bg-surface-container-lowest hover:bg-surface-bright transition-colors group"
+            >
+              <div class="col-span-3 flex items-center gap-3">
+                <div
+                  class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary font-bold overflow-hidden"
+                >
+                  <img
+                    alt="User Avatar"
+                    class="w-full h-full object-cover"
+                    data-alt="Profile photo of a male student"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTWBOT36JxQ_oXHnR7VXbK3h3zvgMFfTYriznyET655SPQHzNoogRjJL4rA-I5f0CQUxlD63m8v8duzYcRZ1IwHCoPpcAeecvtoU0nl4P1RBg9tD4-IUmovEA-G8HARPhPze0vFO738TZlt3xRgWTYKmkdyuhUrW51DkMOD89ARnZblAQ-TuKiUND_xrV9rhk3zihj9wYIlKENo5iDtCSlIktWwgs_lW1rUpyUsrgdRxZVUICBT-FRIEUrGGsKXwHak8Nb5ektgSfh"
+                  />
+                </div>
+                <div>
+                  <p class="font-bold text-on-surface">Marcus Chen</p>
+                  <p class="text-[10px] text-outline">m.chen.train@gmail.com</p>
+                </div>
+              </div>
+              <div class="col-span-3">
+                <p class="text-sm font-semibold text-primary">
+                  Elite Performance Coaching
+                </p>
+                <p class="text-[10px] text-outline">Custom Quote - Deposit</p>
+              </div>
+              <div class="col-span-2">
+                <p
+                  class="text-lg font-extrabold tracking-tight text-on-surface"
+                >
+                  $3,000.00
+                </p>
+                <p class="text-[10px] text-outline">Corporate Card</p>
+              </div>
+              <div class="col-span-2">
+                <button
+                  class="flex items-center gap-2 text-secondary font-bold text-sm group-hover:underline"
+                >
+                  <span
+                    class="material-symbols-outlined text-base"
+                    data-icon="image"
+                    >image</span
+                  >
+                  card_screenshot.jpg
+                </button>
+              </div>
+              <div class="col-span-2 flex justify-end gap-3">
+                <button
+                  class="w-10 h-10 rounded-lg flex items-center justify-center bg-error-container/30 text-error hover:bg-error hover:text-white transition-all duration-200"
+                >
+                  <span class="material-symbols-outlined" data-icon="close"
+                    >close</span
+                  >
+                </button>
+                <button
+                  class="px-6 py-2.5 bg-primary text-on-primary rounded-lg font-bold text-xs uppercase tracking-widest shadow-sm hover:shadow-md transition-all active:scale-95"
+                >
+                  Approve
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Empty State / Pagination Indication -->
+          <div class="flex justify-between items-center px-4 py-8">
+            <p class="text-sm text-outline">
+              Showing <span class="font-bold text-on-surface">1-3</span> of 24
+              pending validations
+            </p>
+            <div class="flex gap-4">
+              <button
+                class="p-3 rounded-lg bg-surface-container-low text-outline hover:bg-surface-container-high transition-colors"
+              >
+                <span class="material-symbols-outlined" data-icon="chevron_left"
+                  >chevron_left</span
+                >
+              </button>
+              <button
+                class="p-3 rounded-lg bg-primary text-on-primary shadow-lg shadow-primary/20 hover:scale-105 transition-all"
+              >
+                <span
+                  class="material-symbols-outlined"
+                  data-icon="chevron_right"
+                  >chevron_right</span
+                >
+              </button>
+            </div>
+          </div>
+        </section>
+        <!-- Focus Mode Suggestion (Asymmetric Card) -->
+        <section
+          class="relative bg-surface-container-low rounded-3xl p-10 overflow-hidden"
+        >
+          <div class="relative z-10 max-w-lg">
+            <h4
+              class="text-3xl font-extrabold text-emerald-900 mb-4 tracking-tighter"
+            >
+              Bulk Verification
+            </h4>
+            <p class="text-on-surface-variant leading-relaxed mb-8">
+              Process high-volume verified stripe transfers automatically. Our
+              Neural Engine matches 85% of standard receipts, saving you 4 hours
+              a week.
+            </p>
+            <button
+              class="px-8 py-4 bg-primary text-on-primary rounded-xl font-bold flex items-center gap-3 hover:gap-5 transition-all"
+            >
+              Launch Engine
+              <span class="material-symbols-outlined" data-icon="bolt"
+                >bolt</span
+              >
+            </button>
+          </div>
+          <!-- Abstract Texture instead of heavy image -->
+          <div
+            class="absolute right-0 top-0 h-full w-1/3 bg-linear-to-l from-primary/10 to-transparent pointer-events-none"
+          ></div>
+          <div
+            class="absolute -right-20 -bottom-20 w-80 h-80 bg-secondary/5 rounded-full blur-3xl"
+          ></div>
+        </section>
+      </div>
+    </main>
+    <!-- Contextual FAB - Only for main dashboards -->
+    <!-- Suppression Logic: FAB is generally for adding items. In a validation screen, we suppress or use it for "History". 
+         But let's add a "Scan" FAB as it fits the validation workflow -->
+    <button
+      class="fixed bottom-12 right-12 w-16 h-16 bg-secondary text-on-primary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform z-50 group"
+    >
+      <span
+        class="material-symbols-outlined text-3xl"
+        data-icon="qr_code_scanner"
+        style="color: white"
+        >qr_code_scanner</span
+      >
+      <div
+        class="absolute right-20 bg-on-background text-surface text-xs px-4 py-2 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none font-bold uppercase tracking-widest"
+      >
+        Scan Receipt
+      </div>
+    </button>
+  </body>
+</html>

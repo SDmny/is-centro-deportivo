@@ -1,0 +1,537 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Kinetic Sanctuary | Dashboard</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#4c6455",
+              "on-tertiary-fixed-variant": "#3e4a40",
+              "surface-variant": "#e3e2e0",
+              "tertiary-container": "#99a69a",
+              background: "#faf9f7",
+              "surface-tint": "#4c6455",
+              "inverse-primary": "#b2cdbb",
+              "on-background": "#1a1c1b",
+              secondary: "#795555",
+              outline: "#727973",
+              surface: "#faf9f7",
+              "error-container": "#ffdad6",
+              "surface-container": "#efeeec",
+              "on-secondary-fixed-variant": "#5f3e3f",
+              "on-error-container": "#93000a",
+              "on-surface-variant": "#424844",
+              "surface-container-low": "#f4f3f1",
+              "inverse-on-surface": "#f1f1ef",
+              "on-tertiary-fixed": "#131e16",
+              "on-primary-container": "#273e31",
+              "on-error": "#ffffff",
+              "primary-fixed": "#cee9d6",
+              "on-secondary-fixed": "#2e1415",
+              "tertiary-fixed": "#d9e6d9",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed-dim": "#b2cdbb",
+              "surface-container-highest": "#e3e2e0",
+              "on-primary-fixed-variant": "#344c3e",
+              "on-surface": "#1a1c1b",
+              "outline-variant": "#c2c8c2",
+              "surface-bright": "#faf9f7",
+              "secondary-fixed": "#ffdad9",
+              "on-primary-fixed": "#082014",
+              "primary-container": "#8fa998",
+              "surface-container-high": "#e9e8e6",
+              "inverse-surface": "#2f3130",
+              "on-tertiary-container": "#303c33",
+              error: "#ba1a1a",
+              tertiary: "#556157",
+              "secondary-fixed-dim": "#eabbbb",
+              "tertiary-fixed-dim": "#bdcabd",
+              "secondary-container": "#fbcccc",
+              "on-tertiary": "#ffffff",
+              "on-primary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "surface-dim": "#dadad8",
+              "on-secondary-container": "#785454",
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Manrope"],
+              label: ["Manrope"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Manrope", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  </head>
+  <body class="bg-background text-on-surface antialiased">
+    <!-- SideNavBar -->
+    <aside
+      class="h-screen w-64 fixed left-0 top-0 flex flex-col py-8 px-4 gap-y-2 no-border bg-stone-100 dark:bg-stone-900 z-50"
+    >
+      <div class="mb-12 px-4">
+        <h1
+          class="text-xl font-bold text-[#4c6455] dark:text-emerald-500 tracking-tighter"
+        >
+          Kinetic Sanctuary
+        </h1>
+        <p
+          class="font-manrope text-sm font-medium tracking-wide text-stone-500"
+        >
+          Elite Performance
+        </p>
+      </div>
+      <nav class="flex-1 flex flex-col gap-y-2">
+        <!-- Active Tab: Dashboard -->
+        <a
+          class="flex items-center gap-x-3 px-4 py-3 rounded-lg text-[#4c6455] dark:text-emerald-400 font-bold border-r-4 border-[#4c6455] dark:border-emerald-500 bg-[#ffffff]/50 dark:bg-stone-800/50 transition-colors duration-200"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="dashboard"
+            >dashboard</span
+          >
+          <span class="font-manrope text-sm font-medium tracking-wide"
+            >Dashboard</span
+          >
+        </a>
+        <a
+          class="flex items-center gap-x-3 px-4 py-3 rounded-lg text-stone-500 dark:text-stone-400 hover:text-[#4c6455] dark:hover:text-emerald-300 hover:bg-[#ffffff] dark:hover:bg-stone-800 transition-colors duration-200"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="school"
+            >school</span
+          >
+          <span class="font-manrope text-sm font-medium tracking-wide"
+            >My Courses</span
+          >
+        </a>
+        <a
+          class="flex items-center gap-x-3 px-4 py-3 rounded-lg text-stone-500 dark:text-stone-400 hover:text-[#4c6455] dark:hover:text-emerald-300 hover:bg-[#ffffff] dark:hover:bg-stone-800 transition-colors duration-200"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="explore"
+            >explore</span
+          >
+          <span class="font-manrope text-sm font-medium tracking-wide"
+            >Explore Courses</span
+          >
+        </a>
+        <a
+          class="flex items-center gap-x-3 px-4 py-3 rounded-lg text-stone-500 dark:text-stone-400 hover:text-[#4c6455] dark:hover:text-emerald-300 hover:bg-[#ffffff] dark:hover:bg-stone-800 transition-colors duration-200"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="calendar_month"
+            >calendar_month</span
+          >
+          <span class="font-manrope text-sm font-medium tracking-wide"
+            >Schedule</span
+          >
+        </a>
+      </nav>
+      <div class="mt-auto px-4 pt-4 border-t border-outline-variant/10">
+        <a
+          class="flex items-center gap-x-3 py-3 text-stone-500 dark:text-stone-400 hover:text-[#4c6455] transition-colors duration-200"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="settings"
+            >settings</span
+          >
+          <span class="font-manrope text-sm font-medium tracking-wide"
+            >Settings</span
+          >
+        </a>
+        <div class="flex items-center gap-x-3 mt-4">
+          <div
+            class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center overflow-hidden"
+          >
+            <img
+              class="w-full h-full object-cover"
+              data-alt="User avatar of Sarah smiling"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwO2eQ8LKgjTz29bpr6Hnn90ZlN_EAURkMT6dq1StYyEZ5BDTbWS1YRaCiqPL4ISSEgwSUuRdL9plGrv2Y9Vg0oEl-ZLLFhWlZazsIJ2E_EvhJEtZUb_u-zW575hulYoHObVzIWa-RKHDqe05vkRee951bmMPwbiu2xikCFFjeVWUlDxUlUTJ4x4_VyYY1o8ZnwarC01DcX0794IAyW4I8-_SECIOb_uKEd2aIVDDdAuynWP3m4pJ0FyP5CVbDaCihAyIcsggun2IA"
+            />
+          </div>
+          <div>
+            <p class="text-xs font-bold text-on-surface">Sarah J.</p>
+            <p class="text-[10px] text-stone-500">Elite Tier</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <!-- TopAppBar -->
+    <header
+      class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-40 bg-[#faf9f7]/70 dark:bg-stone-950/70 backdrop-blur-md flex justify-between items-center px-12 transition-all duration-300 ease-in-out"
+    >
+      <div class="flex-1 max-w-md">
+        <div class="relative group">
+          <span
+            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline-variant"
+            data-icon="search"
+            >search</span
+          >
+          <input
+            class="w-full bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-1 focus:ring-primary transition-all"
+            placeholder="Search sessions..."
+            type="text"
+          />
+        </div>
+      </div>
+      <div class="flex items-center gap-x-6">
+        <button
+          class="hover:bg-[#f4f3f1] dark:hover:bg-stone-800 rounded-full p-2 transition-all"
+        >
+          <span
+            class="material-symbols-outlined text-[#4c6455]"
+            data-icon="notifications"
+            >notifications</span
+          >
+        </button>
+        <button
+          class="hover:bg-[#f4f3f1] dark:hover:bg-stone-800 rounded-full p-2 transition-all"
+        >
+          <span
+            class="material-symbols-outlined text-[#4c6455]"
+            data-icon="account_circle"
+            >account_circle</span
+          >
+        </button>
+      </div>
+    </header>
+    <!-- Main Content Canvas -->
+    <main class="ml-64 pt-24 px-12 pb-12">
+      <!-- Hero Greeting -->
+      <section class="mb-16">
+        <h2 class="text-5xl font-extrabold tracking-tight text-on-surface mb-2">
+          Good morning, Sarah
+        </h2>
+        <p
+          class="text-lg text-on-surface-variant font-medium max-w-2xl opacity-80"
+        >
+          Ready to find your flow? You have 3 sessions scheduled for this week.
+          Take a deep breath and begin.
+        </p>
+      </section>
+      <!-- Bento Grid Layout -->
+      <div class="grid grid-cols-12 gap-8">
+        <!-- Enrolled Courses Section (Main Column) -->
+        <div class="col-span-12 lg:col-span-8 space-y-12">
+          <div class="flex justify-between items-end">
+            <h3 class="text-2xl font-bold tracking-tight text-on-surface">
+              Enrolled Courses
+            </h3>
+            <a
+              class="text-sm font-semibold text-primary hover:underline"
+              href="#"
+              >View all courses</a
+            >
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Course Card: Morning Yoga -->
+            <div
+              class="group bg-surface-container-low rounded-lg overflow-hidden flex flex-col transition-all hover:bg-surface-container-lowest hover:shadow-[0_8px_24px_rgba(76,100,85,0.06)]"
+            >
+              <div class="h-48 relative overflow-hidden">
+                <img
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  data-alt="Woman doing peaceful morning yoga stretch"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBm-U99Oe9FID5fiO-8ii6FHes_xQUtMnnF2uuXtnwaS8Tb4OO45OhdKzBPffzuKJY81Kb5-aFwiOZZ9IVxex7LH0RTmSwyotWDfULSSIjzl25wS_hMrU09Fm590EOb2Kv-NUA_VYLOsRnTatJaAVsNA8dXUEmawZXXafN4j5rLPrqNjKNtmrr8VQAqxaM2KKFE-BC5lq8Zk89REvCX9ZfDdCbdlu1BMNgNZleI_qzXzTEdXbyjVVA4ON-vfhrkpk63JJ-kSl7sqMMt"
+                />
+                <div class="absolute top-4 left-4">
+                  <span
+                    class="bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest"
+                    >Mindfulness</span
+                  >
+                </div>
+              </div>
+              <div class="p-6 flex-1 flex flex-col">
+                <h4 class="text-xl font-bold text-on-surface mb-2">
+                  Morning Yoga
+                </h4>
+                <p class="text-sm text-on-surface-variant line-clamp-2 mb-4">
+                  Start your day with gentle movements and focused breathing to
+                  center your energy.
+                </p>
+                <div class="mt-auto pt-4 flex items-center justify-between">
+                  <div class="flex items-center gap-x-2">
+                    <span
+                      class="material-symbols-outlined text-sm text-primary"
+                      data-icon="schedule"
+                      >schedule</span
+                    >
+                    <span class="text-xs font-semibold text-on-surface-variant"
+                      >45 mins</span
+                    >
+                  </div>
+                  <div
+                    class="w-24 h-2 bg-primary-fixed rounded-full overflow-hidden"
+                  >
+                    <div
+                      class="h-full bg-primary rounded-full"
+                      style="width: 75%"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Course Card: Core Strength -->
+            <div
+              class="group bg-surface-container-low rounded-lg overflow-hidden flex flex-col transition-all hover:bg-surface-container-lowest hover:shadow-[0_8px_24px_rgba(76,100,85,0.06)]"
+            >
+              <div class="h-48 relative overflow-hidden">
+                <img
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  data-alt="Athlete performing core stability exercises"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrgAVfrDr9Im9lMva0R8TGGC2dNohx0yP2mAomnqLZqk71S0Ze6rZPNoRsZfrIq8PYJ40lXRvHHRmUMWF3T3GvdP4FxBb6fCXKDPXHuiihJ7DFSJ1l0_FV_9RR3_6aum2dNMJrzaD5cQXj0mf8mNvGDVvamE49jE_wxpnFcaVLtfvu2i3brr8EFvoQObfmjrM1CEfiex9smOSCgK7F63xIGmO8kXaDm6T5RZ1TGHAX_lEy-gNEmPIjja-QgaXgj6VqPEAIfhvYW1l7"
+                />
+                <div class="absolute top-4 left-4">
+                  <span
+                    class="bg-secondary-fixed text-on-secondary-fixed text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest"
+                    >Strength</span
+                  >
+                </div>
+              </div>
+              <div class="p-6 flex-1 flex flex-col">
+                <h4 class="text-xl font-bold text-on-surface mb-2">
+                  Core Strength
+                </h4>
+                <p class="text-sm text-on-surface-variant line-clamp-2 mb-4">
+                  Build a resilient foundation through targeted abdominal and
+                  back stabilization routines.
+                </p>
+                <div class="mt-auto pt-4 flex items-center justify-between">
+                  <div class="flex items-center gap-x-2">
+                    <span
+                      class="material-symbols-outlined text-sm text-primary"
+                      data-icon="bolt"
+                      >bolt</span
+                    >
+                    <span class="text-xs font-semibold text-on-surface-variant"
+                      >Advanced</span
+                    >
+                  </div>
+                  <div
+                    class="w-24 h-2 bg-primary-fixed rounded-full overflow-hidden"
+                  >
+                    <div
+                      class="h-full bg-primary rounded-full"
+                      style="width: 30%"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Course Card: HIIT Flow (Full width span on MD) -->
+            <div
+              class="md:col-span-2 group bg-surface-container-low rounded-lg overflow-hidden flex flex-col md:flex-row transition-all hover:bg-surface-container-lowest hover:shadow-[0_8px_24px_rgba(76,100,85,0.06)]"
+            >
+              <div class="md:w-1/2 h-64 md:h-auto relative overflow-hidden">
+                <img
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  data-alt="Intense fitness training session"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9EefkexksCvuFA0A6iInlmlvC_lQ5BCcNCF4vs1MLq7_bcuWB8jnQZh1PiI7dfGhOLgmWNb0K3XZ9VwPSeBNZloZ6OiORoxQqbl8eYcMUkVzfvVwjq0zfqLeVd3KKF6ygH3se13lwWgQn2bDiE-hGMERBaC4ryBkXqAoIAsUT7OApyB7Ghn4qhr58i_Wu5EVCGHhB0GXHEvf257LC__FQDq-J2-YToGN0IAi8U8ctiBDdtTRswzaKLkZcrfyIPhHY-GwcJlQtT5uc"
+                />
+              </div>
+              <div class="md:w-1/2 p-8 flex flex-col justify-center">
+                <div class="mb-4">
+                  <span
+                    class="bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest"
+                    >Performance</span
+                  >
+                </div>
+                <h4 class="text-2xl font-bold text-on-surface mb-3">
+                  HIIT Flow
+                </h4>
+                <p class="text-on-surface-variant mb-6 leading-relaxed">
+                  High-intensity interval training meets rhythmic movement for
+                  maximum cardiovascular efficiency and endurance.
+                </p>
+                <div class="flex items-center gap-x-6">
+                  <button
+                    class="bg-primary text-on-primary px-6 py-2 rounded-lg text-sm font-bold shadow-md hover:opacity-90 transition-opacity"
+                  >
+                    Resume Session
+                  </button>
+                  <div class="flex items-center gap-x-2">
+                    <span
+                      class="material-symbols-outlined text-primary"
+                      data-icon="bar_chart"
+                      >bar_chart</span
+                    >
+                    <span class="text-sm font-medium">92% Match</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Weekly Schedule Widget (Right Sidebar) -->
+        <div class="col-span-12 lg:col-span-4 space-y-8">
+          <div class="bg-surface-container rounded-xl p-8 sticky top-24">
+            <div class="flex items-center justify-between mb-8">
+              <h3 class="text-xl font-bold text-on-surface">Weekly Schedule</h3>
+              <span
+                class="material-symbols-outlined text-outline cursor-pointer"
+                data-icon="calendar_today"
+                >calendar_today</span
+              >
+            </div>
+            <div class="space-y-6">
+              <!-- Monday -->
+              <div class="flex gap-x-4">
+                <div class="flex flex-col items-center w-12 pt-1">
+                  <span
+                    class="text-[10px] font-bold text-outline-variant uppercase"
+                    >Mon</span
+                  >
+                  <span class="text-lg font-extrabold text-on-surface">12</span>
+                </div>
+                <div class="flex-1 space-y-3">
+                  <div
+                    class="bg-surface-container-lowest p-4 rounded-lg border-l-4 border-primary shadow-sm"
+                  >
+                    <p
+                      class="text-[10px] font-bold text-primary uppercase tracking-tighter"
+                    >
+                      07:30 AM
+                    </p>
+                    <h5 class="text-sm font-bold text-on-surface">
+                      Morning Yoga
+                    </h5>
+                    <p class="text-[10px] text-on-surface-variant italic">
+                      Studio A • Coach Elena
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Wednesday -->
+              <div class="flex gap-x-4">
+                <div class="flex flex-col items-center w-12 pt-1">
+                  <span
+                    class="text-[10px] font-bold text-outline-variant uppercase text-primary"
+                    >Wed</span
+                  >
+                  <span class="text-lg font-extrabold text-primary">14</span>
+                </div>
+                <div class="flex-1 space-y-3">
+                  <div
+                    class="bg-surface-container-lowest p-4 rounded-lg border-l-4 border-secondary shadow-sm"
+                  >
+                    <p
+                      class="text-[10px] font-bold text-secondary uppercase tracking-tighter"
+                    >
+                      06:00 PM
+                    </p>
+                    <h5 class="text-sm font-bold text-on-surface">
+                      Core Strength
+                    </h5>
+                    <p class="text-[10px] text-on-surface-variant italic">
+                      Gym Floor • Coach Marcus
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Friday -->
+              <div class="flex gap-x-4 opacity-50">
+                <div class="flex flex-col items-center w-12 pt-1">
+                  <span
+                    class="text-[10px] font-bold text-outline-variant uppercase"
+                    >Fri</span
+                  >
+                  <span class="text-lg font-extrabold text-on-surface">16</span>
+                </div>
+                <div class="flex-1">
+                  <div
+                    class="bg-surface-container-low p-4 rounded-lg border-l-4 border-outline-variant/30"
+                  >
+                    <p
+                      class="text-[10px] font-bold text-outline-variant uppercase tracking-tighter"
+                    >
+                      08:00 AM
+                    </p>
+                    <h5 class="text-sm font-bold text-on-surface">HIIT Flow</h5>
+                    <p class="text-[10px] text-on-surface-variant italic">
+                      Studio B • Coach Sarah J.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mt-10 p-6 bg-secondary-container rounded-lg">
+              <div class="flex items-center gap-x-3 mb-2">
+                <span
+                  class="material-symbols-outlined text-on-secondary-container"
+                  data-icon="auto_awesome"
+                  >auto_awesome</span
+                >
+                <p class="text-sm font-bold text-on-secondary-container">
+                  Recovery Insight
+                </p>
+              </div>
+              <p
+                class="text-xs text-on-secondary-container opacity-80 leading-relaxed"
+              >
+                Your heart rate variability is high today. Perfect for the
+                upcoming Core Strength session.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Floating Action Button -->
+    <button
+      class="fixed bottom-12 right-12 w-16 h-16 bg-primary text-on-primary rounded-full shadow-[0_8px_24px_rgba(76,100,85,0.2)] flex items-center justify-center group hover:scale-105 transition-transform duration-300 z-50"
+    >
+      <span class="material-symbols-outlined text-3xl" data-icon="add"
+        >add</span
+      >
+      <div
+        class="absolute right-full mr-4 bg-on-surface text-surface text-[10px] font-bold py-2 px-4 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-widest pointer-events-none shadow-xl"
+      >
+        Book a Walk
+      </div>
+    </button>
+  </body>
+</html>

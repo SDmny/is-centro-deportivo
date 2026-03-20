@@ -1,0 +1,268 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Join Kinetic Sanctuary</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-background": "#1a1c1b",
+              "on-primary": "#ffffff",
+              "secondary-fixed-dim": "#eabbbb",
+              "surface-dim": "#dadad8",
+              "on-primary-container": "#273e31",
+              "inverse-primary": "#b2cdbb",
+              "tertiary-fixed": "#d9e6d9",
+              primary: "#4c6455",
+              "on-secondary-fixed-variant": "#5f3e3f",
+              "primary-container": "#8fa998",
+              "tertiary-container": "#99a69a",
+              "on-surface": "#1a1c1b",
+              "on-error-container": "#93000a",
+              "on-tertiary": "#ffffff",
+              "secondary-fixed": "#ffdad9",
+              "surface-variant": "#e3e2e0",
+              "surface-container-low": "#f4f3f1",
+              "primary-fixed": "#cee9d6",
+              "on-primary-fixed": "#082014",
+              tertiary: "#556157",
+              "on-surface-variant": "#424844",
+              "tertiary-fixed-dim": "#bdcabd",
+              "surface-container-highest": "#e3e2e0",
+              "on-error": "#ffffff",
+              "surface-container-high": "#e9e8e6",
+              "surface-bright": "#faf9f7",
+              background: "#faf9f7",
+              secondary: "#795555",
+              "on-primary-fixed-variant": "#344c3e",
+              "error-container": "#ffdad6",
+              "surface-tint": "#4c6455",
+              "outline-variant": "#c2c8c2",
+              "on-tertiary-fixed": "#131e16",
+              "on-tertiary-fixed-variant": "#3e4a40",
+              "on-secondary-container": "#785454",
+              "surface-container": "#efeeec",
+              outline: "#727973",
+              "on-tertiary-container": "#303c33",
+              "secondary-container": "#fbcccc",
+              "on-secondary-fixed": "#2e1415",
+              "on-secondary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              surface: "#faf9f7",
+              "inverse-on-surface": "#f1f1ef",
+              error: "#ba1a1a",
+              "inverse-surface": "#2f3130",
+              "primary-fixed-dim": "#b2cdbb",
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Manrope"],
+              label: ["Manrope"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Manrope", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .bg-zenith-gradient {
+        background:
+          radial-gradient(circle at 0% 0%, #f4f3f1 0%, transparent 50%),
+          radial-gradient(circle at 100% 100%, #cee9d6 0%, transparent 50%),
+          radial-gradient(circle at 50% 50%, #faf9f7 0%, #efeeec 100%);
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-zenith-gradient min-h-screen flex items-center justify-center p-6 antialiased text-on-surface"
+  >
+    <div class="w-full max-w-lg">
+      <!-- Brand Header Section -->
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-extrabold tracking-tighter text-primary mb-2">
+          Kinetic Sanctuary
+        </h1>
+        <p class="text-on-surface-variant font-medium tracking-tight">
+          The intersection of elite performance and deep recovery.
+        </p>
+      </div>
+      <!-- Registration Card -->
+      <div
+        class="bg-surface-container-lowest rounded-xl shadow-[0_8px_24px_rgba(76,100,85,0.06)] overflow-hidden transition-all duration-300"
+      >
+        <div class="p-10 md:p-14">
+          <div class="mb-10">
+            <h2 class="text-2xl font-bold tracking-tight text-on-surface mb-2">
+              Begin Your Journey
+            </h2>
+            <p class="text-on-surface-variant text-sm">
+              Create your athlete profile to access the sanctuary.
+            </p>
+          </div>
+          <form class="space-y-8">
+            <!-- Full Name -->
+            <div class="relative group">
+              <label
+                class="block text-xs font-semibold tracking-widest text-primary uppercase mb-1.5 ml-1"
+                for="full_name"
+                >Full Name</label
+              >
+              <div class="relative">
+                <input
+                  class="w-full bg-surface-container-highest border-b-2 border-transparent border-opacity-15 outline-variant focus:border-primary focus:ring-0 transition-all duration-300 px-1 py-3 text-on-surface placeholder-outline/50 text-lg font-medium"
+                  id="full_name"
+                  name="full_name"
+                  placeholder="Elias Vance"
+                  type="text"
+                />
+              </div>
+            </div>
+            <!-- Email -->
+            <div class="relative group">
+              <label
+                class="block text-xs font-semibold tracking-widest text-primary uppercase mb-1.5 ml-1"
+                for="email"
+                >Email Address</label
+              >
+              <div class="relative">
+                <input
+                  class="w-full bg-surface-container-highest border-b-2 border-transparent border-opacity-15 outline-variant focus:border-primary focus:ring-0 transition-all duration-300 px-1 py-3 text-on-surface placeholder-outline/50 text-lg font-medium"
+                  id="email"
+                  name="email"
+                  placeholder="elias.v@kineticsanctuary.com"
+                  type="email"
+                />
+              </div>
+            </div>
+            <!-- Password Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="relative group">
+                <label
+                  class="block text-xs font-semibold tracking-widest text-primary uppercase mb-1.5 ml-1"
+                  for="password"
+                  >Password</label
+                >
+                <div class="relative">
+                  <input
+                    class="w-full bg-surface-container-highest border-b-2 border-transparent border-opacity-15 outline-variant focus:border-primary focus:ring-0 transition-all duration-300 px-1 py-3 text-on-surface placeholder-outline/50 text-lg font-medium"
+                    id="password"
+                    name="password"
+                    placeholder="••••••••"
+                    type="password"
+                  />
+                </div>
+              </div>
+              <div class="relative group">
+                <label
+                  class="block text-xs font-semibold tracking-widest text-primary uppercase mb-1.5 ml-1"
+                  for="confirm_password"
+                  >Confirm</label
+                >
+                <div class="relative">
+                  <input
+                    class="w-full bg-surface-container-highest border-b-2 border-transparent border-opacity-15 outline-variant focus:border-primary focus:ring-0 transition-all duration-300 px-1 py-3 text-on-surface placeholder-outline/50 text-lg font-medium"
+                    id="confirm_password"
+                    name="confirm_password"
+                    placeholder="••••••••"
+                    type="password"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Action Section -->
+            <div class="pt-6">
+              <button
+                class="w-full bg-primary hover:opacity-90 active:scale-[0.98] transition-all duration-200 text-on-primary font-bold py-4 rounded-lg shadow-[0_8px_20px_rgba(76,100,85,0.15)] flex items-center justify-center gap-2 group"
+                type="submit"
+              >
+                <span>Sign Up</span>
+                <span
+                  class="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform"
+                  >arrow_forward</span
+                >
+              </button>
+            </div>
+          </form>
+          <div class="mt-12 text-center">
+            <p class="text-on-surface-variant font-medium text-sm">
+              Already have an account?
+              <a
+                class="text-primary font-bold hover:underline underline-offset-4 ml-1 transition-all"
+                href="#"
+                >Sign In</a
+              >
+            </p>
+          </div>
+        </div>
+        <!-- Contextual Footer -->
+        <div
+          class="bg-surface-container-low px-10 py-6 flex justify-between items-center"
+        >
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 rounded-full bg-primary"></div>
+            <span
+              class="text-[10px] uppercase tracking-widest font-bold text-on-surface-variant"
+              >Elite Recovery Protocol</span
+            >
+          </div>
+          <div class="flex gap-4">
+            <span
+              class="material-symbols-outlined text-primary text-lg"
+              data-icon="verified_user"
+              >verified_user</span
+            >
+            <span
+              class="material-symbols-outlined text-primary text-lg"
+              data-icon="lock"
+              >lock</span
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Decorative Element -->
+      <div class="mt-12 flex justify-center opacity-20 select-none">
+        <img
+          alt="Abstract organic texture"
+          class="max-w-50 h-auto grayscale brightness-110"
+          data-alt="Abstract soft green gradient pattern"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-IW77T8ibjWbGW_AOWxgtLqZJx3eF8ER-1wfFgrac5hZLrWZijwCXkyklwBf0MGPch1F9US5i7ueAB1aMgRUzFLOWqMWDfC1wsxEiF9k3gTaVcpi1SjIR_4GQt7p4ki3szzfHpeXxKDHFSDMCv-R01sZygCe3XOqLywcQpeMpvK882NRNXzLKjTme4_gIPY-f0AZUoNo6SceWagHTHyyriEA_sERmzxuoFMP6CpC-VEdQhQpj5TP9NLT-gw-Uhb8eN2FwU_3E5dnD"
+        />
+      </div>
+    </div>
+  </body>
+</html>

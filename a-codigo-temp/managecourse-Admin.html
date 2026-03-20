@@ -1,0 +1,680 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-background": "#1a1c1b",
+              "on-primary": "#ffffff",
+              "secondary-fixed-dim": "#eabbbb",
+              "surface-dim": "#dadad8",
+              "on-primary-container": "#273e31",
+              "inverse-primary": "#b2cdbb",
+              "tertiary-fixed": "#d9e6d9",
+              primary: "#4c6455",
+              "on-secondary-fixed-variant": "#5f3e3f",
+              "primary-container": "#8fa998",
+              "tertiary-container": "#99a69a",
+              "on-surface": "#1a1c1b",
+              "on-error-container": "#93000a",
+              "on-tertiary": "#ffffff",
+              "secondary-fixed": "#ffdad9",
+              "surface-variant": "#e3e2e0",
+              "surface-container-low": "#f4f3f1",
+              "primary-fixed": "#cee9d6",
+              "on-primary-fixed": "#082014",
+              tertiary: "#556157",
+              "on-surface-variant": "#424844",
+              "tertiary-fixed-dim": "#bdcabd",
+              "surface-container-highest": "#e3e2e0",
+              "on-error": "#ffffff",
+              "surface-container-high": "#e9e8e6",
+              "surface-bright": "#faf9f7",
+              background: "#faf9f7",
+              secondary: "#795555",
+              "on-primary-fixed-variant": "#344c3e",
+              "error-container": "#ffdad6",
+              "surface-tint": "#4c6455",
+              "outline-variant": "#c2c8c2",
+              "on-tertiary-fixed": "#131e16",
+              "on-tertiary-fixed-variant": "#3e4a40",
+              "on-secondary-container": "#785454",
+              "surface-container": "#efeeec",
+              outline: "#727973",
+              "on-tertiary-container": "#303c33",
+              "secondary-container": "#fbcccc",
+              "on-secondary-fixed": "#2e1415",
+              "on-secondary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              surface: "#faf9f7",
+              "inverse-on-surface": "#f1f1ef",
+              error: "#ba1a1a",
+              "inverse-surface": "#2f3130",
+              "primary-fixed-dim": "#b2cdbb",
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Manrope"],
+              label: ["Manrope"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Manrope", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background text-on-background antialiased selection:bg-primary-container selection:text-on-primary-container"
+  >
+    <!-- SideNavBar Anchor -->
+    <aside
+      class="h-screen w-72 fixed left-0 top-0 overflow-y-auto bg-[#f4f3f1] dark:bg-slate-900 shadow-none z-50 flex flex-col py-8 font-manrope antialiased tracking-tight"
+    >
+      <div class="px-8 mb-12">
+        <div class="flex items-center gap-3">
+          <div
+            class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-on-primary"
+          >
+            <span
+              class="material-symbols-outlined"
+              data-icon="energy_savings_leaf"
+              >energy_savings_leaf</span
+            >
+          </div>
+          <div>
+            <h1
+              class="text-2xl font-bold text-[#4c6455] dark:text-emerald-400 tracking-tighter"
+            >
+              Kinetic Sanctuary
+            </h1>
+            <p
+              class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold opacity-60"
+            >
+              Admin Portal
+            </p>
+          </div>
+        </div>
+      </div>
+      <nav class="flex-1 space-y-1">
+        <a
+          class="flex items-center gap-3 px-6 py-4 text-slate-500 dark:text-slate-400 hover:text-[#4c6455] transition-colors hover:bg-white/50 dark:hover:bg-slate-800/50"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="dashboard"
+            >dashboard</span
+          >
+          <span class="font-medium">Dashboard</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-6 py-4 bg-white dark:bg-slate-800 text-[#4c6455] dark:text-emerald-400 font-semibold rounded-r-full shadow-none"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="menu_book"
+            >menu_book</span
+          >
+          <span class="font-medium">Courses</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-6 py-4 text-slate-500 dark:text-slate-400 hover:text-[#4c6455] transition-colors hover:bg-white/50 dark:hover:bg-slate-800/50"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="calendar_today"
+            >calendar_today</span
+          >
+          <span class="font-medium">Schedule</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-6 py-4 text-slate-500 dark:text-slate-400 hover:text-[#4c6455] transition-colors hover:bg-white/50 dark:hover:bg-slate-800/50"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="payments"
+            >payments</span
+          >
+          <span class="font-medium">Payments</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-6 py-4 text-slate-500 dark:text-slate-400 hover:text-[#4c6455] transition-colors hover:bg-white/50 dark:hover:bg-slate-800/50"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="settings"
+            >settings</span
+          >
+          <span class="font-medium">Settings</span>
+        </a>
+      </nav>
+      <div class="mt-auto px-6 space-y-1">
+        <button
+          class="w-full flex items-center justify-center gap-2 bg-primary text-on-primary py-3 rounded-lg font-semibold hover:opacity-90 transition-all active:scale-95 duration-150 mb-8"
+        >
+          <span class="material-symbols-outlined text-sm" data-icon="add"
+            >add</span
+          >
+          New Course
+        </button>
+        <a
+          class="flex items-center gap-3 px-6 py-3 text-slate-500 hover:text-primary transition-colors"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="help">help</span>
+          <span class="font-medium text-sm">Support</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-6 py-3 text-slate-500 hover:text-error transition-colors"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="logout"
+            >logout</span
+          >
+          <span class="font-medium text-sm">Logout</span>
+        </a>
+      </div>
+    </aside>
+    <!-- Main Content Shell -->
+    <main class="ml-72 min-h-screen relative">
+      <!-- TopNavBar Anchor -->
+      <header
+        class="fixed top-0 right-0 w-[calc(100%-18rem)] z-40 bg-white/70 dark:bg-slate-950/70 backdrop-blur-xl flex justify-between items-center h-20 px-12 shadow-[0_8px_24px_rgba(76,100,85,0.06)]"
+      >
+        <div class="flex items-center gap-8">
+          <div class="relative group">
+            <span
+              class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline"
+              data-icon="search"
+              >search</span
+            >
+            <input
+              class="pl-12 pr-6 py-2.5 bg-surface-container-low rounded-full border-none focus:ring-2 focus:ring-primary/20 w-80 font-manrope text-sm transition-all duration-300"
+              placeholder="Search courses..."
+              type="text"
+            />
+          </div>
+          <nav class="flex items-center gap-6">
+            <a
+              class="text-[#4c6455] dark:text-emerald-400 border-b-2 border-[#4c6455] pb-2 font-manrope text-sm font-medium transition-all duration-200"
+              href="#"
+              >Overview</a
+            >
+            <a
+              class="text-slate-400 dark:text-slate-500 hover:text-[#4c6455] font-manrope text-sm font-medium transition-all duration-200 hover:opacity-80"
+              href="#"
+              >Analytics</a
+            >
+          </nav>
+        </div>
+        <div class="flex items-center gap-6">
+          <button
+            class="bg-primary text-on-primary px-6 py-2.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity"
+          >
+            Create Entry
+          </button>
+          <div class="flex items-center gap-4 text-outline">
+            <button class="hover:text-primary transition-colors">
+              <span class="material-symbols-outlined" data-icon="notifications"
+                >notifications</span
+              >
+            </button>
+            <div
+              class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border-2 border-white"
+            >
+              <img
+                class="w-full h-full object-cover"
+                data-alt="Admin user profile picture"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWnT3NUC59tVTg4fEohz44sQrVnkT9s5sAhHERERBe4xnf3JqzlOFMLtg6IZfH8tioMrJnu9JpIGisIrpn9XqItXFjep6vx3ek_oWoae0-iBj7DKUWx2Gh6-PTe8xZmIe6G6cpp7KpEJ0_Wk8zNOfIip8vlxzrQZiX4E_E3xKN2CFqLZG3iJ739vt1mJe9jHQ_YF0K1RnWrqe9nd_pHFXhpWeQ5JRXE0_fYn2iwXEiQALwvd6f6xmfWe25O5BY9dyULKHU3GmZfDVw"
+              />
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- Page Content Container -->
+      <div class="pt-32 px-12 pb-20 max-w-7xl mx-auto">
+        <!-- Page Header with Asymmetric Layout -->
+        <section
+          class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16"
+        >
+          <div class="max-w-xl">
+            <h2
+              class="text-4xl font-extrabold tracking-tight text-on-surface mb-4 font-headline"
+            >
+              Course Inventory
+            </h2>
+            <p class="text-body-lg text-on-surface-variant leading-relaxed">
+              Manage your sanctuary's curricula. From breathwork to heavy
+              lifting, oversee all active educational pathways and athlete
+              progress.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <button
+              class="px-5 py-2 rounded-full bg-primary text-on-primary text-sm font-semibold shadow-lg shadow-primary/10"
+            >
+              All Categories
+            </button>
+            <button
+              class="px-5 py-2 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-sm font-semibold hover:bg-tertiary-fixed-dim transition-colors"
+            >
+              Strength
+            </button>
+            <button
+              class="px-5 py-2 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-sm font-semibold hover:bg-tertiary-fixed-dim transition-colors"
+            >
+              Cardio
+            </button>
+            <button
+              class="px-5 py-2 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-sm font-semibold hover:bg-tertiary-fixed-dim transition-colors"
+            >
+              Mobility
+            </button>
+            <button
+              class="px-5 py-2 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-sm font-semibold hover:bg-tertiary-fixed-dim transition-colors"
+            >
+              Recovery
+            </button>
+          </div>
+        </section>
+        <!-- Course Table / Grid (High-End Clean Design) -->
+        <section
+          class="bg-surface-container-low rounded-xl overflow-hidden p-1 shadow-sm"
+        >
+          <div class="overflow-x-auto">
+            <table class="w-full border-collapse text-left">
+              <thead>
+                <tr
+                  class="text-label-md text-on-surface-variant/60 uppercase tracking-widest text-[11px] font-bold"
+                >
+                  <th class="px-8 py-6">Course Name</th>
+                  <th class="px-8 py-6">Instructor</th>
+                  <th class="px-8 py-6">Students</th>
+                  <th class="px-8 py-6">Status</th>
+                  <th class="px-8 py-6 text-right">Actions</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/40">
+                <!-- Row 1 -->
+                <tr
+                  class="group hover:bg-surface-container-lowest transition-all duration-300"
+                >
+                  <td class="px-8 py-6">
+                    <div class="flex items-center gap-4">
+                      <div
+                        class="w-12 h-12 rounded-lg bg-primary-container/20 flex items-center justify-center"
+                      >
+                        <span
+                          class="material-symbols-outlined text-primary"
+                          data-icon="fitness_center"
+                          >fitness_center</span
+                        >
+                      </div>
+                      <div>
+                        <p class="font-bold text-on-surface">
+                          Hypertrophy Blueprint
+                        </p>
+                        <p class="text-xs text-on-surface-variant font-medium">
+                          Strength • 12 Weeks
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-8 py-6">
+                    <div class="flex items-center gap-3">
+                      <img
+                        class="w-8 h-8 rounded-full object-cover"
+                        data-alt="Instructor Elena Vance"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaJfXwYwcYecJ69dzYWLcuNz3c7HeUbj4k17FIwJS15ly5Xa9D_bwuEFIlzFg9ti4plp-XumfzQX-lfzyMTwGR08tA8GuBEzPB2cxxX6LY6gf6YaJXCEr11zipKe6dF7YDQ7Mhib2NkqQWWR0E68udlCEG_iOSVEeSxrUivjepXC_hDLnLI0U0SgboUd30oPYi9Ox6uXkI8kdShc3EIreWzwwR-aSUKzE7UthxmMjwUh9wAaOCdTMvsTEm6bD3aLNRm8qxU9B0prKN"
+                      />
+                      <span class="text-sm font-medium">Elena Vance</span>
+                    </div>
+                  </td>
+                  <td class="px-8 py-6">
+                    <div class="flex -space-x-2">
+                      <div
+                        class="w-8 h-8 rounded-full border-2 border-surface-container-low bg-slate-200"
+                      ></div>
+                      <div
+                        class="w-8 h-8 rounded-full border-2 border-surface-container-low bg-slate-300"
+                      ></div>
+                      <div
+                        class="w-8 h-8 rounded-full border-2 border-surface-container-low bg-primary text-[10px] text-on-primary flex items-center justify-center font-bold"
+                      >
+                        +124
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-8 py-6">
+                    <span
+                      class="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed text-[11px] font-bold uppercase tracking-wider"
+                      >Active</span
+                    >
+                  </td>
+                  <td class="px-8 py-6">
+                    <div
+                      class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity"
+                    >
+                      <button
+                        class="p-2 rounded-lg hover:bg-primary/10 text-primary transition-colors"
+                      >
+                        <span class="material-symbols-outlined" data-icon="edit"
+                          >edit</span
+                        >
+                      </button>
+                      <button
+                        class="p-2 rounded-lg hover:bg-error/10 text-error transition-colors"
+                      >
+                        <span
+                          class="material-symbols-outlined"
+                          data-icon="delete"
+                          >delete</span
+                        >
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <!-- Row 2 -->
+                <tr
+                  class="group hover:bg-surface-container-lowest transition-all duration-300"
+                >
+                  <td class="px-8 py-6">
+                    <div class="flex items-center gap-4">
+                      <div
+                        class="w-12 h-12 rounded-lg bg-secondary-container/20 flex items-center justify-center"
+                      >
+                        <span
+                          class="material-symbols-outlined text-secondary"
+                          data-icon="self_improvement"
+                          >self_improvement</span
+                        >
+                      </div>
+                      <div>
+                        <p class="font-bold text-on-surface">
+                          Vagus Nerve Reset
+                        </p>
+                        <p class="text-xs text-on-surface-variant font-medium">
+                          Recovery • 4 Weeks
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-8 py-6">
+                    <div class="flex items-center gap-3">
+                      <img
+                        class="w-8 h-8 rounded-full object-cover"
+                        data-alt="Instructor Marcus Aurelius"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIQCjR4jS8MkaUtPP45S2uQhCPGpxvspl8JKGcK0wZ_88NfPyhceOfLFytN9wZW6sW5soJWq3GJH2o0wseb1wy9p77xJTUx4Wp409bCqyiQeluJJLjJonWoRhhuVSx0J_uVYNvXFvnnK3w__BIYoUeKWJCkK3JrvJr8vJlIps9J3sG3i9e3PO5oAPLzX2b6C3HT2gnZ6nFLwQpMqz0T-jTSAplklCxF0KcJlv4XA4E85jqlvY4Wm47rAvsTxM9R9ip_ffP4zOO2cDi"
+                      />
+                      <span class="text-sm font-medium">Marcus Chen</span>
+                    </div>
+                  </td>
+                  <td class="px-8 py-6">
+                    <div class="flex -space-x-2">
+                      <div
+                        class="w-8 h-8 rounded-full border-2 border-surface-container-low bg-slate-200"
+                      ></div>
+                      <div
+                        class="w-8 h-8 rounded-full border-2 border-surface-container-low bg-primary text-[10px] text-on-primary flex items-center justify-center font-bold"
+                      >
+                        +56
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-8 py-6">
+                    <span
+                      class="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed text-[11px] font-bold uppercase tracking-wider"
+                      >Active</span
+                    >
+                  </td>
+                  <td class="px-8 py-6">
+                    <div
+                      class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity"
+                    >
+                      <button
+                        class="p-2 rounded-lg hover:bg-primary/10 text-primary transition-colors"
+                      >
+                        <span class="material-symbols-outlined" data-icon="edit"
+                          >edit</span
+                        >
+                      </button>
+                      <button
+                        class="p-2 rounded-lg hover:bg-error/10 text-error transition-colors"
+                      >
+                        <span
+                          class="material-symbols-outlined"
+                          data-icon="delete"
+                          >delete</span
+                        >
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <!-- Row 3 -->
+                <tr
+                  class="group hover:bg-surface-container-lowest transition-all duration-300"
+                >
+                  <td class="px-8 py-6">
+                    <div class="flex items-center gap-4">
+                      <div
+                        class="w-12 h-12 rounded-lg bg-tertiary-fixed-dim/20 flex items-center justify-center"
+                      >
+                        <span
+                          class="material-symbols-outlined text-tertiary"
+                          data-icon="air"
+                          >air</span
+                        >
+                      </div>
+                      <div>
+                        <p class="font-bold text-on-surface">
+                          Endurance Mechanics
+                        </p>
+                        <p class="text-xs text-on-surface-variant font-medium">
+                          Cardio • 8 Weeks
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-8 py-6">
+                    <div class="flex items-center gap-3">
+                      <img
+                        class="w-8 h-8 rounded-full object-cover"
+                        data-alt="Instructor Sarah Jenkins"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAplm-a6Ivpfs_NTwdBwuN1NNueNgl4KWi93dPN-G4cFQlgz3XRyAcWFXHx6_F-7llPlHQ0FARttuFM_q74VZvm4shXPdi1c3ZCWBpsD7b4bm9OpOkaa64mLP0spqoVsW5etzrDHQjyqc2pwqR_3YwaDKvA1bNcJqMQonymYyT5kxy8ko0VI51dYOgDB-9AHOFFbJJsHj5Hvq_ubR3lBFvh2q_1Y69VAkeyj2SPXBmAHFnZd7GFKByejJcPkkAlFTBJAg-KR_v-4o4X"
+                      />
+                      <span class="text-sm font-medium">Sarah Jenkins</span>
+                    </div>
+                  </td>
+                  <td class="px-8 py-6">
+                    <div class="flex -space-x-2">
+                      <div
+                        class="w-8 h-8 rounded-full border-2 border-surface-container-low bg-slate-200"
+                      ></div>
+                      <div
+                        class="w-8 h-8 rounded-full border-2 border-surface-container-low bg-primary text-[10px] text-on-primary flex items-center justify-center font-bold"
+                      >
+                        +88
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-8 py-6">
+                    <span
+                      class="px-3 py-1 rounded-full bg-surface-variant text-on-surface-variant text-[11px] font-bold uppercase tracking-wider"
+                      >Draft</span
+                    >
+                  </td>
+                  <td class="px-8 py-6">
+                    <div
+                      class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity"
+                    >
+                      <button
+                        class="p-2 rounded-lg hover:bg-primary/10 text-primary transition-colors"
+                      >
+                        <span class="material-symbols-outlined" data-icon="edit"
+                          >edit</span
+                        >
+                      </button>
+                      <button
+                        class="p-2 rounded-lg hover:bg-error/10 text-error transition-colors"
+                      >
+                        <span
+                          class="material-symbols-outlined"
+                          data-icon="delete"
+                          >delete</span
+                        >
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <!-- Row 4 -->
+                <tr
+                  class="group hover:bg-surface-container-lowest transition-all duration-300"
+                >
+                  <td class="px-8 py-6">
+                    <div class="flex items-center gap-4">
+                      <div
+                        class="w-12 h-12 rounded-lg bg-primary-fixed/20 flex items-center justify-center"
+                      >
+                        <span
+                          class="material-symbols-outlined text-primary"
+                          data-icon="bolt"
+                          >bolt</span
+                        >
+                      </div>
+                      <div>
+                        <p class="font-bold text-on-surface">
+                          Explosive Power Prep
+                        </p>
+                        <p class="text-xs text-on-surface-variant font-medium">
+                          Strength • 6 Weeks
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-8 py-6">
+                    <div class="flex items-center gap-3">
+                      <img
+                        class="w-8 h-8 rounded-full object-cover"
+                        data-alt="Instructor David Miller"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4K70acCf0wZf7rWajLn24wJgaKvxe72cPIlEPDsFZEwfQpnlFWrLX_EIa8sl-jt0ahb2LPOON59A1m_eA4XR2K_UF6RGwk2Bo4fMVr1KqHSxJCynSk6d6WOZ_l-9sgeKO5lCbmuvpPm8IVLXhow6Aqffz_XCZO3Bt3QDJCFzZ8EanMoz5B74l2xE83ErNc24IUKZxLnrE2pddftbpR-lZ40bMMCj8HHJHoOgvp77Mj_CBh70g25x444dJY2Hrg548Vptnz2ACbA41"
+                      />
+                      <span class="text-sm font-medium">David Miller</span>
+                    </div>
+                  </td>
+                  <td class="px-8 py-6">
+                    <div class="flex -space-x-2">
+                      <div
+                        class="w-8 h-8 rounded-full border-2 border-surface-container-low bg-slate-200"
+                      ></div>
+                      <div
+                        class="w-8 h-8 rounded-full border-2 border-surface-container-low bg-primary text-[10px] text-on-primary flex items-center justify-center font-bold"
+                      >
+                        +210
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-8 py-6">
+                    <span
+                      class="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed text-[11px] font-bold uppercase tracking-wider"
+                      >Active</span
+                    >
+                  </td>
+                  <td class="px-8 py-6">
+                    <div
+                      class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity"
+                    >
+                      <button
+                        class="p-2 rounded-lg hover:bg-primary/10 text-primary transition-colors"
+                      >
+                        <span class="material-symbols-outlined" data-icon="edit"
+                          >edit</span
+                        >
+                      </button>
+                      <button
+                        class="p-2 rounded-lg hover:bg-error/10 text-error transition-colors"
+                      >
+                        <span
+                          class="material-symbols-outlined"
+                          data-icon="delete"
+                          >delete</span
+                        >
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <!-- Pagination / Footer Info -->
+        <footer class="mt-10 flex items-center justify-between">
+          <p class="text-sm text-on-surface-variant">Showing 4 of 32 courses</p>
+          <div class="flex gap-2">
+            <button
+              class="w-10 h-10 rounded-full bg-white border border-outline-variant/30 flex items-center justify-center text-outline hover:text-primary transition-colors"
+            >
+              <span class="material-symbols-outlined" data-icon="chevron_left"
+                >chevron_left</span
+              >
+            </button>
+            <button
+              class="w-10 h-10 rounded-full bg-white border border-outline-variant/30 flex items-center justify-center text-primary font-bold"
+            >
+              1
+            </button>
+            <button
+              class="w-10 h-10 rounded-full bg-white border border-outline-variant/30 flex items-center justify-center text-outline hover:text-primary transition-colors font-medium"
+            >
+              2
+            </button>
+            <button
+              class="w-10 h-10 rounded-full bg-white border border-outline-variant/30 flex items-center justify-center text-outline hover:text-primary transition-colors"
+            >
+              <span class="material-symbols-outlined" data-icon="chevron_right"
+                >chevron_right</span
+              >
+            </button>
+          </div>
+        </footer>
+      </div>
+    </main>
+    <!-- Contextual FAB (Hidden on management view as per suppression rule, but included for system compliance if intent were different - here we suppress for task focus) -->
+  </body>
+</html>
