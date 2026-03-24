@@ -1,4 +1,4 @@
-function Sidebar() {
+function SidebarUser() {
   return (
     <>
       <aside className="h-screen w-64 fixed left-0 top-0 flex flex-col py-8 px-4 gap-y-2 no-border bg-stone-100 dark:bg-stone-900 z-50">
@@ -70,4 +70,4 @@ function Sidebar() {
   );
 }
 
-export default Sidebar;
+export default SidebarUser;

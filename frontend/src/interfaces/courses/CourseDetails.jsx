@@ -1,5 +1,5 @@
-import HeaderCourseDetail from "../../components/ui/headers/HeaderCourseDetail.jsx";
-import Sidebar from "../../components/ui/Sidebar.jsx";
+import HeaderCourseDetail from "../../components/ui/header/HeaderCourseDetail.jsx";
+import SidebarUser from "../../components/ui/sidebar/SidebarUser.jsx";
 import WeeklySession from "../../components/courses/WeeklySession.jsx";
 import SpanTextUnderSymbol from "../../components/ui/spans/SpanTextUnderSymbol.jsx";
 import SpanTextAsideSymbol from "../../components/ui/spans/SpanTextAsideSymbol.jsx";
@@ -14,7 +14,7 @@ function CourseDetails() {
       estilo, estoy copiando el archivo tal cual lo tenemos pero estructurado en
       los componentes que voy viendo posibles */}
       <div className="bg-background text-on-background selection:bg-primary-fixed selection:text-on-primary-fixed">
-        <Sidebar />
+        <SidebarUser />
         <HeaderCourseDetail />
         <main className="ml-64 pt-24 px-12 pb-20">
           {/* Componente */}

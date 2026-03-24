@@ -1,5 +1,5 @@
-import Header from "../../components/ui/headers/Header.jsx";
-import Sidebar from "../../components/ui/Sidebar.jsx";
+import HeaderMyCourses from "../../components/ui/header/HeaderMyCourses.jsx";
+import SidebarUser from "../../components/ui/sidebar/SidebarUser.jsx";
 
 function UserDashboard() {
   return (
@@ -12,8 +12,8 @@ function UserDashboard() {
       <div className="bg-background text-on-background selection:bg-primary-fixed selection:text-on-primary-fixed">
         {/* Aqui van los componentes, el div de arriba es el body, pase mi
         intento a CourseDetails.jsx*/}
-        <Sidebar />
-        <Header />
+        <SidebarUser />
+        <HeaderMyCourses />
         <div className="ml-64 pt-24 px-12 pb-12">
           {/* Hero Greeting */}
           <section className="mb-16">

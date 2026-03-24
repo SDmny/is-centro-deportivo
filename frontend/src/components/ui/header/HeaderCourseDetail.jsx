@@ -3,7 +3,7 @@ function HeaderCourseDetail() {
     <>
       <header className="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-40 bg-[#faf9f7]/70 dark:bg-stone-950/70 backdrop-blur-md flex justify-between items-center px-12 transition-all duration-300 ease-in-out">
         <div className="flex items-center gap-4">
-          <button className="hover:bg-[#f4f3f1] dark:hover:bg-stone-800 rounded-full p-2 transition-all">
+          <button className="hover:bg-surface-container-low dark:hover:bg-stone-800 rounded-full p-2 transition-all">
             <span className="material-symbols-outlined text-primary">
               arrow_back
             </span>
@@ -24,12 +24,12 @@ function HeaderCourseDetail() {
             />
           </div>
           <div className="flex items-center gap-2">
-            <button className="hover:bg-[#f4f3f1] dark:hover:bg-stone-800 rounded-full p-2 transition-all">
+            <button className="hover:bg-surface-container-low dark:hover:bg-stone-800 rounded-full p-2 transition-all">
               <span className="material-symbols-outlined text-on-surface-variant">
                 notifications
               </span>
             </button>
-            <button className="hover:bg-[#f4f3f1] dark:hover:bg-stone-800 rounded-full p-2 transition-all">
+            <button className="hover:bg-surface-container-low dark:hover:bg-stone-800 rounded-full p-2 transition-all">
               <span className="material-symbols-outlined text-on-surface-variant">
                 account_circle
               </span>
