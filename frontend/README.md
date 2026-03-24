@@ -2,6 +2,11 @@
 
 Aquí se incluyen css, tailwind, javascript, react, etc.
 
+# importante!
+
+Favor de leer a-codigo-temp/A-DESIGN.md, puede que no
+recuerdes todo pero lo que se nos quede en memoria sirve.
+
 ## node_modules
 
 No lo tocamos, son cosas de instalación relacionadas con npm.
@@ -68,3 +73,5 @@ _.ntvs_
 _.njsproj
 _.sln
 \*.sw?
+
+### Hasta aquí el .gitignore
