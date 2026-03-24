@@ -10,7 +10,7 @@ function Sidebar() {
             ELITE PERFORMANCE
           </p>
         </div>
-        <nav className="flex-1 space-y-1">
+        <nav className="flex-1 flex flex-col gap-y-2">
           <a
             className="flex items-center gap-3 px-4 py-3 rounded-lg text-stone-500 dark:text-stone-400 hover:bg-[#ffffff] transition-colors duration-200 font-manrope text-sm font-medium tracking-wide"
             href="#"
@@ -38,13 +38,33 @@ function Sidebar() {
             <span className="material-symbols-outlined">calendar_month</span>
             Schedule
           </a>
+        </nav>
+        <div className="mt-auto px-4 pt-4 border-outline-variant/10">
           <a
-            className="flex items-center gap-3 px-4 py-3 rounded-lg text-stone-500 dark:text-stone-400 hover:bg-[#ffffff] transition-colors duration-200 mt-auto font-manrope text-sm font-medium tracking-wide"
+            className="flex items-center gap-x-3 py-3 text-stone-500 dark:text-stone-400 hover:text-[#4c6455] transition-colors duration-200"
             href="#"
           >
-            <span className="material-symbols-outlined">settings</span> Settings
+            <span className="material-symbols-outlined" data-icon="settings">
+              settings
+            </span>
+            <span className="font-manrope text-sm font-medium tracking-wide">
+              Settings
+            </span>
           </a>
-        </nav>
+          <div className="flex items-center gap-x-3 mt-4">
+            <div className="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center overflow-hidden">
+              <img
+                className="w-full h-full object-cover"
+                data-alt="User avatar of Sarah smiling"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwO2eQ8LKgjTz29bpr6Hnn90ZlN_EAURkMT6dq1StYyEZ5BDTbWS1YRaCiqPL4ISSEgwSUuRdL9plGrv2Y9Vg0oEl-ZLLFhWlZazsIJ2E_EvhJEtZUb_u-zW575hulYoHObVzIWa-RKHDqe05vkRee951bmMPwbiu2xikCFFjeVWUlDxUlUTJ4x4_VyYY1o8ZnwarC01DcX0794IAyW4I8-_SECIOb_uKEd2aIVDDdAuynWP3m4pJ0FyP5CVbDaCihAyIcsggun2IA"
+              />
+            </div>
+            <div>
+              <p className="text-xs font-bold text-on-surface">Sarah J.</p>
+              <p className="text-[10px] text-stone-500">Elite Tier</p>
+            </div>
+          </div>
+        </div>
       </aside>
     </>
   );

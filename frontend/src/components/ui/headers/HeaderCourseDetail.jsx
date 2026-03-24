@@ -1,4 +1,4 @@
-function Header() {
+function HeaderCourseDetail() {
   return (
     <>
       <header className="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-40 bg-[#faf9f7]/70 dark:bg-stone-950/70 backdrop-blur-md flex justify-between items-center px-12 transition-all duration-300 ease-in-out">
@@ -41,4 +41,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default HeaderCourseDetail;

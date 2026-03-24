@@ -1,4 +1,4 @@
-import Header from "../../components/ui/Header.jsx";
+import HeaderCourseDetail from "../../components/ui/headers/HeaderCourseDetail.jsx";
 import Sidebar from "../../components/ui/Sidebar.jsx";
 import WeeklySession from "../../components/courses/WeeklySession.jsx";
 import SpanTextUnderSymbol from "../../components/ui/spans/SpanTextUnderSymbol.jsx";
@@ -15,7 +15,7 @@ function CourseDetails() {
       los componentes que voy viendo posibles */}
       <div className="bg-background text-on-background selection:bg-primary-fixed selection:text-on-primary-fixed">
         <Sidebar />
-        <Header />
+        <HeaderCourseDetail />
         <main className="ml-64 pt-24 px-12 pb-20">
           {/* Componente */}
           <section className="grid grid-cols-12 gap-12 mb-16">
