@@ -1,5 +1,9 @@
 import Header from "../../components/ui/Header.jsx";
 import Sidebar from "../../components/ui/Sidebar.jsx";
+import WeeklySession from "../../components/courses/WeeklySession.jsx";
+import SpanTextUnderSymbol from "../../components/ui/spans/SpanTextUnderSymbol.jsx";
+import SpanTextAsideSymbol from "../../components/ui/spans/SpanTextAsideSymbol.jsx";
+import SpanStat from "../../components/ui/spans/SpanStat.jsx";
 
 function CourseDetails() {
   return (
@@ -32,32 +36,9 @@ function CourseDetails() {
                 center your breath before the high-intensity demands of the day.
               </p>
               <div className="flex items-center gap-8 mt-10">
-                <div className="flex flex-col">
-                  <span className="text-[10px] uppercase tracking-[0.2em] text-outline font-bold mb-1">
-                    Intensity
-                  </span>
-                  <div className="flex gap-1">
-                    <div className="w-8 h-1.5 rounded-full bg-primary"></div>
-                    <div className="w-8 h-1.5 rounded-full bg-primary-fixed"></div>
-                    <div className="w-8 h-1.5 rounded-full bg-primary-fixed"></div>
-                  </div>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-[10px] uppercase tracking-[0.2em] text-outline font-bold mb-1">
-                    Duration
-                  </span>
-                  <span className="text-on-surface font-semibold">
-                    45 Minutes
-                  </span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-[10px] uppercase tracking-[0.2em] text-outline font-bold mb-1">
-                    Difficulty
-                  </span>
-                  <span className="text-on-surface font-semibold">
-                    All Levels
-                  </span>
-                </div>
+                <SpanStat statTitle="Intensity" statState="" />
+                <SpanStat statTitle="Duration" statState="45 Minutes" />
+                <SpanStat statTitle="Difficulty" statState="All Levels" />
               </div>
             </div>
             <div className="col-span-12 lg:col-span-5 relative">
@@ -122,46 +103,19 @@ function CourseDetails() {
                   Sacred Essentials
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                  <div className="flex flex-col items-center text-center group">
-                    <div className="w-16 h-16 rounded-full bg-surface-container-lowest flex items-center justify-center mb-3 group-hover:bg-primary-fixed transition-colors">
-                      <span className="material-symbols-outlined text-primary text-3xl">
-                        floor_lamp
-                      </span>
-                    </div>
-                    <span className="text-sm font-bold text-on-surface-variant">
-                      Thick Mat
-                    </span>
-                  </div>
-                  <div className="flex flex-col items-center text-center group">
-                    <div className="w-16 h-16 rounded-full bg-surface-container-lowest flex items-center justify-center mb-3 group-hover:bg-primary-fixed transition-colors">
-                      <span className="material-symbols-outlined text-primary text-3xl">
-                        chair
-                      </span>
-                    </div>
-                    <span className="text-sm font-bold text-on-surface-variant">
-                      Yoga Blocks
-                    </span>
-                  </div>
-                  <div className="flex flex-col items-center text-center group">
-                    <div className="w-16 h-16 rounded-full bg-surface-container-lowest flex items-center justify-center mb-3 group-hover:bg-primary-fixed transition-colors">
-                      <span className="material-symbols-outlined text-primary text-3xl">
-                        water_full
-                      </span>
-                    </div>
-                    <span className="text-sm font-bold text-on-surface-variant">
-                      Hydration
-                    </span>
-                  </div>
-                  <div className="flex flex-col items-center text-center group">
-                    <div className="w-16 h-16 rounded-full bg-surface-container-lowest flex items-center justify-center mb-3 group-hover:bg-primary-fixed transition-colors">
-                      <span className="material-symbols-outlined text-primary text-3xl">
-                        checkroom
-                      </span>
-                    </div>
-                    <span className="text-sm font-bold text-on-surface-variant">
-                      Comfortable Wear
-                    </span>
-                  </div>
+                  <SpanTextUnderSymbol
+                    text={"Thick Mat"}
+                    symbol={"floor_lamp"}
+                  />
+                  <SpanTextUnderSymbol text={"Yoga Blocks"} symbol={"chair"} />
+                  <SpanTextUnderSymbol
+                    text={"Hydration"}
+                    symbol={"water_full"}
+                  />
+                  <SpanTextUnderSymbol
+                    text={"Comfortable Wear"}
+                    symbol={"checkroom"}
+                  />
                 </div>
               </div>
               {/* Schedule Section */}
@@ -171,92 +125,34 @@ function CourseDetails() {
                 </h3>
                 <div className="space-y-4">
                   {/* Session 1 */}
-                  <div className="bg-surface-container-lowest p-6 rounded-lg flex items-center justify-between group hover:shadow-[0_8px_24px_rgba(76,100,85,0.06)] transition-all">
-                    <div className="flex items-center gap-6">
-                      <div className="w-14 h-14 rounded-lg bg-surface-container-low flex flex-col items-center justify-center">
-                        <span className="text-[10px] font-bold text-outline">
-                          MON
-                        </span>
-                        <span className="text-lg font-extrabold text-primary">
-                          12
-                        </span>
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-on-surface">
-                          Dawn Awakening
-                        </h4>
-                        <p className="text-sm text-on-surface-variant font-medium">
-                          06:30 AM — 07:15 AM
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-6">
-                      <span className="text-xs font-bold text-on-tertiary-fixed-variant bg-tertiary-fixed px-3 py-1 rounded-full">
-                        8 SPOTS LEFT
-                      </span>
-                      <button className="text-primary font-bold text-sm hover:underline">
-                        Select Session
-                      </button>
-                    </div>
-                  </div>
+                  <WeeklySession
+                    day={"MON"}
+                    dayNumber={"12"}
+                    activity={"Dawn Awakening"}
+                    time={"06:30 AM — 07:15 AM"}
+                    spotInfo={"8 SPOTS LEFT"}
+                    buttonText={"Select Session"}
+                  />
+
                   {/* Session 2 */}
-                  <div className="bg-surface-container-lowest p-6 rounded-lg flex items-center justify-between group hover:shadow-[0_8px_24px_rgba(76,100,85,0.06)] transition-all">
-                    <div className="flex items-center gap-6">
-                      <div className="w-14 h-14 rounded-lg bg-surface-container-low flex flex-col items-center justify-center">
-                        <span className="text-[10px] font-bold text-outline">
-                          WED
-                        </span>
-                        <span className="text-lg font-extrabold text-primary">
-                          14
-                        </span>
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-on-surface">
-                          Mid-Week Mobility
-                        </h4>
-                        <p className="text-sm text-on-surface-variant font-medium">
-                          07:00 AM — 07:45 AM
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-6">
-                      <span className="text-xs font-bold text-on-secondary-container bg-secondary-container px-3 py-1 rounded-full">
-                        WAITLIST ONLY
-                      </span>
-                      <button className="text-primary font-bold text-sm hover:underline">
-                        Join Waitlist
-                      </button>
-                    </div>
-                  </div>
+                  <WeeklySession
+                    day={"WED"}
+                    dayNumber={"14"}
+                    activity={"Mid-Week Mobility"}
+                    time={"07:00 AM — 07:45 AM"}
+                    spotInfo={"WAITLIST ONLY"}
+                    buttonText={"Join Waitlist"}
+                  />
+
                   {/* Session 3 */}
-                  <div className="bg-surface-container-lowest p-6 rounded-lg flex items-center justify-between group hover:shadow-[0_8px_24px_rgba(76,100,85,0.06)] transition-all">
-                    <div className="flex items-center gap-6">
-                      <div className="w-14 h-14 rounded-lg bg-surface-container-low flex flex-col items-center justify-center">
-                        <span className="text-[10px] font-bold text-outline">
-                          FRI
-                        </span>
-                        <span className="text-lg font-extrabold text-primary">
-                          16
-                        </span>
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-on-surface">
-                          Flow to Friday
-                        </h4>
-                        <p className="text-sm text-on-surface-variant font-medium">
-                          06:30 AM — 07:15 AM
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-6">
-                      <span className="text-xs font-bold text-on-tertiary-fixed-variant bg-tertiary-fixed px-3 py-1 rounded-full">
-                        12 SPOTS LEFT
-                      </span>
-                      <button className="text-primary font-bold text-sm hover:underline">
-                        Select Session
-                      </button>
-                    </div>
-                  </div>
+                  <WeeklySession
+                    day={"FRI"}
+                    dayNumber={"16"}
+                    activity={"Flow to Friday"}
+                    time={"06:30 AM — 07:15 AM"}
+                    spotInfo={"12 SPOTS LEFT"}
+                    buttonText={"Select Session"}
+                  />
                 </div>
               </div>
             </div>
@@ -287,30 +183,18 @@ function CourseDetails() {
                   </div>
                 </div>
                 <div className="space-y-6 mb-10">
-                  <div className="flex items-center gap-4">
-                    <span className="material-symbols-outlined text-secondary text-xl">
-                      event_available
-                    </span>
-                    <span className="text-sm font-semibold text-on-surface-variant">
-                      12 Total Sessions Included
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <span className="material-symbols-outlined text-secondary text-xl">
-                      person_pin_circle
-                    </span>
-                    <span className="text-sm font-semibold text-on-surface-variant">
-                      Access to In-Studio or Hybrid
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <span className="material-symbols-outlined text-secondary text-xl">
-                      library_books
-                    </span>
-                    <span className="text-sm font-semibold text-on-surface-variant">
-                      Digital Pose Library Included
-                    </span>
-                  </div>
+                  <SpanTextAsideSymbol
+                    text={"12 Total Sessions Included"}
+                    symbol={"event_available"}
+                  />
+                  <SpanTextAsideSymbol
+                    text={"Access to In-Studio or Hybrid"}
+                    symbol={"person_pin_circle"}
+                  />
+                  <SpanTextAsideSymbol
+                    text={"Digital Pose Library Included"}
+                    symbol={"library_books"}
+                  />
                 </div>
                 <div className="space-y-4">
                   <button className="w-full bg-primary text-on-primary py-4 rounded-lg font-bold text-lg hover:opacity-90 transition-all flex items-center justify-center gap-3">
