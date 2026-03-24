@@ -1,6 +1,11 @@
 // tailwind.config.js
+import forms from "@tailwindcss/forms";
+import containerQueries from "@tailwindcss/container-queries";
+import aspectRatio from "@tailwindcss/aspect-ratio";
+
 export default {
   darkMode: "class",
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
@@ -65,4 +70,5 @@ export default {
       },
     },
   },
+  plugins: [forms(), containerQueries(), aspectRatio()],
 };

@@ -1,11 +1,16 @@
 import { Routes, Route } from "react-router-dom";
-import EstructuraBase from "./components/EstructuraBase";
+
+/* interfaces */
+import Home from "./interfaces/Home.jsx";
+import CourseDetails from "./interfaces/courses/CourseDetails.jsx";
 
 function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<EstructuraBase />} />
+        /* aqui van rutas */
+        <Route path="/" element={<Home />} />
+        <Route path="/curso-detalle" element={<CourseDetails />} />
       </Routes>
     </>
   );
