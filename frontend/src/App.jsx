@@ -4,6 +4,10 @@ import { Routes, Route } from "react-router-dom";
 import CourseDetails from "./interfaces/courses/CourseDetails.jsx";
 import UserDashboard from "./interfaces/user/UserDashboard.jsx";
 import AdminManageCourses from "./interfaces/admin/AdminManageCourses.jsx";
+import Schedule from "./interfaces/user/Schedule.jsx";
+import Dashboard from "./interfaces/user/Dashboard.jsx";
+import ExploreCourses from "./interfaces/user/ExploreCourses.jsx";
+import ActivitySchedule from "./interfaces/user/ActivitySchedule.jsx";
 
 function App() {
   return (
@@ -15,6 +19,10 @@ function App() {
 
         {/* como nota: la ruta / probablemente debería ser diferenciada según la sesión */}
         <Route path="/admin" element={<AdminManageCourses />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/schedule" element={<Schedule />} />
+        <Route path="/explore" element={<ExploreCourses />} />
+        <Route path="/explore/schedule/:activityName" element={<ActivitySchedule />} />
       </Routes>
     </>
   );

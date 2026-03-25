@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 function SidebarUser() {
   return (
     <>
@@ -11,33 +13,53 @@ function SidebarUser() {
           </p>
         </div>
         <nav className="flex-1 flex flex-col gap-y-2">
-          <a
-            className="flex items-center gap-3 px-4 py-3 rounded-lg text-stone-500 dark:text-stone-400 hover:bg-[#ffffff] transition-colors duration-200 font-manrope text-sm font-medium tracking-wide"
-            href="#"
+          <NavLink
+            to="/dashboard"
+            end
+            className={({ isActive }) =>
+              isActive
+                ? "flex items-center gap-3 px-4 py-3 rounded-lg text-[#4c6455] dark:text-emerald-400 font-bold border-r-4 border-[#4c6455] dark:border-emerald-500 bg-[#ffffff]/50 dark:bg-stone-800/50 font-manrope text-sm tracking-wide"
+                : "flex items-center gap-3 px-4 py-3 rounded-lg text-stone-500 dark:text-stone-400 hover:bg-[#ffffff] transition-colors duration-200 font-manrope text-sm font-medium tracking-wide"
+            }
           >
             <span className="material-symbols-outlined">dashboard</span>
             Dashboard
-          </a>
-          <a
-            className="flex items-center gap-3 px-4 py-3 rounded-lg text-[#4c6455] dark:text-emerald-400 font-bold border-r-4 border-[#4c6455] dark:border-emerald-500 bg-[#ffffff]/50 dark:bg-stone-800/50 font-manrope text-sm tracking-wide"
-            href="#"
+          </NavLink>
+          <NavLink
+            to="/"
+            end
+            className={({ isActive }) =>
+              isActive
+                ? "flex items-center gap-3 px-4 py-3 rounded-lg text-[#4c6455] dark:text-emerald-400 font-bold border-r-4 border-[#4c6455] dark:border-emerald-500 bg-[#ffffff]/50 dark:bg-stone-800/50 font-manrope text-sm tracking-wide"
+                : "flex items-center gap-3 px-4 py-3 rounded-lg text-stone-500 dark:text-stone-400 hover:bg-[#ffffff] transition-colors duration-200 font-manrope text-sm font-medium tracking-wide"
+            }
           >
             <span className="material-symbols-outlined">school</span> My Courses
-          </a>
-          <a
-            className="flex items-center gap-3 px-4 py-3 rounded-lg text-stone-500 dark:text-stone-400 hover:bg-[#ffffff] transition-colors duration-200 font-manrope text-sm font-medium tracking-wide"
-            href="#"
+          </NavLink>
+          <NavLink
+            to="/explore"
+            end
+            className={({ isActive }) =>
+              isActive
+                ? "flex items-center gap-3 px-4 py-3 rounded-lg text-[#4c6455] dark:text-emerald-400 font-bold border-r-4 border-[#4c6455] dark:border-emerald-500 bg-[#ffffff]/50 dark:bg-stone-800/50 font-manrope text-sm tracking-wide"
+                : "flex items-center gap-3 px-4 py-3 rounded-lg text-stone-500 dark:text-stone-400 hover:bg-[#ffffff] transition-colors duration-200 font-manrope text-sm font-medium tracking-wide"
+            }
           >
             <span className="material-symbols-outlined">explore</span> Explore
             Courses
-          </a>
-          <a
-            className="flex items-center gap-3 px-4 py-3 rounded-lg text-stone-500 dark:text-stone-400 hover:bg-[#ffffff] transition-colors duration-200 font-manrope text-sm font-medium tracking-wide"
-            href="#"
+          </NavLink>
+          <NavLink
+            to="/schedule"
+            end
+            className={({ isActive }) =>
+              isActive
+                ? "flex items-center gap-3 px-4 py-3 rounded-lg text-[#4c6455] dark:text-emerald-400 font-bold border-r-4 border-[#4c6455] dark:border-emerald-500 bg-[#ffffff]/50 dark:bg-stone-800/50 font-manrope text-sm tracking-wide"
+                : "flex items-center gap-3 px-4 py-3 rounded-lg text-stone-500 dark:text-stone-400 hover:bg-[#ffffff] transition-colors duration-200 font-manrope text-sm font-medium tracking-wide"
+            }
           >
             <span className="material-symbols-outlined">calendar_month</span>
             Schedule
-          </a>
+          </NavLink>
         </nav>
         <div className="mt-auto px-4 pt-4 border-outline-variant/10">
           <a
