@@ -4,10 +4,9 @@ import SidebarUser from "../../components/ui/sidebar/SidebarUser.jsx";
 import HeaderMyCourses from "../../components/ui/header/HeaderMyCourses.jsx";
 
 function ActivitySchedule() {
-  const { activityName } = useParams(); // Asegúrate que en App.js diga path="/explore/schedule/:activityName"
+  const { activityName } = useParams(); 
   const decodedName = decodeURIComponent(activityName);
 
-  // Diccionario de datos mapeado por TÍTULO EXACTO
   const courseDatabase = {
     "Precision Pilates": { img: "https://images.unsplash.com/photo-1518611012118-296072bb5804?w=800", desc: "A precision-focused pilates flow to enhance core stability and body alignment." },
     "Aquatic Endurance": { img: "https://images.unsplash.com/photo-1530549387074-d562cb6e6020?w=800", desc: "High-intensity aquatic sessions designed for maximum cardiovascular endurance." },
@@ -60,7 +59,6 @@ function ActivitySchedule() {
               <span className="bg-[#E9F0EC] text-[#4C6455] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-tighter">Wellness</span>
               <span className="bg-[#FEF4F4] text-[#D9A3A3] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-tighter">Elite Program</span>
             </div>
-            {/* Título dinámico corregido */}
             <h2 className="text-4xl font-bold text-gray-900 mb-4">{decodedName} & Mastery</h2>
             <p className="text-gray-500 leading-relaxed text-sm">{activityInfo.desc}</p>
           </div>

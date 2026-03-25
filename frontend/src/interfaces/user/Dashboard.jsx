@@ -13,7 +13,7 @@ function Dashboard() {
               Buenos días, Sarah
             </h2>
             <p className="text-lg text-on-surface-variant font-medium max-w-2xl opacity-80">
-              ¡Prepárate para el Burn! Tienes 3 sesiones planificadas esta semana. Respira hondo y empieza el día.
+              ¡Prepárate para tu sesión! Tienes 3 sesiones planificadas esta semana. Respira hondo y empieza el día.
             </p>
           </section>
 
