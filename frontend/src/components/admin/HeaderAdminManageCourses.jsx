@@ -9,7 +9,7 @@ function HeaderAdminManageCourses() {
             </span>
             <input
               class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-lg focus:ring-1 focus:ring-primary text-sm placeholder:text-outline-variant transition-colors"
-              placeholder="Search courses, instructors, or students..."
+              placeholder="Buscar cursos, instructores, o estudiantes..."
               type="text"
             />
           </div>

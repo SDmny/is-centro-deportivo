@@ -1,4 +1,4 @@
-import HeaderAdminManageCourses from "../../components/ui/header/HeaderAdminManageCourses";
+import HeaderAdminManageCourses from "../../components/admin/HeaderAdminManageCourses";
 import SidebarAdmin from "../../components/ui/sidebar/SidebarAdmin";
 
 function AdminManageCourses() {
@@ -17,8 +17,8 @@ function AdminManageCourses() {
                     Administrar Cursos
                   </h2>
                   <p className="text-lg text-on-surface-variant leading-relaxed opacity-80">
-                    Curate and optimize the elite performance curriculum. Every
-                    session is a step towards a new summit.
+                    Supervisa los cursos, crea uno nuevo, modifica detalles de
+                    un curso.
                   </p>
                 </div>
                 <div>

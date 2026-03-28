@@ -1,4 +1,4 @@
-import HeaderAdminManageCourses from "../../components/ui/header/HeaderAdminManageCourses";
+import HeaderAdminManageUsers from "../../components/admin/HeaderAdminManageUsers";
 import SidebarAdmin from "../../components/ui/sidebar/SidebarAdmin";
 
 function AdminManageCourses() {
@@ -7,7 +7,7 @@ function AdminManageCourses() {
       <div className="bg-background text-on-background selection:bg-primary-fixed selection:text-on-primary-fixed">
         <SidebarAdmin />
         <div className="ml-64 min-h-screen bg-background">
-          <HeaderAdminManageCourses />
+          <HeaderAdminManageUsers />
           <div class="pt-12 px-12 pb-20 max-w-7xl mx-auto">
             <section className="max-w-7xl mx-auto">
               {/* Header Section with Asymmetric Layout */}
@@ -17,8 +17,9 @@ function AdminManageCourses() {
                     Administrar Usuarios
                   </h2>
                   <p className="text-lg text-on-surface-variant leading-relaxed opacity-80">
-                    Orchestrate your athlete community with mindful oversight
-                    and detailed performance analytics.
+                    Visualiza los usuarios, sus detalles, estado, fecha de
+                    última vez activo, etc. Agrega un nuevo usuario, edita o
+                    elimina uno ya existente.
                   </p>
                 </div>
                 <div>
