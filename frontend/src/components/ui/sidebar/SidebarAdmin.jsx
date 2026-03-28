@@ -57,15 +57,15 @@ function SidebarAdmin() {
             </span>
           </a>
         </nav>
-        <div className="mt-auto flex items-center gap-x-3 p-4 bg-surface-container-low rounded-xl">
-          <img
-            className="w-10 h-10 rounded-full object-cover"
-            data-alt="User professional portrait for profile"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvNlXUAGAnrjz1d7svcmYAWg2Pu6Do2QXjbON1wrL2oAI-jmj_wEy1Ez_WnuO03WWLmWYevm-oniuG2H-OoGiWZjLB7wBNA_cqM0PWFSJgG3vKHeXs5b2F9qu6ASFRJ9wia13-NpTa7oOH7Yo6FZOgOC-aalirSBN74NkonItckEykiZ5_MthfcgyqrYx3fdH5KUgPJ1wKkLYRadNlhsuhcpHO5mfaxgzVZX1Vw3JF5qKGzokZ6J98Krz3m4FdD1fBj-6-pEA1MFnz"
-          />
-          <div className="overflow-hidden">
-            <p className="text-xs font-bold truncate">Alex Rivera</p>
-            <p className="text-[10px] text-outline truncate">Pro Athlete</p>
+        <div class="mt-auto pt-6 border-t border-transparent">
+          <div class="flex items-center gap-x-3 px-2">
+            <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+              <span class="material-symbols-outlined">person</span>
+            </div>
+            <div class="overflow-hidden">
+              <p class="text-xs font-bold truncate">Admin User</p>
+              <p class="text-[10px] text-stone-500 truncate">Course Director</p>
+            </div>
           </div>
         </div>
       </aside>
