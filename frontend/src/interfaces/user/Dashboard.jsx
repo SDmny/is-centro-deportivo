@@ -13,7 +13,8 @@ function Dashboard() {
               Buenos días, Sarah
             </h2>
             <p className="text-lg text-on-surface-variant font-medium max-w-2xl opacity-80">
-              ¡Prepárate para tu sesión! Tienes 3 sesiones planificadas esta semana. Respira hondo y empieza el día.
+              ¡Prepárate para tu sesión! Tienes 3 sesiones planificadas esta
+              semana. Respira hondo y empieza el día.
             </p>
           </section>
 
@@ -54,7 +55,10 @@ function Dashboard() {
                     </p>
                     <div className="mt-auto pt-4 flex items-center justify-between">
                       <div className="flex items-center gap-x-2">
-                        <span className="material-symbols-outlined text-sm text-primary" data-icon="schedule">
+                        <span
+                          className="material-symbols-outlined text-sm text-primary"
+                          data-icon="schedule"
+                        >
                           schedule
                         </span>
                         <span className="text-xs font-semibold text-on-surface-variant">
@@ -90,7 +94,10 @@ function Dashboard() {
                     </p>
                     <div className="mt-auto pt-4 flex items-center justify-between">
                       <div className="flex items-center gap-x-2">
-                        <span className="material-symbols-outlined text-sm text-primary" data-icon="bolt">
+                        <span
+                          className="material-symbols-outlined text-sm text-primary"
+                          data-icon="bolt"
+                        >
                           bolt
                         </span>
                         <span className="text-xs font-semibold text-on-surface-variant">
@@ -122,14 +129,18 @@ function Dashboard() {
                       HIIT Flow
                     </h4>
                     <p className="text-on-surface-variant mb-6 leading-relaxed">
-                      High-intensity interval training con movimientos fluidos y controlados.
+                      High-intensity interval training con movimientos fluidos y
+                      controlados.
                     </p>
                     <div className="flex items-center gap-x-6">
                       <button className="bg-primary text-on-primary px-6 py-2 rounded-lg text-sm font-bold shadow-md hover:opacity-90 transition-opacity">
                         Resume Session
                       </button>
                       <div className="flex items-center gap-x-2">
-                        <span className="material-symbols-outlined text-primary" data-icon="bar_chart">
+                        <span
+                          className="material-symbols-outlined text-primary"
+                          data-icon="bar_chart"
+                        >
                           bar_chart
                         </span>
                         <span className="text-sm font-medium">92% Match</span>
@@ -146,7 +157,10 @@ function Dashboard() {
                   <h3 className="text-xl font-bold text-on-surface">
                     Weekly Schedule
                   </h3>
-                  <span className="material-symbols-outlined text-outline cursor-pointer" data-icon="calendar_today">
+                  <span
+                    className="material-symbols-outlined text-outline cursor-pointer"
+                    data-icon="calendar_today"
+                  >
                     calendar_today
                   </span>
                 </div>
@@ -158,7 +172,7 @@ function Dashboard() {
                         Mon
                       </span>
                       <span className="text-lg font-extrabold text-on-surface">
-                        8:00 AM
+                        12
                       </span>
                     </div>
                     <div className="flex-1 space-y-3">
@@ -182,7 +196,7 @@ function Dashboard() {
                         Tue
                       </span>
                       <span className="text-lg font-extrabold text-primary">
-                        5:00 PM
+                        14
                       </span>
                     </div>
                     <div className="flex-1 space-y-3">
@@ -206,15 +220,17 @@ function Dashboard() {
                         Wed
                       </span>
                       <span className="text-lg font-extrabold text-on-surface">
-                        —
+                        16
                       </span>
                     </div>
                     <div className="flex-1">
                       <div className="bg-surface-container-low p-4 rounded-lg border-l-4 border-outline-variant/30">
                         <p className="text-[10px] font-bold text-outline-variant uppercase tracking-tighter">
-                          Descanso
+                          08:00 AM
                         </p>
-                        <h5 className="text-sm font-bold text-on-surface">Yoga opcional</h5>
+                        <h5 className="text-sm font-bold text-on-surface">
+                          Yoga opcional
+                        </h5>
                         <p className="text-[10px] text-on-surface-variant italic">
                           Elige una sesión de yoga para relajarte y recuperarte.
                         </p>
@@ -225,7 +241,10 @@ function Dashboard() {
 
                 <div className="mt-10 p-6 bg-secondary-container rounded-lg">
                   <div className="flex items-center gap-x-3 mb-2">
-                    <span className="material-symbols-outlined text-on-secondary-container" data-icon="auto_awesome">
+                    <span
+                      className="material-symbols-outlined text-on-secondary-container"
+                      data-icon="auto_awesome"
+                    >
                       auto_awesome
                     </span>
                     <p className="text-sm font-bold text-on-secondary-container">
@@ -240,7 +259,7 @@ function Dashboard() {
             </div>
           </div>
         </div>
-      </div> 
+      </div>
     </>
   );
 }
