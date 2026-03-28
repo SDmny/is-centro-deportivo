@@ -14,7 +14,7 @@ function AdminManageCourses() {
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
                 <div className="max-w-xl">
                   <h2 className="text-4xl font-extrabold text-on-surface tracking-tight mb-4">
-                    Course Management
+                    Administrar Cursos
                   </h2>
                   <p className="text-lg text-on-surface-variant leading-relaxed opacity-80">
                     Curate and optimize the elite performance curriculum. Every
@@ -26,12 +26,10 @@ function AdminManageCourses() {
                     <span className="material-symbols-outlined" data-icon="add">
                       add
                     </span>
-                    <span>Add New Course</span>
+                    <span>Agregar Curso</span>
                   </button>
                 </div>
               </div>
-
-              {/* Add New Placeholder Card */}
             </section>
 
             <section className="bg-surface-container-low rounded-xl overflow-hidden p-1 shadow-sm">
@@ -39,11 +37,11 @@ function AdminManageCourses() {
                 <table className="w-full border-collapse text-left">
                   <thead>
                     <tr className="text-label-md text-on-surface-variant/60 uppercase tracking-widest text-[11px] font-bold">
-                      <th className="px-8 py-6">Course Name</th>
+                      <th className="px-8 py-6">Curso</th>
                       <th className="px-8 py-6">Instructor</th>
-                      <th className="px-8 py-6">Students</th>
-                      <th className="px-8 py-6">Status</th>
-                      <th className="px-8 py-6 text-right">Actions</th>
+                      <th className="px-8 py-6">Estudiantes</th>
+                      <th className="px-8 py-6">Estatus</th>
+                      <th className="px-8 py-6 text-right">Acciones</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-white/40">
@@ -327,7 +325,7 @@ function AdminManageCourses() {
             {/* Global Pagination / Content breathing room */}
             <footer class="mt-10 flex items-center justify-between">
               <p class="text-sm text-on-surface-variant">
-                Showing 4 of 32 courses
+                Mostrando 4 de 32 cursos
               </p>
               <div class="flex gap-2">
                 <button class="w-10 h-10 rounded-full bg-white border border-outline-variant/30 flex items-center justify-center text-outline hover:text-primary transition-colors">

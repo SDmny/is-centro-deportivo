@@ -254,7 +254,7 @@ function AdminManageCourses() {
             {/* Global Pagination / Content breathing room */}
             <footer class="mt-10 flex items-center justify-between">
               <p class="text-sm text-on-surface-variant">
-                Showing 4 of 32 courses
+                Mostrando 4 de 32 usuarios
               </p>
               <div class="flex gap-2">
                 <button class="w-10 h-10 rounded-full bg-white border border-outline-variant/30 flex items-center justify-center text-outline hover:text-primary transition-colors">
