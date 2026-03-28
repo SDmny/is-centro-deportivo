@@ -8,21 +8,29 @@ import Schedule from "./interfaces/user/Schedule.jsx";
 import Dashboard from "./interfaces/user/Dashboard.jsx";
 import ExploreCourses from "./interfaces/user/ExploreCourses.jsx";
 import ActivitySchedule from "./interfaces/user/ActivitySchedule.jsx";
+import AdminManageUsers from "./interfaces/admin/AdminManageUsers.jsx";
 
 function App() {
   return (
     <>
       <Routes>
         {/* aqui van rutas */}
+
+        {/* como nota: la ruta / probablemente debería ser diferenciada según la sesión */}
         <Route path="/" element={<UserDashboard />} />
         <Route path="/curso-detalle" element={<CourseDetails />} />
 
-        {/* como nota: la ruta / probablemente debería ser diferenciada según la sesión */}
-        <Route path="/admin" element={<AdminManageCourses />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/schedule" element={<Schedule />} />
         <Route path="/explore" element={<ExploreCourses />} />
-        <Route path="/explore/schedule/:activityName" element={<ActivitySchedule />} />
+        <Route
+          path="/explore/schedule/:activityName"
+          element={<ActivitySchedule />}
+        />
+
+        {/* rutas de administrador */}
+        <Route path="/admin_cursos" element={<AdminManageCourses />} />
+        <Route path="/admin_usuarios" element={<AdminManageUsers />} />
       </Routes>
     </>
   );

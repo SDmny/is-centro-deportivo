@@ -1,4 +1,4 @@
-import HeaderAdminManageCourses from "../../components/admin/HeaderAdminManageCourses";
+import HeaderAdminManageUsers from "../../components/admin/HeaderAdminManageUsers";
 import SidebarAdmin from "../../components/ui/sidebar/SidebarAdmin";
 
 function AdminManageCourses() {
@@ -7,18 +7,19 @@ function AdminManageCourses() {
       <div className="bg-background text-on-background selection:bg-primary-fixed selection:text-on-primary-fixed">
         <SidebarAdmin />
         <div className="ml-64 min-h-screen bg-background">
-          <HeaderAdminManageCourses />
+          <HeaderAdminManageUsers />
           <div class="pt-12 px-12 pb-20 max-w-7xl mx-auto">
             <section className="max-w-7xl mx-auto">
               {/* Header Section with Asymmetric Layout */}
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
                 <div className="max-w-xl">
                   <h2 className="text-4xl font-extrabold text-on-surface tracking-tight mb-4">
-                    Administrar Cursos
+                    Administrar Usuarios
                   </h2>
                   <p className="text-lg text-on-surface-variant leading-relaxed opacity-80">
-                    Supervisa los cursos, crea uno nuevo, modifica detalles de
-                    un curso.
+                    Visualiza los usuarios, sus detalles, estado, fecha de
+                    última vez activo, etc. Agrega un nuevo usuario, edita o
+                    elimina uno ya existente.
                   </p>
                 </div>
                 <div>
@@ -26,10 +27,12 @@ function AdminManageCourses() {
                     <span className="material-symbols-outlined" data-icon="add">
                       add
                     </span>
-                    <span>Agregar Curso</span>
+                    <span>Agregar Usuario</span>
                   </button>
                 </div>
               </div>
+
+              {/* Add New Placeholder Card */}
             </section>
 
             <section className="bg-surface-container-low rounded-xl overflow-hidden p-1 shadow-sm">
@@ -37,9 +40,9 @@ function AdminManageCourses() {
                 <table className="w-full border-collapse text-left">
                   <thead>
                     <tr className="text-label-md text-on-surface-variant/60 uppercase tracking-widest text-[11px] font-bold">
-                      <th className="px-8 py-6">Curso</th>
-                      <th className="px-8 py-6">Instructor</th>
-                      <th className="px-8 py-6">Estudiantes</th>
+                      <th className="px-8 py-6">Usuario</th>
+                      <th className="px-8 py-6">Nombre</th>
+                      <th className="px-8 py-6">Correo</th>
                       <th className="px-8 py-6">Estatus</th>
                       <th className="px-8 py-6 text-right">Acciones</th>
                     </tr>
@@ -48,24 +51,9 @@ function AdminManageCourses() {
                     {/* Row 1 */}
                     <tr className="group hover:bg-surface-container-lowest transition-all duration-300">
                       <td className="px-8 py-6">
-                        <div className="flex items-center gap-4">
-                          <div className="w-12 h-12 rounded-lg bg-primary-container/20 flex items-center justify-center">
-                            <span
-                              className="material-symbols-outlined text-primary"
-                              data-icon="fitness_center"
-                            >
-                              fitness_center
-                            </span>
-                          </div>
-                          <div>
-                            <p className="font-bold text-on-surface">
-                              Hypertrophy Blueprint
-                            </p>
-                            <p className="text-xs text-on-surface-variant font-medium">
-                              Strength • 12 Weeks
-                            </p>
-                          </div>
-                        </div>
+                        <span class="text-sm font-medium text-on-surface-variant">
+                          usuario
+                        </span>
                       </td>
                       <td className="px-8 py-6">
                         <div className="flex items-center gap-3">
@@ -80,13 +68,9 @@ function AdminManageCourses() {
                         </div>
                       </td>
                       <td className="px-8 py-6">
-                        <div className="flex -space-x-2">
-                          <div className="w-8 h-8 rounded-full border-2 border-surface-container-low bg-slate-200"></div>
-                          <div className="w-8 h-8 rounded-full border-2 border-surface-container-low bg-slate-300"></div>
-                          <div className="w-8 h-8 rounded-full border-2 border-surface-container-low bg-primary text-[10px] text-on-primary flex items-center justify-center font-bold">
-                            +124
-                          </div>
-                        </div>
+                        <span class="text-sm font-medium text-on-surface-variant">
+                          email@correo.com
+                        </span>
                       </td>
                       <td className="px-8 py-6">
                         <span className="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed text-[11px] font-bold uppercase tracking-wider">
@@ -117,24 +101,9 @@ function AdminManageCourses() {
                     {/* Row 2 */}
                     <tr className="group hover:bg-surface-container-lowest transition-all duration-300">
                       <td className="px-8 py-6">
-                        <div className="flex items-center gap-4">
-                          <div className="w-12 h-12 rounded-lg bg-secondary-container/20 flex items-center justify-center">
-                            <span
-                              className="material-symbols-outlined text-secondary"
-                              data-icon="self_improvement"
-                            >
-                              self_improvement
-                            </span>
-                          </div>
-                          <div>
-                            <p className="font-bold text-on-surface">
-                              Vagus Nerve Reset
-                            </p>
-                            <p className="text-xs text-on-surface-variant font-medium">
-                              Recovery • 4 Weeks
-                            </p>
-                          </div>
-                        </div>
+                        <span class="text-sm font-medium text-on-surface-variant">
+                          usuario
+                        </span>
                       </td>
                       <td className="px-8 py-6">
                         <div className="flex items-center gap-3">
@@ -149,12 +118,9 @@ function AdminManageCourses() {
                         </div>
                       </td>
                       <td className="px-8 py-6">
-                        <div className="flex -space-x-2">
-                          <div className="w-8 h-8 rounded-full border-2 border-surface-container-low bg-slate-200"></div>
-                          <div className="w-8 h-8 rounded-full border-2 border-surface-container-low bg-primary text-[10px] text-on-primary flex items-center justify-center font-bold">
-                            +56
-                          </div>
-                        </div>
+                        <span class="text-sm font-medium text-on-surface-variant">
+                          email@correo.com
+                        </span>
                       </td>
                       <td className="px-8 py-6">
                         <span className="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed text-[11px] font-bold uppercase tracking-wider">
@@ -185,24 +151,9 @@ function AdminManageCourses() {
                     {/* Row 3 */}
                     <tr className="group hover:bg-surface-container-lowest transition-all duration-300">
                       <td className="px-8 py-6">
-                        <div className="flex items-center gap-4">
-                          <div className="w-12 h-12 rounded-lg bg-tertiary-fixed-dim/20 flex items-center justify-center">
-                            <span
-                              className="material-symbols-outlined text-tertiary"
-                              data-icon="air"
-                            >
-                              air
-                            </span>
-                          </div>
-                          <div>
-                            <p className="font-bold text-on-surface">
-                              Endurance Mechanics
-                            </p>
-                            <p className="text-xs text-on-surface-variant font-medium">
-                              Cardio • 8 Weeks
-                            </p>
-                          </div>
-                        </div>
+                        <span class="text-sm font-medium text-on-surface-variant">
+                          usuario
+                        </span>
                       </td>
                       <td className="px-8 py-6">
                         <div className="flex items-center gap-3">
@@ -217,12 +168,9 @@ function AdminManageCourses() {
                         </div>
                       </td>
                       <td className="px-8 py-6">
-                        <div className="flex -space-x-2">
-                          <div className="w-8 h-8 rounded-full border-2 border-surface-container-low bg-slate-200"></div>
-                          <div className="w-8 h-8 rounded-full border-2 border-surface-container-low bg-primary text-[10px] text-on-primary flex items-center justify-center font-bold">
-                            +88
-                          </div>
-                        </div>
+                        <span class="text-sm font-medium text-on-surface-variant">
+                          email@correo.com
+                        </span>
                       </td>
                       <td className="px-8 py-6">
                         <span className="px-3 py-1 rounded-full bg-surface-variant text-on-surface-variant text-[11px] font-bold uppercase tracking-wider">
@@ -253,24 +201,9 @@ function AdminManageCourses() {
                     {/* Row 4 */}
                     <tr className="group hover:bg-surface-container-lowest transition-all duration-300">
                       <td className="px-8 py-6">
-                        <div className="flex items-center gap-4">
-                          <div className="w-12 h-12 rounded-lg bg-primary-fixed/20 flex items-center justify-center">
-                            <span
-                              className="material-symbols-outlined text-primary"
-                              data-icon="bolt"
-                            >
-                              bolt
-                            </span>
-                          </div>
-                          <div>
-                            <p className="font-bold text-on-surface">
-                              Explosive Power Prep
-                            </p>
-                            <p className="text-xs text-on-surface-variant font-medium">
-                              Strength • 6 Weeks
-                            </p>
-                          </div>
-                        </div>
+                        <span class="text-sm font-medium text-on-surface-variant">
+                          usuario
+                        </span>
                       </td>
                       <td className="px-8 py-6">
                         <div className="flex items-center gap-3">
@@ -285,12 +218,9 @@ function AdminManageCourses() {
                         </div>
                       </td>
                       <td className="px-8 py-6">
-                        <div className="flex -space-x-2">
-                          <div className="w-8 h-8 rounded-full border-2 border-surface-container-low bg-slate-200"></div>
-                          <div className="w-8 h-8 rounded-full border-2 border-surface-container-low bg-primary text-[10px] text-on-primary flex items-center justify-center font-bold">
-                            +210
-                          </div>
-                        </div>
+                        <span class="text-sm font-medium text-on-surface-variant">
+                          email@correo.com
+                        </span>
                       </td>
                       <td className="px-8 py-6">
                         <span className="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed text-[11px] font-bold uppercase tracking-wider">
@@ -325,7 +255,7 @@ function AdminManageCourses() {
             {/* Global Pagination / Content breathing room */}
             <footer class="mt-10 flex items-center justify-between">
               <p class="text-sm text-on-surface-variant">
-                Mostrando 4 de 32 cursos
+                Mostrando 4 de 32 usuarios
               </p>
               <div class="flex gap-2">
                 <button class="w-10 h-10 rounded-full bg-white border border-outline-variant/30 flex items-center justify-center text-outline hover:text-primary transition-colors">
