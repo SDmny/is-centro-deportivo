@@ -10,7 +10,6 @@ function AdminManageCourses() {
           <HeaderAdminManageUsers />
           <div class="pt-12 px-12 pb-20 max-w-7xl mx-auto">
             <section className="max-w-7xl mx-auto">
-              {/* Header Section with Asymmetric Layout */}
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
                 <div className="max-w-xl">
                   <h2 className="text-4xl font-extrabold text-on-surface tracking-tight mb-4">
@@ -32,7 +31,6 @@ function AdminManageCourses() {
                 </div>
               </div>
 
-              {/* Add New Placeholder Card */}
             </section>
 
             <section className="bg-surface-container-low rounded-xl overflow-hidden p-1 shadow-sm">
@@ -252,7 +250,6 @@ function AdminManageCourses() {
                 </table>
               </div>
             </section>
-            {/* Global Pagination / Content breathing room */}
             <footer class="mt-10 flex items-center justify-between">
               <p class="text-sm text-on-surface-variant">
                 Mostrando 4 de 32 usuarios

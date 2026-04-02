@@ -37,7 +37,7 @@ function Dashboard() {
                   <div className="h-48 relative overflow-hidden">
                     <img
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      data-alt="Morning Yoga"
+                      data-alt="Yoga Matinal"
                       src="https://lh3.googleusercontent.com/aida-public/AB6AXuBm-U99Oe9FID5fiO-8ii6FHes_xQUtMnnF2uuXtnwaS8Tb4OO45OhdKzBPffzuKJY81Kb5-aFwiOZZ9IVxex7LH0RTmSwyotWDfULSSIjzl25wS_hMrU09Fm590EOb2Kv-NUA_VYLOsRnTatJaAVsNA8dXUEmawZXXafN4j5rLPrqNjKNtmrr8VQAqxaM2KKFE-BC5lq8Zk89REvCX9ZfDdCbdlu1BMNgNZleI_qzXzTEdXbyjVVA4ON-vfhrkpk63JJ-kSl7sqMMt"
                     />
                     <div className="absolute top-4 left-4">
@@ -48,7 +48,7 @@ function Dashboard() {
                   </div>
                   <div className="p-6 flex-1 flex flex-col">
                     <h4 className="text-xl font-bold text-on-surface mb-2">
-                      Morning Yoga
+                      Yoga Matinal
                     </h4>
                     <p className="text-sm text-on-surface-variant line-clamp-2 mb-4">
                       Empieza el día con energía y enfoque.
@@ -76,18 +76,18 @@ function Dashboard() {
                   <div className="h-48 relative overflow-hidden">
                     <img
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      data-alt="Core Strength"
+                      data-alt="Fuerza Core"
                       src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrgAVfrDr9Im9lMva0R8TGGC2dNohx0yP2mAomnqLZqk71S0Ze6rZPNoRsZfrIq8PYJ40lXRvHHRmUMWF3T3GvdP4FxBb6fCXKDPXHuiihJ7DFSJ1l0_FV_9RR3_6aum2dNMJrzaD5cQXj0mf8mNvGDVvamE49jE_wxpnFcaVLtfvu2i3brr8EFvoQObfmjrM1CEfiex9smOSCgK7F63xIGmO8kXaDm6T5RZ1TGHAX_lEy-gNEmPIjja-QgaXgj6VqPEAIfhvYW1l7"
                     />
                     <div className="absolute top-4 left-4">
                       <span className="bg-secondary-fixed text-on-secondary-fixed text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
-                        Strength
+                        Fuerza
                       </span>
                     </div>
                   </div>
                   <div className="p-6 flex-1 flex flex-col">
                     <h4 className="text-xl font-bold text-on-surface mb-2">
-                      Core Strength
+                      Fuerza Core
                     </h4>
                     <p className="text-sm text-on-surface-variant line-clamp-2 mb-4">
                       Fortalece tu centro con ejercicios intensos.
@@ -122,19 +122,19 @@ function Dashboard() {
                   <div className="md:w-1/2 p-8 flex flex-col justify-center">
                     <div className="mb-4">
                       <span className="bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
-                        Performance
+                        Rendimiento
                       </span>
                     </div>
                     <h4 className="text-2xl font-bold text-on-surface mb-3">
                       HIIT Flow
                     </h4>
                     <p className="text-on-surface-variant mb-6 leading-relaxed">
-                      High-intensity interval training con movimientos fluidos y
+                      Entrenamiento de intervalos de alta intensidad con movimientos fluidos y
                       controlados.
                     </p>
                     <div className="flex items-center gap-x-6">
                       <button className="bg-primary text-on-primary px-6 py-2 rounded-lg text-sm font-bold shadow-md hover:opacity-90 transition-opacity">
-                        Resume Session
+                        Reanudar Sesión
                       </button>
                       <div className="flex items-center gap-x-2">
                         <span
@@ -143,7 +143,7 @@ function Dashboard() {
                         >
                           bar_chart
                         </span>
-                        <span className="text-sm font-medium">92% Match</span>
+                        <span className="text-sm font-medium">92% de Afinidad</span>
                       </div>
                     </div>
                   </div>
@@ -155,7 +155,7 @@ function Dashboard() {
               <div className="bg-surface-container rounded-xl p-8 sticky top-24">
                 <div className="flex items-center justify-between mb-8">
                   <h3 className="text-xl font-bold text-on-surface">
-                    Weekly Schedule
+                    Horario Semanal
                   </h3>
                   <span
                     className="material-symbols-outlined text-outline cursor-pointer"
@@ -169,7 +169,7 @@ function Dashboard() {
                   <div className="flex gap-x-4">
                     <div className="flex flex-col items-center w-12 pt-1">
                       <span className="text-[10px] font-bold text-outline-variant uppercase">
-                        Mon
+                        Lun
                       </span>
                       <span className="text-lg font-extrabold text-on-surface">
                         12
@@ -181,10 +181,10 @@ function Dashboard() {
                           07:00 AM
                         </p>
                         <h5 className="text-sm font-bold text-on-surface">
-                          Morning Yoga
+                          Yoga Matinal
                         </h5>
                         <p className="text-[10px] text-on-surface-variant italic">
-                          Studio A • Coach Elena
+                          Estudio A • Coach Elena
                         </p>
                       </div>
                     </div>
@@ -193,7 +193,7 @@ function Dashboard() {
                   <div className="flex gap-x-4">
                     <div className="flex flex-col items-center w-12 pt-1">
                       <span className="text-[10px] font-bold  uppercase text-primary">
-                        Tue
+                        Mar
                       </span>
                       <span className="text-lg font-extrabold text-primary">
                         14
@@ -208,7 +208,7 @@ function Dashboard() {
                           HIIT Flow
                         </h5>
                         <p className="text-[10px] text-on-surface-variant italic">
-                          Studio B • Coach Marcus
+                          Estudio B • Coach Marcus
                         </p>
                       </div>
                     </div>
@@ -217,7 +217,7 @@ function Dashboard() {
                   <div className="flex gap-x-4 opacity-50">
                     <div className="flex flex-col items-center w-12 pt-1">
                       <span className="text-[10px] font-bold text-outline-variant uppercase">
-                        Wed
+                        Mié
                       </span>
                       <span className="text-lg font-extrabold text-on-surface">
                         16

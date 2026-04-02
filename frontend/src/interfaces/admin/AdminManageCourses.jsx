@@ -1,362 +1,106 @@
-import HeaderAdminManageCourses from "../../components/admin/HeaderAdminManageCourses";
-import SidebarAdmin from "../../components/ui/sidebar/SidebarAdmin";
+import React from 'react';
+import { useNavigate } from "react-router-dom";
+import SidebarAdmin from "../../components/ui/sidebar/SidebarAdmin.jsx";
+import HeaderAdminManageCourses from "../../components/admin/HeaderAdminManageCourses.jsx";
 
 function AdminManageCourses() {
+  const navigate = useNavigate();
+  
+  const courses = [
+    { title: "Dominio de la Respiración Kinética", instructor: "Dr. Elias Vance", students: 428, category: "RESPIRACIÓN", img: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=400" },
+    { title: "Regeneración de Tejido Profundo", instructor: "Sarah Chen", students: 215, category: "RECUPERACIÓN", img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=400" },
+    { title: "Biomecánica de Alta Velocidad", instructor: "Marcus Thorne", students: 892, category: "ATLÉTICO", img: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=400" },
+    { title: "Estrategia de Carga Cognitiva", instructor: "Dr. Julian Grey", students: 112, category: "MENTALIDAD", img: "https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&q=80&w=400" },
+    { title: "Fundamentos Aeróbicos Zona 2", instructor: "Lena Park", students: 540, category: "RESISTENCIA", img: "https://images.unsplash.com/photo-1441742917377-57f78ee0e582?auto=format&fit=crop&q=80&w=400" },
+  ];
+
   return (
     <>
-      <div className="bg-background text-on-background selection:bg-primary-fixed selection:text-on-primary-fixed">
-        <SidebarAdmin />
-        <div className="ml-64 min-h-screen bg-background">
-          <HeaderAdminManageCourses />
-          <div class="pt-12 px-12 pb-20 max-w-7xl mx-auto">
-            <section className="max-w-7xl mx-auto">
-              {/* Header Section with Asymmetric Layout */}
-              <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
-                <div className="max-w-xl">
-                  <h2 className="text-4xl font-extrabold text-on-surface tracking-tight mb-4">
-                    Administrar Cursos
-                  </h2>
-                  <p className="text-lg text-on-surface-variant leading-relaxed opacity-80">
-                    Supervisa los cursos, crea uno nuevo, modifica detalles de
-                    un curso.
-                  </p>
+      <SidebarAdmin />
+      <HeaderAdminManageCourses />
+      <div className="ml-64 pt-24 px-12 pb-20 bg-stone-50 min-h-screen transition-colors">
+        {/* Título y Acción Principal */}
+        <div className="flex justify-between items-start mb-12">
+          <div className="max-w-2xl">
+            <h2 className="text-4xl font-black text-stone-900 tracking-tighter uppercase">Gestión de Cursos</h2>
+            <p className="text-stone-500 text-sm font-medium mt-2 leading-relaxed">
+              Organiza y optimiza el plan de estudios de alto rendimiento. Cada sesión es un paso hacia una nueva cima.
+            </p>
+          </div>
+          <button className="flex items-center gap-2 bg-[#4c6455] hover:bg-[#3d5044] text-white px-6 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all shadow-lg shadow-emerald-900/20">
+            <span className="material-symbols-outlined text-lg">add</span> Agregar Nuevo Curso
+          </button>
+        </div>
+
+        <div className="grid grid-cols-3 gap-8 mb-12">
+          <div className="bg-white p-8 rounded-[32px] border border-stone-200 shadow-sm">
+            <p className="text-[10px] font-black text-stone-400 uppercase tracking-widest mb-2">Cursos Activos</p>
+            <p className="text-4xl font-black text-stone-900">24</p>
+          </div>
+          <div className="bg-white p-8 rounded-[32px] border border-stone-200 shadow-sm">
+            <p className="text-[10px] font-black text-stone-400 uppercase tracking-widest mb-2">Estudiantes Totales</p>
+            <p className="text-4xl font-black text-stone-900">1,482</p>
+          </div>
+          <div className="bg-white p-8 rounded-[32px] border border-stone-200 shadow-sm">
+            <p className="text-[10px] font-black text-stone-400 uppercase tracking-widest mb-2">Progreso Promedio</p>
+            <p className="text-4xl font-black text-stone-900">68%</p>
+          </div>
+        </div>
+
+        {/* Cursos */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+          {courses.map((course, idx) => (
+            <div 
+              key={idx} 
+              onClick={() => navigate('/admin/editar-curso', { state: { course } })}
+              className="bg-white rounded-[32px] border border-stone-200 overflow-hidden group hover:shadow-xl transition-all duration-300 cursor-pointer"
+            >
+              <div className="relative h-48">
+                <img src={course.img} alt={course.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+                <div className="absolute top-4 left-4">
+                  <span className="bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[9px] font-black tracking-widest text-stone-600 uppercase border border-stone-200/50">
+                    {course.category}
+                  </span>
                 </div>
-                <div>
-                  <button className="flex items-center gap-x-2 bg-primary text-on-primary px-6 py-4 rounded-lg font-semibold shadow-lg hover:brightness-110 transition-all transform active:scale-95">
-                    <span className="material-symbols-outlined" data-icon="add">
-                      add
-                    </span>
-                    <span>Agregar Curso</span>
+              </div>
+              <div className="p-8">
+                <h3 className="text-xl font-black text-stone-900 mb-4 line-clamp-1 uppercase">{course.title}</h3>
+                <div className="space-y-2 mb-8">
+                  <div className="flex items-center gap-2 text-stone-500">
+                    <span className="material-symbols-outlined text-sm">person</span>
+                    <span className="text-[11px] font-bold uppercase tracking-tight">Instructor: {course.instructor}</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-stone-500">
+                    <span className="material-symbols-outlined text-sm">group</span>
+                    <span className="text-[11px] font-bold uppercase tracking-tight">{course.students} Estudiantes</span>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between border-t border-stone-100 pt-6">
+                  <div className="flex gap-4">
+                    <button className="text-[11px] font-black text-stone-400 hover:text-stone-900 transition-colors uppercase tracking-widest">Detalles</button>
+                    <button className="text-[11px] font-black text-stone-400 hover:text-[#4c6455] transition-colors uppercase tracking-widest">Gestionar</button>
+                  </div>
+                  <button className="text-stone-300 hover:text-red-500 transition-colors" onClick={(e) => { e.stopPropagation(); /* lógica borrar */ }}>
+                    <span className="material-symbols-outlined text-lg">delete</span>
                   </button>
                 </div>
               </div>
-            </section>
+            </div>
+          ))}
 
-            <section className="bg-surface-container-low rounded-xl overflow-hidden p-1 shadow-sm">
-              <div className="overflow-x-auto">
-                <table className="w-full border-collapse text-left">
-                  <thead>
-                    <tr className="text-label-md text-on-surface-variant/60 uppercase tracking-widest text-[11px] font-bold">
-                      <th className="px-8 py-6">Curso</th>
-                      <th className="px-8 py-6">Instructor</th>
-                      <th className="px-8 py-6">Estudiantes</th>
-                      <th className="px-8 py-6">Estatus</th>
-                      <th className="px-8 py-6 text-right">Acciones</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-white/40">
-                    {/* Row 1 */}
-                    <tr className="group hover:bg-surface-container-lowest transition-all duration-300">
-                      <td className="px-8 py-6">
-                        <div className="flex items-center gap-4">
-                          <div className="w-12 h-12 rounded-lg bg-primary-container/20 flex items-center justify-center">
-                            <span
-                              className="material-symbols-outlined text-primary"
-                              data-icon="fitness_center"
-                            >
-                              fitness_center
-                            </span>
-                          </div>
-                          <div>
-                            <p className="font-bold text-on-surface">
-                              Hypertrophy Blueprint
-                            </p>
-                            <p className="text-xs text-on-surface-variant font-medium">
-                              Strength • 12 Weeks
-                            </p>
-                          </div>
-                        </div>
-                      </td>
-                      <td className="px-8 py-6">
-                        <div className="flex items-center gap-3">
-                          <img
-                            className="w-8 h-8 rounded-full object-cover"
-                            data-alt="Instructor Elena Vance"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaJfXwYwcYecJ69dzYWLcuNz3c7HeUbj4k17FIwJS15ly5Xa9D_bwuEFIlzFg9ti4plp-XumfzQX-lfzyMTwGR08tA8GuBEzPB2cxxX6LY6gf6YaJXCEr11zipKe6dF7YDQ7Mhib2NkqQWWR0E68udlCEG_iOSVEeSxrUivjepXC_hDLnLI0U0SgboUd30oPYi9Ox6uXkI8kdShc3EIreWzwwR-aSUKzE7UthxmMjwUh9wAaOCdTMvsTEm6bD3aLNRm8qxU9B0prKN"
-                          />
-                          <span className="text-sm font-medium">
-                            Elena Vance
-                          </span>
-                        </div>
-                      </td>
-                      <td className="px-8 py-6">
-                        <div className="flex -space-x-2">
-                          <div className="w-8 h-8 rounded-full border-2 border-surface-container-low bg-slate-200"></div>
-                          <div className="w-8 h-8 rounded-full border-2 border-surface-container-low bg-slate-300"></div>
-                          <div className="w-8 h-8 rounded-full border-2 border-surface-container-low bg-primary text-[10px] text-on-primary flex items-center justify-center font-bold">
-                            +124
-                          </div>
-                        </div>
-                      </td>
-                      <td className="px-8 py-6">
-                        <span className="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed text-[11px] font-bold uppercase tracking-wider">
-                          Active
-                        </span>
-                      </td>
-                      <td className="px-8 py-6">
-                        <div className="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                          <button className="p-2 rounded-lg hover:bg-primary/10 text-primary transition-colors">
-                            <span
-                              className="material-symbols-outlined"
-                              data-icon="edit"
-                            >
-                              edit
-                            </span>
-                          </button>
-                          <button className="p-2 rounded-lg hover:bg-error/10 text-error transition-colors">
-                            <span
-                              className="material-symbols-outlined"
-                              data-icon="delete"
-                            >
-                              delete
-                            </span>
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
-                    {/* Row 2 */}
-                    <tr className="group hover:bg-surface-container-lowest transition-all duration-300">
-                      <td className="px-8 py-6">
-                        <div className="flex items-center gap-4">
-                          <div className="w-12 h-12 rounded-lg bg-secondary-container/20 flex items-center justify-center">
-                            <span
-                              className="material-symbols-outlined text-secondary"
-                              data-icon="self_improvement"
-                            >
-                              self_improvement
-                            </span>
-                          </div>
-                          <div>
-                            <p className="font-bold text-on-surface">
-                              Vagus Nerve Reset
-                            </p>
-                            <p className="text-xs text-on-surface-variant font-medium">
-                              Recovery • 4 Weeks
-                            </p>
-                          </div>
-                        </div>
-                      </td>
-                      <td className="px-8 py-6">
-                        <div className="flex items-center gap-3">
-                          <img
-                            className="w-8 h-8 rounded-full object-cover"
-                            data-alt="Instructor Marcus Aurelius"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIQCjR4jS8MkaUtPP45S2uQhCPGpxvspl8JKGcK0wZ_88NfPyhceOfLFytN9wZW6sW5soJWq3GJH2o0wseb1wy9p77xJTUx4Wp409bCqyiQeluJJLjJonWoRhhuVSx0J_uVYNvXFvnnK3w__BIYoUeKWJCkK3JrvJr8vJlIps9J3sG3i9e3PO5oAPLzX2b6C3HT2gnZ6nFLwQpMqz0T-jTSAplklCxF0KcJlv4XA4E85jqlvY4Wm47rAvsTxM9R9ip_ffP4zOO2cDi"
-                          />
-                          <span className="text-sm font-medium">
-                            Marcus Chen
-                          </span>
-                        </div>
-                      </td>
-                      <td className="px-8 py-6">
-                        <div className="flex -space-x-2">
-                          <div className="w-8 h-8 rounded-full border-2 border-surface-container-low bg-slate-200"></div>
-                          <div className="w-8 h-8 rounded-full border-2 border-surface-container-low bg-primary text-[10px] text-on-primary flex items-center justify-center font-bold">
-                            +56
-                          </div>
-                        </div>
-                      </td>
-                      <td className="px-8 py-6">
-                        <span className="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed text-[11px] font-bold uppercase tracking-wider">
-                          Active
-                        </span>
-                      </td>
-                      <td className="px-8 py-6">
-                        <div className="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                          <button className="p-2 rounded-lg hover:bg-primary/10 text-primary transition-colors">
-                            <span
-                              className="material-symbols-outlined"
-                              data-icon="edit"
-                            >
-                              edit
-                            </span>
-                          </button>
-                          <button className="p-2 rounded-lg hover:bg-error/10 text-error transition-colors">
-                            <span
-                              className="material-symbols-outlined"
-                              data-icon="delete"
-                            >
-                              delete
-                            </span>
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
-                    {/* Row 3 */}
-                    <tr className="group hover:bg-surface-container-lowest transition-all duration-300">
-                      <td className="px-8 py-6">
-                        <div className="flex items-center gap-4">
-                          <div className="w-12 h-12 rounded-lg bg-tertiary-fixed-dim/20 flex items-center justify-center">
-                            <span
-                              className="material-symbols-outlined text-tertiary"
-                              data-icon="air"
-                            >
-                              air
-                            </span>
-                          </div>
-                          <div>
-                            <p className="font-bold text-on-surface">
-                              Endurance Mechanics
-                            </p>
-                            <p className="text-xs text-on-surface-variant font-medium">
-                              Cardio • 8 Weeks
-                            </p>
-                          </div>
-                        </div>
-                      </td>
-                      <td className="px-8 py-6">
-                        <div className="flex items-center gap-3">
-                          <img
-                            className="w-8 h-8 rounded-full object-cover"
-                            data-alt="Instructor Sarah Jenkins"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAplm-a6Ivpfs_NTwdBwuN1NNueNgl4KWi93dPN-G4cFQlgz3XRyAcWFXHx6_F-7llPlHQ0FARttuFM_q74VZvm4shXPdi1c3ZCWBpsD7b4bm9OpOkaa64mLP0spqoVsW5etzrDHQjyqc2pwqR_3YwaDKvA1bNcJqMQonymYyT5kxy8ko0VI51dYOgDB-9AHOFFbJJsHj5Hvq_ubR3lBFvh2q_1Y69VAkeyj2SPXBmAHFnZd7GFKByejJcPkkAlFTBJAg-KR_v-4o4X"
-                          />
-                          <span className="text-sm font-medium">
-                            Sarah Jenkins
-                          </span>
-                        </div>
-                      </td>
-                      <td className="px-8 py-6">
-                        <div className="flex -space-x-2">
-                          <div className="w-8 h-8 rounded-full border-2 border-surface-container-low bg-slate-200"></div>
-                          <div className="w-8 h-8 rounded-full border-2 border-surface-container-low bg-primary text-[10px] text-on-primary flex items-center justify-center font-bold">
-                            +88
-                          </div>
-                        </div>
-                      </td>
-                      <td className="px-8 py-6">
-                        <span className="px-3 py-1 rounded-full bg-surface-variant text-on-surface-variant text-[11px] font-bold uppercase tracking-wider">
-                          Draft
-                        </span>
-                      </td>
-                      <td className="px-8 py-6">
-                        <div className="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                          <button className="p-2 rounded-lg hover:bg-primary/10 text-primary transition-colors">
-                            <span
-                              className="material-symbols-outlined"
-                              data-icon="edit"
-                            >
-                              edit
-                            </span>
-                          </button>
-                          <button className="p-2 rounded-lg hover:bg-error/10 text-error transition-colors">
-                            <span
-                              className="material-symbols-outlined"
-                              data-icon="delete"
-                            >
-                              delete
-                            </span>
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
-                    {/* Row 4 */}
-                    <tr className="group hover:bg-surface-container-lowest transition-all duration-300">
-                      <td className="px-8 py-6">
-                        <div className="flex items-center gap-4">
-                          <div className="w-12 h-12 rounded-lg bg-primary-fixed/20 flex items-center justify-center">
-                            <span
-                              className="material-symbols-outlined text-primary"
-                              data-icon="bolt"
-                            >
-                              bolt
-                            </span>
-                          </div>
-                          <div>
-                            <p className="font-bold text-on-surface">
-                              Explosive Power Prep
-                            </p>
-                            <p className="text-xs text-on-surface-variant font-medium">
-                              Strength • 6 Weeks
-                            </p>
-                          </div>
-                        </div>
-                      </td>
-                      <td className="px-8 py-6">
-                        <div className="flex items-center gap-3">
-                          <img
-                            className="w-8 h-8 rounded-full object-cover"
-                            data-alt="Instructor David Miller"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4K70acCf0wZf7rWajLn24wJgaKvxe72cPIlEPDsFZEwfQpnlFWrLX_EIa8sl-jt0ahb2LPOON59A1m_eA4XR2K_UF6RGwk2Bo4fMVr1KqHSxJCynSk6d6WOZ_l-9sgeKO5lCbmuvpPm8IVLXhow6Aqffz_XCZO3Bt3QDJCFzZ8EanMoz5B74l2xE83ErNc24IUKZxLnrE2pddftbpR-lZ40bMMCj8HHJHoOgvp77Mj_CBh70g25x444dJY2Hrg548Vptnz2ACbA41"
-                          />
-                          <span className="text-sm font-medium">
-                            David Miller
-                          </span>
-                        </div>
-                      </td>
-                      <td className="px-8 py-6">
-                        <div className="flex -space-x-2">
-                          <div className="w-8 h-8 rounded-full border-2 border-surface-container-low bg-slate-200"></div>
-                          <div className="w-8 h-8 rounded-full border-2 border-surface-container-low bg-primary text-[10px] text-on-primary flex items-center justify-center font-bold">
-                            +210
-                          </div>
-                        </div>
-                      </td>
-                      <td className="px-8 py-6">
-                        <span className="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed text-[11px] font-bold uppercase tracking-wider">
-                          Active
-                        </span>
-                      </td>
-                      <td className="px-8 py-6">
-                        <div className="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                          <button className="p-2 rounded-lg hover:bg-primary/10 text-primary transition-colors">
-                            <span
-                              className="material-symbols-outlined"
-                              data-icon="edit"
-                            >
-                              edit
-                            </span>
-                          </button>
-                          <button className="p-2 rounded-lg hover:bg-error/10 text-error transition-colors">
-                            <span
-                              className="material-symbols-outlined"
-                              data-icon="delete"
-                            >
-                              delete
-                            </span>
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </section>
-            {/* Global Pagination / Content breathing room */}
-            <footer class="mt-10 flex items-center justify-between">
-              <p class="text-sm text-on-surface-variant">
-                Mostrando 4 de 32 cursos
-              </p>
-              <div class="flex gap-2">
-                <button class="w-10 h-10 rounded-full bg-white border border-outline-variant/30 flex items-center justify-center text-outline hover:text-primary transition-colors">
-                  <span
-                    class="material-symbols-outlined"
-                    data-icon="chevron_left"
-                  >
-                    chevron_left
-                  </span>
-                </button>
-                <button class="w-10 h-10 rounded-full bg-white border border-outline-variant/30 flex items-center justify-center text-primary font-bold">
-                  1
-                </button>
-                <button class="w-10 h-10 rounded-full bg-white border border-outline-variant/30 flex items-center justify-center text-outline hover:text-primary transition-colors font-medium">
-                  2
-                </button>
-                <button class="w-10 h-10 rounded-full bg-white border border-outline-variant/30 flex items-center justify-center text-outline hover:text-primary transition-colors">
-                  <span
-                    class="material-symbols-outlined"
-                    data-icon="chevron_right"
-                  >
-                    chevron_right
-                  </span>
-                </button>
-              </div>
-            </footer>
-            <footer className="p-12 text-center text-on-surface-variant opacity-40 text-sm">
-              © 2024 Kinetic Sanctuary • Elite Performance Management System
-            </footer>
+          {/* Botón Crear Nuevo */}
+          <div className="border-2 border-dashed border-stone-200 rounded-[32px] flex flex-col items-center justify-center p-12 hover:bg-stone-100 transition-all group cursor-pointer">
+            <div className="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center text-stone-400 group-hover:scale-110 transition-transform mb-4">
+              <span className="material-symbols-outlined">add</span>
+            </div>
+            <p className="text-[11px] font-black text-stone-400 uppercase tracking-widest">Crear Nuevo Currículo</p>
           </div>
         </div>
+
+        {/* Footer */}
+        <p className="text-center text-stone-400 text-[10px] font-bold mt-20 uppercase tracking-[0.3em]">
+          © 2026 Kinetic Sanctuary • Sistema de Gestión de Rendimiento Elite
+        </p>
       </div>
     </>
   );
