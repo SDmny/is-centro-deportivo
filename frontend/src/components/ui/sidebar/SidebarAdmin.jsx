@@ -60,7 +60,7 @@ function SidebarAdmin() {
             <span className={spanClass}>Pagos</span>
           </NavLink>
           <NavLink
-            to="/perfil"
+            to="/admin/perfil"
             className={({ isActive }) =>
               `${baseClass} ${isActive ? activeClass : inactiveClass}`
             }
@@ -71,7 +71,7 @@ function SidebarAdmin() {
         </nav>
 
         <div className="mt-auto pt-6 border-t border-transparent">
-          <Link to="/perfil" className="flex items-center gap-x-3 px-2 hover:bg-white/50 dark:hover:bg-stone-800/50 py-2 rounded-xl transition-all">
+          <Link to="/admin/perfil" className="flex items-center gap-x-3 px-2 hover:bg-white/50 dark:hover:bg-stone-800/50 py-2 rounded-xl transition-all">
             <div className="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900 flex items-center justify-center text-emerald-700 dark:text-emerald-300">
               <span className={spanIconClass}>person</span>
             </div>

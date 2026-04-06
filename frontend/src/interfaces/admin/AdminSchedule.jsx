@@ -1,8 +1,10 @@
 import React from 'react';
+import { useNavigate } from "react-router-dom";
 import SidebarAdmin from "../../components/ui/sidebar/SidebarAdmin.jsx";
 import HeaderAdminManageCourses from "../../components/admin/HeaderAdminManageCourses.jsx";
 
 function AdminSchedule() {
+  const navigate = useNavigate();
   const timeSlots = ["08:00", "09:00", "10:00", "11:00", "12:00", "16:00", "17:00", "18:00"];
   const days = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"];
 
@@ -16,7 +18,10 @@ function AdminSchedule() {
             <h2 className="text-4xl font-black text-stone-900 uppercase tracking-tighter">Gestión de Horarios</h2>
             <p className="text-stone-500 text-sm font-medium mt-2">Control de disponibilidad y sesiones grupales</p>
           </div>
-          <button className="bg-[#4c6455] text-white px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-lg shadow-emerald-900/20">
+          <button 
+            onClick={() => navigate('/admin/crear-curso')}
+            className="bg-[#4c6455] text-white px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-lg shadow-emerald-900/20 cursor-pointer"
+          >
             Añadir Sesión
           </button>
         </div>
@@ -39,7 +44,10 @@ function AdminSchedule() {
                       Respiración Kinética <br/> <span className="opacity-60">Dr. Vance</span>
                     </div>
                   ) : (
-                    <div className="h-full w-full min-h-[60px] flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <div 
+                      onClick={() => navigate('/admin/crear-curso')}
+                      className="h-full w-full min-h-[60px] flex items-center justify-center opacity-0 group-hover:opacity-100"
+                    >
                       <span className="material-symbols-outlined text-stone-200">add_circle</span>
                     </div>
                   )}

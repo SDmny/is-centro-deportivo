@@ -1,18 +1,19 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import SidebarUser from "../../components/ui/sidebar/SidebarUser.jsx";
 import HeaderMyCourses from "../../components/ui/header/HeaderMyCourses.jsx";
 
 function ExploreCourses() {
   const navigate = useNavigate();
-  const [activeFilter, setActiveFilter] = useState("Todas las Disciplinas");
+  const location = useLocation();
+  const [activeFilter, setActiveFilter] = useState(location.state?.category || "Todas las Disciplinas");
 
   const courses = [
-    { title: "Pilates de Precisión", instructor: "Elena Thorne", tag: "PILATES", category: "Mindfulness", img: "https://images.unsplash.com/photo-1518611012118-296072bb5804?auto=format&fit=crop&w=800", description: "Domina la estabilidad del core y el movimiento fluido bajo una guía refinada." },
+    { title: "Pilates de Precisión", instructor: "Elena Thorne", tag: "PILATES", category: "Bienestar", img: "https://images.unsplash.com/photo-1518611012118-296072bb5804?auto=format&fit=crop&w=800", description: "Domina la estabilidad del core y el movimiento fluido bajo una guía refinada." },
     { title: "Resistencia Acuática", instructor: "David Teal", tag: "CARDIO", category: "Cardio", img: "https://images.unsplash.com/photo-1530549387074-d562cb6e6020?auto=format&fit=crop&w=800", description: "Mejora tu capacidad cardiovascular con resistencia al agua de bajo impacto." },
     { title: "El Saque Kinético", instructor: "Sarah Lewis", tag: "FUERZA", category: "Fuerza", img: "https://images.unsplash.com/photo-1595435064212-36263f69930c?auto=format&fit=crop&w=800", description: "Acondicionamiento de alto rendimiento diseñado para tenistas competitivos." },
     { title: "Quietud Profunda", instructor: "Julian Ross", tag: "RECUPERACIÓN", category: "Recuperación", img: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800", description: "Encuentra el equilibrio restaurador a través del trabajo de respiración y el movimiento meditativo." },
-    { title: "Flujo Fundacional", instructor: "Ben Rivers", tag: "MOVILIDAD", category: "Mindfulness", img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800", description: "Construye una base sólida de movimiento con secuencias enfocadas en la movilidad." },
+    { title: "Flujo Fundacional", instructor: "Ben Rivers", tag: "MOVILIDAD", category: "Bienestar", img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800", description: "Construye una base sólida de movimiento con secuencias enfocadas en la movilidad." },
   ];
 
   const filteredCourses = activeFilter === "Todas las Disciplinas" 
@@ -31,7 +32,7 @@ function ExploreCourses() {
         </header>
 
         <div className="flex gap-3 mb-10 overflow-x-auto pb-2">
-          {["Todas las Disciplinas", "Strength", "Cardio", "Recovery", "Mindfulness"].map((f) => (
+          {["Todas las Disciplinas", "Fuerza", "Cardio", "Recuperación", "Bienestar"].map((f) => (
             <button 
               key={f} 
               onClick={() => setActiveFilter(f)}

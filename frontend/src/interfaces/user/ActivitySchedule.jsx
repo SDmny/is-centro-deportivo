@@ -150,7 +150,19 @@ function ActivitySchedule() {
                     <div className={`h-full ${session.color} w-1/3 rounded-full transition-all duration-700`} />
                   </div>
                 </div>
-                <button className="bg-[#4C6455] text-white px-8 py-3 rounded-xl font-bold text-xs hover:bg-[#3a4d41] transition-all shadow-sm active:scale-95">
+                <button 
+                  onClick={() => navigate(`/solicitar-inscripcion/${encodeURIComponent(decodedName)}`, {
+                    state: {
+                      name: decodedName,
+                      img: activityInfo.img,
+                      desc: activityInfo.desc,
+                      time: session.time,
+                      coach: session.coach,
+                      date: selectedDate
+                    }
+                  })}
+                  className="bg-[#4C6455] text-white px-8 py-3 rounded-xl font-bold text-xs hover:bg-[#3a4d41] transition-all shadow-sm active:scale-95"
+                >
                   Seleccionar Sesión
                 </button>
               </div>

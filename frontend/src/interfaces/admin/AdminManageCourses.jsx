@@ -27,7 +27,10 @@ function AdminManageCourses() {
               Organiza y optimiza el plan de estudios de alto rendimiento. Cada sesión es un paso hacia una nueva cima.
             </p>
           </div>
-          <button className="flex items-center gap-2 bg-[#4c6455] hover:bg-[#3d5044] text-white px-6 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all shadow-lg shadow-emerald-900/20">
+          <button 
+            onClick={() => navigate('/admin/crear-curso')}
+            className="flex items-center gap-2 bg-[#4c6455] hover:bg-[#3d5044] text-white px-6 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all shadow-lg shadow-emerald-900/20 cursor-pointer"
+          >
             <span className="material-symbols-outlined text-lg">add</span> Agregar Nuevo Curso
           </button>
         </div>
@@ -89,7 +92,10 @@ function AdminManageCourses() {
           ))}
 
           {/* Botón Crear Nuevo */}
-          <div className="border-2 border-dashed border-stone-200 rounded-[32px] flex flex-col items-center justify-center p-12 hover:bg-stone-100 transition-all group cursor-pointer">
+          <div 
+            onClick={() => navigate('/admin/crear-curso')}
+            className="border-2 border-dashed border-stone-200 rounded-[32px] flex flex-col items-center justify-center p-12 hover:bg-stone-100 transition-all group cursor-pointer"
+          >
             <div className="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center text-stone-400 group-hover:scale-110 transition-transform mb-4">
               <span className="material-symbols-outlined">add</span>
             </div>

@@ -1,8 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import HeaderMyCourses from "../../components/ui/header/HeaderMyCourses.jsx";
 import SidebarUser from "../../components/ui/sidebar/SidebarUser.jsx";
 import CourseCard from "../../components/courses/CourseCard.jsx";
 
 function UserDashboard() {
+  const navigate = useNavigate();
+
   /* Datos de ejemplo para las tarjetas de la imagen */
   const myCourses = [
     {
@@ -72,7 +75,10 @@ function UserDashboard() {
             <p className="text-on-surface-variant text-base max-w-lg mb-10 leading-relaxed font-medium opacity-80">
               La recuperación de élite es tan importante como el entrenamiento mismo. Explora nuestros nuevos protocolos para maximizar tu rendimiento.
             </p>
-            <button className="bg-primary text-white px-10 py-4 rounded-2xl font-bold text-sm hover:scale-105 transition-all shadow-lg shadow-primary/20 cursor-pointer">
+            <button 
+              onClick={() => navigate("/explore", { state: { category: "Recuperación" } })}
+              className="bg-primary text-white px-10 py-4 rounded-2xl font-bold text-sm hover:scale-105 transition-all shadow-lg shadow-primary/20 cursor-pointer"
+            >
               Explorar Portal de Recuperación
             </button>
           </section>
